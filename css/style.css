@@ -7,3 +7,12 @@
 .jumbotron section p{
 	font-size: 1.3em;
 }
+
+/*hablu feedback style*/
+.hablu-feedback textarea{
+	font-size: 2.5em;
+}
+
+.hablu-feedback input{
+	font-size: 1.25em;
+}
