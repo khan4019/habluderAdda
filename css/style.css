@@ -21,3 +21,15 @@
 .hablu-feedback input{
 	font-size: 1.25em;
 }
+
+/*chapter specific style*/
+.chapter-title span{
+	font-size: 0.6em;
+	font-weight: 700;
+}
+.chapter-main{
+	color: #00B6E0;
+}
+.chapter-rest{
+	color: #F19621;
+}
