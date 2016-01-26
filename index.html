@@ -6,6 +6,8 @@
 	<link rel="shortcut icon" href="images/favicon.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -18,7 +20,7 @@
             <span class="icon-bar"></span>
           </button>
           <!-- <a class="navbar-brand" href="#">Project name</a> -->
-          <img src="images/logo.png" height="50" width="167" alt="">
+          <a href="home.html"><img src="images/logo.png" height="50" width="167" alt=""></a>
         </div>
         <div id="navbar" class="navbar-cullapse cullapse">
           <ul class="nav navbar-nav">
@@ -47,10 +49,26 @@
     				<img src="images/printedLogo.png" height="168" width="400" alt="">
     			</div>
     		</div>
+            <input type='text' id='name' placeholder='Name(optional)'>
+            <input type='text' id='email' placeholder='Email(optional)'>
+            <input type='text' id='comment' placeholder='Message'>
+            <button id ="submitComment">submit</button>
     		<div class="row">
     			<h3>For detail check: <a href="http://jhankarmahbub.com/">www.jhankarmahbub.com</a></h3>
     		</div>
     	</div>
     </div>
+    <script>
+        var habluGudamRef = new Firebase('https://hablu.firebaseio.com/');
+        $('#submitComment').on('click',function (e) {
+                  var hablu = $('#name').val() || 'hablu';
+                  var email = $('#email').val() || 'habluder@gmail.com';
+                  var comment = $('#comment').val();
+                  habluGudamRef.push({name:hablu, email:email, comment:comment});
+                  console.log(hablu, comment)
+                  $('#comment').val('');
+                
+              });
+    </script>
 </body>
 </html>
