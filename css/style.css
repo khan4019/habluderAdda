@@ -27,9 +27,50 @@
 	font-size: 0.6em;
 	font-weight: 700;
 }
-.chapter-main{
+.chapter-title-main{
 	color: #00B6E0;
 }
-.chapter-rest{
+.chapter-title-rest{
 	color: #F19621;
+}
+
+.chapter-one-line{
+	text-align: center;
+	background-color: rgba(0, 182, 224, 0.2);
+	border-radius: 10px;
+	margin-top: 10px;
+}
+
+.chapter-one-line p{
+	font-weight: 700;
+	padding-top: 5px;
+}
+
+.chapter-link-text p{
+	font-size: 16px;
+}
+
+.chapter-nije-nije{
+	width: 160px;
+	background-color:  rgba(138, 43, 226, 0.2);
+	padding: 5px 10px 0px 10px;
+}
+
+.chapter-nije-nije p{
+	font-weight: 700;
+	margin-bottom: 0px;
+}
+
+.question-collection{
+	margin-top: 30px;
+}
+.question-holder{
+	border-radius: 10px;
+	border:3px solid  rgba(138, 43, 226, 0.2);
+	padding: 10px 25px 1px 25px;
+}
+
+.question-number{
+	font-weight: 700;
+	font-size: 21px;
 }
