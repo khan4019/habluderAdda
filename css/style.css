@@ -74,3 +74,9 @@
 	font-weight: 700;
 	font-size: 21px;
 }
+
+.other-chapters ul{
+	list-style: none;
+	font-size: 21px;
+	padding: 20px;
+}
