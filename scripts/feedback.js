@@ -1,21 +1,26 @@
-var habluGudamRef = new Firebase('https://hablu.firebaseio.com/');
+var habluGudamRef = new Firebase('https://hablu.firebaseio.com/hablu');
 $('#submitComment').on('click',function (e) {
   var hablu = $('#name').val();
   var email = $('#email').val();
   var feedback = $('#feedback').val();
   var rex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  $('.has-error').removeClass('has-error');
   if(!feedback){
     $('#feedback').parent().addClass('has-error');
+    $('#missing-data').removeClass('hide');
   }
-  else if(!email || !rex.test(email)){
+  /*else if(!email || !rex.test(email)){
     $('#email').parent().addClass('has-error');
     $('#feedback').parent().removeClass('has-error');
-  }
+    $('#missing-data').removeClass('hide');
+  }*/
   else if(!hablu){
-    $('#name').parent().addClass('has-error')
+    $('#name').parent().addClass('has-error');
+    $('#missing-data').removeClass('hide');
   }
   else{
+    $('#missing-data').addClass('hide');
     var habluDetail = {name:hablu, email:email, feedback:feedback, timestamp: Firebase.ServerValue.TIMESTAMP};
     habluGudamRef.push(habluDetail);
     $('#feedback').val('');  

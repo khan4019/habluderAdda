@@ -49,24 +49,33 @@
     				<img src="images/printedLogo.png" height="168" width="400" alt="">
     			</div>
     		</div>
+    	</div>
+      <div class="container">
+        <h3>হাত ইশপিশ করলে, যা মনে আসে লিখে ফেল</h3>
         <div class="row hablu-feedback">
-          <textarea class="form-control" id="feedback" rows="4" placeholder="তোর মনের কথা, প্রাণ খুলে এইখানে লিখ"></textarea>
+          <div class="form-group">
+            <textarea class="form-control" id="feedback" rows="4" placeholder="হাবলুর মনের কথা"></textarea>
+          </div>
           <form class="form-inline">
             <div class="form-group">
               <input type="text" class="form-control" id="name" placeholder="হাবলুর নাম">  
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" id="email" placeholder="হাবলুর ইমেইল">
+              <input type="email" class="form-control" id="email" placeholder="হাবলুর ইমেইল (অপশনাল)">
             </div>
           </form>
-          <button type="submit" class="btn btn-primary" id ="submitComment">Submit</button>
+          <div class="comment-submit">
+            <p id="missing-data" class="text-warning hide">আরে হাবলু, তোর নাম, কমেন্ট ঠিকমতো লিখতে হবে কিন্তু! </p>
+            <button type="submit" class="btn btn-primary" id ="submitComment">Submit</button>
+          </div>
         </div> 
         <div class="row">
-          <h2>সর্বশেষ ১০ মন্তব্য</h2>
+          <h3>সর্বশেষ ১০ মন্তব্য</h3>
           <ol id="latestComments"></ol>
         </div>
-    	</div>
+      </div>
       <div class="chapter-overall">
+        <hr>
         <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
       </div>
     </div>
