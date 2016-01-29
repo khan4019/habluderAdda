@@ -1,3 +1,8 @@
+.navbar-nav>li:hover{
+	background-color: rgba(241, 150, 33, 0.2)
+}
+
+
 .hablu-logo{
 	width: 90px;
 	padding-left: 30px;
@@ -79,4 +84,24 @@
 	list-style: none;
 	font-size: 21px;
 	padding: 20px;
+}
+
+/*comment text*/
+.comment-holder{
+	margin-bottom: 15px;
+}
+.comment-holder p{
+	margin-bottom: 0px;
+	line-height: 12px;	
+}
+.comment-name{
+	font-size: 14px;
+	font-weight: 700;
+}
+.comment-time{
+	font-size: 10px;
+	padding-left: 30px;
+}
+.comment-text{
+	font-size: 12px;
 }
