@@ -54,6 +54,7 @@ body {
 
 #output {
     list-style: none;
+    overflow: auto;
 }
 #output li {
     margin: 5px 0;
@@ -67,6 +68,7 @@ body {
 #output > li > div {
     margin-left: 20px;
     line-height: 20px;
+    overflow: auto;
 }
 #console span.gutter {
     float: left;
@@ -92,7 +94,7 @@ body {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
     -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
-    
+
     #output .echo .permalink {
         background: url(link@2x.png) no-repeat center;
         background-size: 16px 16px;
@@ -194,7 +196,6 @@ form {
     color: #000;
     height: 24px;
     line-height: 24px;
-    overflow: hidden;
 }
 
 /* HACK */
@@ -208,8 +209,8 @@ form {
     padding-top: 35px;
 }
 #exec, .fakeInput {
-    position: relative;
-    height: auto;
+    overflow: auto;
+    padding-left: 10px;
 }
 
 /* bottom position */
@@ -268,6 +269,7 @@ form {
 
 #exec{
     min-height: 150px;
+    height: 50vh;
 }
 /* code complete visual tweaks */
 #cursor {
@@ -295,7 +297,7 @@ form {
 
 /* with footer - which I've removed temporarily */
 /* body.large #console {
-  bottom: 35px; 
+  bottom: 35px;
 } */
 
 /* syntax highlighting */
@@ -368,44 +370,23 @@ form {
     /* pointer-events: auto !important;*/
 }
 
+.input-container{
+  height: 50vh;
+}
 
 #btn-run{
-    margin-top: 170px;
+    margin-top: 10px;
     margin-left: 10px;
 }
-/*#footer {
-  -webkit-animation-name: hidefooter;
-  -webkit-animation-duration: 200ms;
-  -webkit-animation-delay: 1s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: none;
-  -webkit-transition: opacity 200ms ease-out;
-  opacity: 1;
-}
 
-#footer:hover {
-  opacity: 1 !important;
-}
-
-@-webkit-keyframes hidefooter {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-*/
-/* difference display types */
 
 /* iPhone type display */
 @media screen and (max-device-width: 480px) {
     -webkit-text-size-adjust: none;
     /* prevent webkit from resizing text to fit */
-    
+
     html, body {
         height: auto;
-        overflow-y: auto;
         overflow-x: hidden;
     }
     #console {
@@ -425,12 +406,12 @@ form {
     #footer {
         display: none;
     }
-    
+
     #exec, .fakeInput {
         font-weight: bold;
         padding-right: 10px;
     }
-    
+
     #output li {
         min-height: 20px;
         font-size: 14px;
@@ -440,12 +421,12 @@ form {
         margin-left: 12px;
         line-height: 20px;
     }
-    
+
     #output > li:last-child {
         padding-bottom: 0;
         margin-bottom: 0;
     }
-    
+
     #output .gutter {
         line-height: 20px;
     }
@@ -463,59 +444,12 @@ form {
         font-size: 18px;
         line-height: 18px;
     }
-    
+
     /*  .info span { line-height: 30px; }*/
 }
 
 @media screen and (max-device-width: 768px) {
     #footer {
         display: none;
-    }
-}
-
-/* allow the debug to be printed */
-@media print {
-    body {
-        overflow: auto;
-    }
-    #console {
-        overflow: visible;
-    }
-}
-
-@media print {
-    .str {
-        color: #060;
-    }
-    .kwd {
-        color: #006;
-        font-weight: bold;
-    }
-    .com {
-        color: #600;
-        font-style: italic;
-    }
-    .typ {
-        color: #404;
-        font-weight: bold;
-    }
-    .lit {
-        color: #044;
-    }
-    .pun {
-        color: #440;
-    }
-    .pln {
-        color: #000;
-    }
-    .tag {
-        color: #006;
-        font-weight: bold;
-    }
-    .atn {
-        color: #404;
-    }
-    .atv {
-        color: #060;
     }
 }
