@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selection Sort</title>
+	<link rel="shortcut icon" href="../../images/favicon.png" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle cullapsed" data-toggle="cullapse" data-target="#navbar" aria-expanded="false" aria-contruls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Project name</a> -->
+          <div class="hablu-logo">
+              <a href="../index.html"><img src="../../images/logo.png" height="50" width="60" alt=""></a>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-cullapse cullapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li  class=""><a href="../basic/index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
+						<li><a href="../basic/program.html">হাবলু প্রশ্ন</a></li>
+            <li  class="active"><a href="index.html">প্রোগ্রামিংয়ের বলদ টু বস</a></li>
+            <li><a href="program.html">বলদ প্রশ্ন</a></li>
+            <li><a href="../jkr/index.html">About Jhankar</a></li>
+          </ul>
+        </div><!--/.nav-cullapse -->
+      </div>
+    </nav>
+    <div class="container">
+    	<div class="jumbotron">
+    		<div class="row text-center chapter-title">
+    			<h1><span class="chapter-title-rest">Insertion</span><span class="chapter-title-main"> Sort</span> <span class="chapter-title-rest"> </span></h1>
+    		</div>
+				<div class="row">
+					<div id="insertionSort">
+		        <h2>Insertion sort</h2>
+		        <p><strong>How it works: </strong> Imagine you are playing cards. Somebody is giving you cards one by one. When you are receiving card, you are planning to put them in a way so that the smaller one is on the left. This means you want to insert them in a sorted way</p>
+		        <p><strong>step-1:</strong> If the first card you are getting is 5. Just hold the card in your hand. you dont have to do anything. </p>
+		        <p><strong>step-2:</strong> If the second card is 2, you want to put it before 5 so that the two cards you have are sorted. When you are putting the card with number 2 at the left, you are changing the position of the card 5 from first position to second position. And then first position becomes available and you put 2 there.</p>
+		        <p><strong>step-3:</strong> If the third card is 4. you will start from second position. In the second position, you have card 5 which is bigger than 4. Hence you will move 5 to the third position. The next card to the left is 2 which is smaller than 4. Hence, you wont move 2. And you will insert card 4 in the second position.</p>
+		        <p><strong> step-4:</strong> Then you got 10. It is bigger than the previous card which is 5. Hence, you just add it at the last position.</p>
+		        <p><strong> step-5:</strong> The next card is 7. You just move the position of the card 10 to the right and insert card 7.</p>
+		        <p><strong> step-6:</strong> If the last card is 3. You will have to move 10 to the right as it is bigger than 3. and then you check with the next card to the left it is 7 which is bigger than 3. you move it to the right. similarly, you move 5, 4 to the right. And put the number 3 before 2 as 2 is smaller than 3.</p>
+		        <p>congrats. you are done.</p>
+		        <img src="../../images/concepts/insertionSort.png" alt="">
+		        <p><strong>Code Insertion sort</strong>: Code is similar to the card and image above. It starts with the second element. Pick the second element to be inserted and then compare to the previous element. If the first one is bigger, move the first one to second position and second one at first.</p>
+		        <p>Now first and second item is sorted.</p>
+		        <p>Then, pick the third element and check whether the second element is bigger than the third. keep going similar way until you hit the first element or a element smaller than the element you are comparing with. When you get an item smaller than the picked item, you insert it.</p>
+		        <p>super easy.</p>
+		        <pre><code>
+function insertionSort(arr){
+  var i, len = arr.length, el, j;
+
+  for(i = 1; i&lt;len; i++){
+    el = arr[i];
+    j = i;
+
+    while(j>0 && arr[j-1]>toInsert){
+      arr[j] = arr[j-1];
+      j--;
+   }
+
+   arr[j] = el;
+  }
+
+  return arr;
+}
+		        </code></pre>
+		        <p><strong>complexity:</strong> the worst case O(n2) and best case O(n)</p>
+		      </div>
+				</div>
+    		<div class="row">
+                <div class="other-chapters">
+                    <button id="otherChapterLink" type="button" class="toggleExample btn btn-primary">Show other chapter link</button>
+                    <div id="otherChapterLinkExample" class="hide bg-success">
+                        <ul>
+                            <li><a href="program.html">প্রোগ্রাম খায়, পরে না মাথায় দেয়?</a></li>
+                            <li><a href="variable.html">variable বুঝলে, হবে না পয়সা ব্যয়</a></li>
+                            <li><a href="practice.html">প্রোগ্রামিং প্র্যাকটিস করে রাত পোহালে</a></li>
+                            <li><a href="string.html">string এর তালে নাচবে গরু গোয়ালে</a></li>
+                            <br>
+                            <li><a href="ifelse.html">নানীর if-else বুঝে লাফায় নানা </a></li>
+                            <li><a href="array.html">বিস্কুটের array খায় বিড়ালছানা</a></li>
+                            <li><a href="while.html">while লুপকে করলে মালিশ</a></li>
+                            <li><a href="for.html">for লুপ ডাকবে সালিশ</a></li>
+                            <br>
+                            <li><a href="propose.html">প্রেমের প্রপোজ করলে গোটা দশ হালি</a></li>
+                            <li><a href="function.html">function বুঝবে না- কোনটা বউ কোনটা শালী</a></li>
+                            <li><a href="dhar.html">দ্বিগুণ টাকা ধার করে পালালে</a></li>
+                            <li><a href="language.html">প্রোগ্রামিং ল্যাঙ্গুয়েজ খুঁজবে মামা শিয়ালে</a></li>
+                            <li><a href="next.html">হাসবে হাবলু বিজয় মিছিলে</a></li>
+                        </ul>
+                    </div>
+                </div>
+    		</div>
+    	</div>
+        <div class="chapter-overall">
+            <div>
+                <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div id="fb-root"></div>
+    <script src="../scripts/toggleExample.js"></script>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40601505-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

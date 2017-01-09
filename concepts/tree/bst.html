@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selection Sort</title>
+	<link rel="shortcut icon" href="../../images/favicon.png" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle cullapsed" data-toggle="cullapse" data-target="#navbar" aria-expanded="false" aria-contruls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Project name</a> -->
+          <div class="hablu-logo">
+              <a href="../index.html"><img src="../../images/logo.png" height="50" width="60" alt=""></a>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-cullapse cullapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li  class=""><a href="../basic/index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
+						<li><a href="../basic/program.html">হাবলু প্রশ্ন</a></li>
+            <li  class="active"><a href="index.html">প্রোগ্রামিংয়ের বলদ টু বস</a></li>
+            <li><a href="program.html">বলদ প্রশ্ন</a></li>
+            <li><a href="../jkr/index.html">About Jhankar</a></li>
+          </ul>
+        </div><!--/.nav-cullapse -->
+      </div>
+    </nav>
+    <div class="container">
+    	<div class="jumbotron">
+    		<div class="row text-center chapter-title">
+    			<h1><span class="chapter-title-rest">Selection</span><span class="chapter-title-main"> Sort</span> <span class="chapter-title-rest"> </span></h1>
+    		</div>
+				<div class="row">
+					<div id="bst">
+		        <h2>Binary Search Tree</h2>
+		        <p><strong>Question:</strong> How would you create a binary search tree?</p>
+		        <p><strong>Answer:</strong></p>
+		        <p>to create a tree you need a node. a node in a tree looks like</p>
+		        <pre><code>
+		function Node(val){
+		  this.value = val;
+		  this.left = null;
+		  this.right = null;
+		}
+		        </code></pre>
+		        <p>Create a constructor for binary search tree</p>
+		        <pre><code>
+		function BinarySearchTree(){
+		  this.root = null;
+		}
+		        </code></pre>
+		        <p>Now you need to understand the structure of a binary search tree. For every node value in the left is smaller than the value of the node and value at the right is higher than the value of the root.</p>
+		        <p>so while inserting a value you have to find the appropriate location</p>
+		        <pre><code>
+		BinarySearchTree.prototype.push = function(val){
+		   var root = this.root;
+
+		   if(!root){
+		      this.root = new Node(val);
+		      return;
+		   }
+
+		   var currentNode = root;
+		   var newNode = new Node(val);
+
+		   while(currentNode){
+		      if(val &lt; currentNode.value){
+		          if(!currentNode.left){
+		             currentNode.left = newNode;
+		             break;
+		          }
+		          else{
+		             currentNode = currentNode.left;
+		        }
+		     }
+		     else{
+		         if(!currentNode.right){
+		            currentNode.right = newNode;
+		            break;
+		         }
+		         else{
+		            currentNode = currentNode.right;
+		         }
+		     }
+		  }
+
+		}
+		        </code></pre>
+		        <pre><code>
+		var bst = new BinarySearchTree();
+		bst.push(3);
+		bst.push(2);
+		bst.push(4);
+		bst.push(1);
+		bst.push(5);
+		        </code></pre>
+		      </div>
+		      <div id="bredthFirstSearch">
+		        <h2>Breadth First Search</h2>
+		        <p><strong>Question:</strong> How do you implement Breadth First Search</p>
+		        <p><strong>Answer:</strong></p>
+		        <pre><code>
+		BinarySearchTree.prototype.breadthFirstSearch = function() {
+		  var queue = [];
+		  queue.push(this);
+		  while (queue.length) {
+		    var node = queue.shift();
+		    console.log(node.value);
+		    if (node.left) {
+		      queue.push(node.left);
+		    }
+		    if (node.right) {
+		      queue.push(node.right);
+		    }
+		  }
+		};
+		        </code></pre>
+		        <p>ref: <a href="http://stackoverflow.com/a/13633354/1535443">stackoverflow</a></p>
+		        <p>ref: <a href="https://github.com/duereg/js-algorithms">js algorithms</a></p>
+		      </div>
+		      <div id="inorderTraversal">
+		        <h2>Depth first search</h2>
+		        <p><strong>Question:</strong> How to perform in order traversal</p>
+		        <p><strong></strong></p>
+		        <pre><code>
+		function dfs(node){
+		  if(node){
+		    console.log(node.value);
+		    dfs(node.left);
+		    dfs(node.right);
+		  }
+		}
+		        </code></pre>
+		      </div>
+		      <div id="inorder">
+		        <h2>In order Traversal</h2>
+		        <p><strong>Question:</strong></p>
+		        <p><strong>Answer:</strong></p>
+		        <p><strong></strong></p>
+		        <img src="images/inorder.jpg" alt="">
+		        <pre><code>
+		function inorder(node){
+		   if(node){
+		      inorder(node.left);
+		      console.log(node.value);
+		      inorder(node.right);
+		   }
+		}
+		        </code></pre>
+		        <p>ref: <a href="http://www.javabeat.net/binary-search-tree-traversal-java/">source of image</a> </p>
+		      </div>
+		      <div id="preorder">
+		        <h2>pre order</h2>
+		        <p><strong></strong></p>
+		        <p><strong></strong></p>
+		        <img src="images/preorder.jpg" alt="">
+		        <pre><code>
+		//code here
+		        </code></pre>
+		        <p>ref: <a href="http://en.wikipedia.org/wiki/Tree_traversal">wiki pseudocode doesnt work for JavaScript</a></p>
+		      </div>
+		      <div id="postOrder">
+		        <h2>Post order</h2>
+		        <img src="images/postorder.jpg" alt="">
+		        <pre><code>
+		//code here
+		        </code></pre>
+		      </div>
+		      <div id="minMax">
+		        <h2>min and max value</h2>
+		        <p><strong>Question:</strong> How can you find the min value in a bst</p>
+		        <p>finding min is super simple. the go through the left node and left most node is the minimum node</p>
+		        <p><strong></strong></p>
+		        <pre><code>
+		function minNode(node){
+		   if(!node){
+		      return 0;
+		   }
+		   if(node.left){
+		     return minNode(node.left)
+		  }
+		  return node.value
+		}
+		        </code></pre>
+		        <p><strong>Question:</strong> How can you find the max value in a bst</p>
+		        <p><strong></strong></p>
+		        <pre><code>
+		function maxNode(node){
+		   if(!node){
+		     return 0;
+		  }
+		  if(node.right){
+		     return maxNode(node.right)
+		  }
+		  return node.value;
+		}
+		        </code></pre>
+		      </div>
+		      <div id="balanced">
+		        <h2>Balanced and Unbalanced Tree</h2>
+		        <p><strong>Question:</strong>What is balanced and unbalanced tree</p>
+		        <p><strong>Answer:</strong></p>
+		        <ol>
+		          <li>The left and right subtrees' heights differ by at most one, AND</li>
+		          <li>The left subtree is balanced, AND</li>
+		          <li>The right subtree is balanced</li>
+		        </ol>
+
+		        <p>ref: <a href="http://stackoverflow.com/questions/8015630/definition-of-a-balanced-tree">Get answer from here</a></p>
+		      </div>
+		      <div id="checkBST">
+		        <h2>Check BST</h2>
+		        <p><strong>Question:</strong> check a binary tree is BST or not?</p>
+		        <p><strong>Answer:</strong></p>
+		        <h4>Simple but wrong approach</h4>
+		        <p><strong>Step-1:</strong> if node is null, its BST</p>
+
+		        <pre><code>
+		function isBST(node){
+		   if(!node){
+		     return true;
+		  }
+
+		  if(node.left != null && node.left.value > node.value){
+		    return false;
+		  }
+
+		  if(node.right !=null && node.right.value < node.value) {
+		    return false;
+		  }
+
+		  if(!isBST(node.left) || !isBST(node.right)) {
+		    return false;
+		  }
+
+		  return true;
+		}
+		        </code></pre>
+		        <p>The reason this method will generate wrong result is for</p>
+		        <img src="images/bstWrong.gif" alt="">
+		        <h4>do in order traversal</h4>
+		        <p><strong></strong></p>
+		        <pre><code>
+		          //use method 4 in the link below
+		        </code></pre>
+		        <p>ref: <a href="http://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/">taken from geeksforgeeks</a></p>
+		      </div>
+		      <div id="checkBalance">
+		        <h2>Check balanced</h2>
+		        <p><strong>Quetion:</strong> How could you check a tree is balanced or not</p>
+		        <p><strong>Answer: </strong></p>
+		        <p>check multiple example whether it is balanced. <a href="http://webdocs.cs.ualberta.ca/~holte/T26/balanced-trees.html">check balanced tree example</a></p>
+		        <p>ref: <a href="http://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/">get the answer from here</a></p>
+		      </div>
+		      <div id="height">
+		        <h2>Height of a tree</h2>
+		        <p><strong></strong></p>
+		        <p><strong></strong></p>
+		        <pre><code>
+		function height(node){
+		   if(!node) return 0;
+		   var leftHeight = height(node.left);
+		   var rightHeight = height(node.right);
+
+		   return Math.max(leftHeight, rightHeight) + 1;
+		}
+		        </code></pre>
+		      </div>
+		      <div id="printAncestor">
+		        <h2>print ancestor</h2>
+		        <p><strong>Question:</strong></p>
+		        <p><strong>Answer:</strong></p>
+		        <pre><code>
+		function printAncestor(node, target){
+		   if(!node) return false
+
+		   if(node.value == target) return true;
+
+		   if(printAncestor(node.left, target) || printAncestor(node.rigth, target)){
+		     console.log(node.value);
+		     return true;
+		  }
+
+		  return false
+		}
+		        </code></pre>
+		        <p>ref: <a href="http://stackoverflow.com/questions/12052192/printing-ancestors-of-a-node-in-binary-tree">from stack overflow</a></p>
+		        <h3 class="text-danger">Doesnt work for intermediate nodes. Debug this</h3>
+		      </div>
+		      <div id="nodesBetweenTwo">
+		        <h2>Print all nodes between two nodes</h2>
+		        <p><strong>Question:</strong></p>
+		        <p><strong>Answer:</strong></p>
+		        <pre><code>
+		//put the code
+		        </code></pre>
+		        <p>ref: <a href="http://www.geeksforgeeks.org/given-binary-tree-print-nodes-two-given-level-numbers/">Get the code form here</a></p>
+		      </div>
+		      <div id="commonAncestor">
+		        <h2>common ancestor</h2>
+		        <p><strong></strong></p>
+		        <p><strong></strong></p>
+		        <p>this will work for bst only. If you are dealing with binary tree..this needs to be modified</p>
+		        <h4 class="text-danger">Make this code better</h4>
+		        <pre><code>
+		function commonAncestor(node, n1, n2){
+		   if(!node) return;
+		   var val = node.value;
+		   if(n1 &lt; val && n2&lt;val){
+		     return commonAncestor(node.left, n1, n2);
+		   }
+		   if(n1&lt;val && n2&lt;val){
+		     return commonAncestor(node.right, n1, n2);
+		  }
+		  console.log('lowest common ancestor value: ', val);
+		  return node;
+		}
+		        </code></pre>
+		        <p>ref: <a href="http://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/">common ancesotr</a></p>
+
+		        <h4>coomon ancestor for binary tree</h4>
+		        <pre><code>
+		function commonAncestorBT(node, n1, n2){
+		   if(!node) return;
+		   var val = node.value;
+		   if(n1 == val || n2 ==val){
+		     return node;
+		   }
+		   var left = commonAncestorBT(node.left, n1, n2);
+		   var right = commonAncestorBT(node.right, n1, n2);
+		   if(left && right){
+		     return node;
+		  }
+		  return (left) ? left : right;
+		}
+		        </code></pre>
+		        <p>ref: <a href="http://www.fusu.us/2013/06/p2-lowest-common-ancestor-in-binary-tree.html">try pavels blog</a></p>
+		        <p>ref: <a href="http://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/">common ancestor for binary tree</a></p>
+		      </div>
+		      <div id="heightBalance">
+		        <h2>check bst is height balanced</h2>
+		        <p><strong>Qustion</strong></p>
+		        <p><strong></strong></p>
+		        <p>ref: <a href="http://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/">get code from here</a></p>
+		      </div>
+		      <div id="topView">
+		        <h2>Top view</h2>
+		      </div>
+		      <div id="bottomView">
+		        <h2>bottom view</h2>
+		      </div>
+		      <div id="leftView">
+		        <h2>leftview</h2>
+		        <p> ref: <a href="http://www.geeksforgeeks.org/print-left-view-binary-tree/">bst left view</a></p>
+		      </div>
+		      <div id="rightView">
+		        <h2>Right view</h2>
+		        <p> ref: <a href="http://www.geeksforgeeks.org/print-right-view-binary-tree-2/">print right view</a></p>
+		      </div>
+		      <div id="mergeSorted">
+		        <h2>Merge two BST</h2>
+		        <p> ref: <a href="http://www.geeksforgeeks.org/merge-two-bsts-with-limited-extra-space/">merge two bst</a></p>
+		      </div>
+		      <div id="binaryToBST">
+		        <h2>convert binary to BST</h2>
+		        <p> ref: <a href="http://www.geeksforgeeks.org/binary-tree-to-binary-search-tree-conversion/">binary tree to bst</a></p>
+		      </div>
+		      <div id="checkSubTree">
+		        <h2>Check Sub tree</h2>
+		        <p>ref: <a href="http://www.geeksforgeeks.org/check-binary-tree-subtree-another-binary-tree-set-2/">check subtree</a></p>
+		      </div>
+		      <div id="diagonalSum">
+		        <h2>Diagonal Sum</h2>
+		        <p>ref: <a href="http://www.geeksforgeeks.org/diagonal-sum-binary-tree/">gfg</a></p>
+		      </div>
+		      <div id="selfBalancing">
+		        <h2>Self Balancing or Height Balanced Tree</h2>
+		        <p><strong>Question:</strong></p>
+		        <p><strong>Answer:</strong></p>
+		        <p>A binary tree whose height of the left subtree and height of the right subtree differ at most one.</p>
+		      </div>
+		      <div id="avlTree">
+		        <h2>AVL Tree</h2>
+		        <p><strong>Question:</strong></p>
+		        <p><strong>Answer:</strong></p>
+		        <p>It is Self balancing binary search tree. This means in an AVL tree, heights of two child subtrees of any node differ by at most one. If at any time if heights differ more than one, re-balancing is done to restore the height balance property.</p>
+		        <p>Lookup, insertion and deletion all takes O(logn) in average and worst case</p>
+		      </div>
+		      <div id="insertAVL">
+		        <h2>Insert, delete Into AVL</h2>
+		      </div>
+		      <div id="redBlackTree">
+		        <h2>Red Black Tree</h2>
+		        <p><strong>Question:</strong></p>
+		        <p><strong>Answer:</strong>A red-black tree is a binary search tree with one extra attribute for each node: the colour, which is either red or black.</p>
+		        <ul>
+		          <li>Every node is either red or black.</li>
+		          <li>Every leaf (NULL) is black.</li>
+		          <li>If a node is red, then both its children are black. However, two black node may be adjacent</li>
+		          <li>Every simple path from a node to a descendant leaf contains the same number of black nodes.</li>
+		          <li>Root node will always be black</li>
+		        </ul>
+		        <img src="images/rb_tree1a.gif" alt="">
+		        <p>ref: <a href="https://www.cs.auckland.ac.nz/software/AlgAnim/red_black.html">Red Black Trees</a></p>
+		      </div>
+		      <div id="redBlackInsertion">
+		        <h2>Insert into Red Black Tree</h2>
+		      </div>
+		      <div>
+		        <h2>Questions list</h2>
+		        <h4>from cracking the coding interview</h4>
+		        <ul>
+		          <li><a href="http://www.ardendertat.com/2011/10/10/programming-interview-questions-7-binary-search-tree-check/">check binary tree is balanced</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/check-two-nodes-cousins-binary-tree/">two nodes are cusin</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/">lowest common ancestor</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/find-k-th-smallest-element-in-bst-order-statistics-in-bst/">k th smalled node</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/inorder-predecessor-successor-given-key-bst/">in order successor and precessor</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/find-maximum-path-sum-two-leaves-binary-tree/">maximum path between two nodes</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/print-nodes-distance-k-given-node-binary-tree/">all nodes of k distance</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/print-binary-tree-vertical-order/">vertical order</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/print-nodes-dont-sibling-binary-tree/">nodes that doesnt have siblings</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/convert-given-binary-tree-doubly-linked-list-set-3/">bst to doubly linked list</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/deepest-left-leaf-node-in-a-binary-tree/">deepest left node</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/check-leaves-level/">check leaves</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/difference-between-sums-of-odd-and-even-levels/">sum of odd levels and even levels node</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/tree-isomorphism-problem/">isporphisom: dont know what is this</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/find-a-pair-with-given-sum-in-bst/">pair with a given sum</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/floor-and-ceil-from-a-bst/">floor and ceil of bst</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/fix-two-swapped-nodes-of-bst/">two nodes swapped, correct bst</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/check-if-a-given-binary-tree-is-complete-tree-or-not/">check complete or not</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/maximum-width-of-a-binary-tree/">max width of bst</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/given-a-binary-tree-print-all-root-to-leaf-paths/">all root to leaf path</a></li>
+		          <li>BST from sorted array</li>
+		          <li>From BST, linked list for each level</li>
+		          <li>check binary tree is BST</li>
+		          <li>next node (in-order successor) of BST</li>
+		          <li>First common ancestor of two nodes in BT</li>
+		          <li>Very large two BT. check one is sub tree of another</li>
+		          <li>all path that sums to a number in BT</li>
+		          <li><a href="http://www.crazyforcode.com/tree/">carzy for code list of tree questions</a></li>
+		          <li><a href="http://www.geeksforgeeks.org/forums/forum/trees-specific-questions/">geeks for geeks questions</a></li>
+		          <li><a href="http://www.glassdoor.com/Interview/binary-trees-interview-questions-SRCH_KT0,12.htm">glassdoor questions</a></li>
+		          <li><a href="https://www.youtube.com/playlist?list=PLC3855D81E15BC990">you tube got some questions as well</a></li>
+		          <li><a href="http://www.careercup.com/page?pid=trees-and-graphs-interview-questions">career cup list of question</a></li>
+		        </ul>
+		      </div>
+				</div>
+    		<div class="row">
+                <div class="other-chapters">
+                    <button id="otherChapterLink" type="button" class="toggleExample btn btn-primary">Show other chapter link</button>
+                    <div id="otherChapterLinkExample" class="hide bg-success">
+                        <ul>
+                            <li><a href="program.html">প্রোগ্রাম খায়, পরে না মাথায় দেয়?</a></li>
+                            <li><a href="variable.html">variable বুঝলে, হবে না পয়সা ব্যয়</a></li>
+                            <li><a href="practice.html">প্রোগ্রামিং প্র্যাকটিস করে রাত পোহালে</a></li>
+                            <li><a href="string.html">string এর তালে নাচবে গরু গোয়ালে</a></li>
+                            <br>
+                            <li><a href="ifelse.html">নানীর if-else বুঝে লাফায় নানা </a></li>
+                            <li><a href="array.html">বিস্কুটের array খায় বিড়ালছানা</a></li>
+                            <li><a href="while.html">while লুপকে করলে মালিশ</a></li>
+                            <li><a href="for.html">for লুপ ডাকবে সালিশ</a></li>
+                            <br>
+                            <li><a href="propose.html">প্রেমের প্রপোজ করলে গোটা দশ হালি</a></li>
+                            <li><a href="function.html">function বুঝবে না- কোনটা বউ কোনটা শালী</a></li>
+                            <li><a href="dhar.html">দ্বিগুণ টাকা ধার করে পালালে</a></li>
+                            <li><a href="language.html">প্রোগ্রামিং ল্যাঙ্গুয়েজ খুঁজবে মামা শিয়ালে</a></li>
+                            <li><a href="next.html">হাসবে হাবলু বিজয় মিছিলে</a></li>
+                        </ul>
+                    </div>
+                </div>
+    		</div>
+    	</div>
+        <div class="chapter-overall">
+            <div>
+                <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div id="fb-root"></div>
+    <script src="../scripts/toggleExample.js"></script>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40601505-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+</body>
+</html>
