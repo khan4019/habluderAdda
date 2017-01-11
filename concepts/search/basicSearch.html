@@ -39,12 +39,50 @@
     		</div>
 				<div class="row">
 					<h1>Coming Soon</h1>
-					<ul>
-						<li><a href="inertance.html">Inheritance</a></li>
-						<li><a href="polymorphism.html">Polymorphism</a></li>
-						<li><a href="encapsulation.html">Encapsulation</a></li>
-						<li><a href="access.html">Access Identifier</a></li>
-					</ul>
+					<div id="binarySearch">
+						তবে কোন একটা উপাদান যদি array এর মধ্যে না থাকে। যেমন ধর তুই গেঞ্জি(genji) খুঁজতেছস কিন্তু তোর গেঞ্জি নাই। তাই if এর পরে যে শর্ত আছে সেটা সত্যি হবে না। এবং তুই কখনোই রিটার্ন হিসেবে i পাবি না। তবে কোন একটা জিনিস array এর মধ্যে না থাকলে এবং for লুপ চলতে চলতে শেষ হয়ে গেলে, লুপের বাইরে -1 রিটার্ন করে দেয়া হয়।
+
+একটু খেয়াল করলে বুঝতে পারবি array এর উপাদানগুলোর পজিশন শুরু হয় 0 থেকে। তারপর 1, 2, 3 হতে থাকে। তাই কখনোই array এর মধ্যে কোন উপাদানের পজিশন -1 হবে না। সেজন্যই কোন একটা উপাদান array এর মধ্যে নাই বুঝতে array এর মধ্যে পজিশন -1 লেখা হয়। তারমানে কোন জিনিসের পজিশন -1 মানে সেটা সেই array এর মধ্যে নাই। তাই গেঞ্জি খোঁজার জন্য নিচের মতো প্রোগ্রাম লিখলে রিটার্ন হিসেবে -1 পাবি।
+
+<pre><code>
+	for(var i = 0; i <choukirTola.length; i++){
+	   var jinish = choukirTola[i];
+	   if (jinish == "charger"){
+	       return i;
+	   }
+	}
+	return -1;
+</code></pre>
+
+তবে এইভাবে for লুপের বাইরে খালি জায়গায় return লিখা যায় না। রিটার্ন লিখতে হয় কোন একটা function এর ভিতরে। যেহেতু return ফাংশনের ভিতরে লিখতে হয়। সেহেতু এই চান্সে যেকোন কিছু খুঁজে বের করার একটা ফাংশন লিখে ফেল। যেটা যেকোন array এর মধ্যে কোন জিনিস আছে কিনা সেটা বলে দিবে। অর্থাৎ থাকলে ওই পজিশনের নাম্বার বলে দিবে। আর না থাকলে -1 বলে দিবে। এইরকম একটা খোঁজার ফাংশন দিয়ে তুই যেহেতু পজিশন খুঁজে বের করতে চাস তাই এর নাম দিবি findIndex। index একটা ইংরেজি শব্দ। index বলতে পজিশনকে বুঝায়। আর এই ফাংশনের দুইটা ইনপুট নিবি। প্রথমটা ইনপুট হবে যে array এর মধ্যে খুঁজতে চাস সেটা। আর এই ইনপুটের নাম দিবি findFrom কারণ এইটার ভিতর থেকে খুঁজে বের করতে চাস। আর দ্বিতীয় ইনপুট এর নাম দিবি target কারণ এই জিনিসটা খুঁজে বের করা তোর টার্গেট।
+
+একটু উপরে যে প্রোগ্রামটা  লিখছস সেটা এই ফাংশনের ভিতরে বসায় দে। তবে কয়েকটা জিনিসের নাম পাল্টায় নিতে হবে। কারণ আগে array এর নাম ছিল চৌকিরতলা এখন সেটা হয়ে গেছে findFrom। তাই আগের যেইখানে যেইখানে choukrTola ছিলো সেখানে findFrom বসায় দে। তারপর  আগে যেখানে charger লেখা ছিলো সেখানে target বসায় দে। তাহলেই কাজ শেষ। এখন তোর findIndex ফাংশনটা দেখতে নিচের মতো হবে।
+
+<pre><code>
+	function findIndex(findFrom, target){
+	 for(var i = 0; i <findFrom.length; i++){
+	   var jinish = findFrom[i];
+	   if (jinish == target){
+	       return i;
+	   }
+	 }
+	 return -1;
+	}
+
+</code></pre>
+এখন উপরের ফাংশন দিয়ে চৌকিরতলায় চার্জার খুঁজতে চাইলে নিচের মতো করে লিখবি।
+
+<pre><code>
+	var choukirTola = ["tShirt", "jeans", "juta", "boi", "gamcha", "charger", "panjabi"];
+	findIndex(choukirTola, "charger");
+</code></pre>
+
+আবার একই ফাংশন ব্যবহার করে পাঞ্জাবি খুঁজতে চাইলে লিখবি
+
+<pre><code>
+	findIndex(choukirTola, "panjabi");
+</code></pre>
+					</div>
 				</div>
     		<div class="row">
                 <div class="other-chapters">

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selection Sort</title>
+	<link rel="shortcut icon" href="../../images/favicon.png" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle cullapsed" data-toggle="cullapse" data-target="#navbar" aria-expanded="false" aria-contruls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Project name</a> -->
+          <div class="hablu-logo">
+              <a href="../index.html"><img src="../../images/logo.png" height="50" width="60" alt=""></a>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-cullapse cullapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li  class=""><a href="../basic/index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
+						<li><a href="../basic/program.html">হাবলু প্রশ্ন</a></li>
+            <li  class="active"><a href="index.html">প্রোগ্রামিংয়ের বলদ টু বস</a></li>
+            <li><a href="program.html">বলদ প্রশ্ন</a></li>
+            <li><a href="../jkr/index.html">About Jhankar</a></li>
+          </ul>
+        </div><!--/.nav-cullapse -->
+      </div>
+    </nav>
+    <div class="container">
+    	<div class="jumbotron">
+    		<div class="row text-center chapter-title">
+    			<h1><span class="chapter-title-rest">Selection</span><span class="chapter-title-main"> Sort</span> <span class="chapter-title-rest"> </span></h1>
+    		</div>
+				<div class="row">
+					<div id="selectionSort">
+		        <h2>Access Modifier</h2>
+						<p><strong>গোপন খবর ফাঁস, চরিত্র নাশ:</strong></p>
+						<p>কিছু প্রোগ্রামিং ল্যাঙ্গুয়েজে ক্লাস ডিক্লেয়ার করার সময় ক্লাসের বৈশিষ্ট্য এবং মেথডগুলোকে তিনটা তকমা দেওয়া হয়। এই তকমাগুলা তুই তোর জীবনে সবসময় ব্যবহার করে আসছস।</p>
+						<p>সবার লাইফেই এমন কিছু ঘটনা আছে বা এমন কিছু জিনিস আছে যেগুলা সে ছাড়া অন্য কেউ জানে না। যেমন ধর তুই ক্রাশ খাইলি। এখন তোর মনের ভিতরে কার কথা দিন-রাত ঘুরপাক খায় সেটা তুই ছাড়া অন্য কেউ জানে না। এই যে গোপন ভালোবাসার কথা, সেটা একমাত্র তুইই জানস। তাই এইটা তোর প্রাইভেট (private) বা ব্যক্তিগত জিনিস। একইভাবে তোর পকেটে এই মুহূর্তে একজাক্টলি কত টাকা আছে সেটাও শুধু তুই জানস। তুই ছাড়া অন্য কেউ জানে না। তাই এইটাও প্রাইভেট। একইভাবে তোর পেটের ভিতরের নাড়িভুঁড়ি, মাথার ভিতরের ঘিলু- এগুলাও বাইর থেকে দেখা যায় না। তাই এইগুলাও তোর প্রাইভেট প্রপার্টিজ।</p>
+						<p>আরেকটা কথা। তুই যে ভেটকি মাছের শুঁটকি দিয়ে বেগুনের তরকারি খাইতে পছন্দ করস। এইটা রাস্তার অপরিচিত কেউ, তোর সাথে দেখা হওয়া মাত্রই বলে দিতে পারবে না। তবে তোর ফ্যামিলির লোকজন বা ক্লোজ ফ্রেন্ডরা ঠিকই বলতে পারবে। তারা তোকে খুশি করার জন্য তোর জন্মদিনে ভেটকি মাছের শুঁটকি খাওয়াতে পারবে। এই যে তোর প্রিয় খাবার অথবা লাস্ট কার কাছ থেকে ছ্যাঁকা খাইছস। সেটা তোর আশেপাশের কিছু মানুষের মাঝে সীমাবদ্ধ। কোন একটা বৈশিষ্ট্য বা মেথড আশেপাশের লোকজনের কাছে সীমাবদ্ধ রেখে, বাইরের মানুষের সাথে শেয়ার না করার বিষয়টাকে বলে- প্রোটেক্টেড (protected) করে রাখা।</p>
+						<p>আর তোর বাহ্যিক কিছু বৈশিষ্ট্য আছে। যেগুলা তোকে দেখা মাত্রই বলে দেয়া যায়। যেমন তোর চুল সোজা, কোঁকড়ানো নাকি টাকলু সেটা তোকে দেখলেই বলে দেয়া যায়। তোর উচ্চতা, গায়ের রং, খরগোশের মতো কান এইগুলা যেকেউ রাস্তায় দেখা মাত্রই বলে দিতে পারে। কারণ এই বৈশিষ্ট্যগুলো সবার জন্য উম্মুক্ত বা ইংরেজিতে বললে বলতে পারস- এই বৈশিষ্ট্যগুলো হচ্ছে পাবলিক (public)।</p>
+						<p>এতো কথার সার কথা হচ্ছে- তোর বৈশিষ্ট্যগুলোকে তিন ভাগে ভাগ করা যায়। সেগুল হচ্ছে ব্যক্তিগত, পরিচিত মহলে সীমাবদ্ধ এবং উম্মুক্ত। একইভাবে যেকোন ক্লাসের বৈশিষ্ট্য বা মেথডগুলোকে তিন ভাগে ভাগ করা যায়। সেগুলা সেই ক্লাসের ব্যক্তিগত, পরিচিত মহলে সীমাবদ্ধ এবং উম্মুক্ত। আর এই তিনটা ভাগকে ইংরেজিতে বললে- বলবি প্রাইভেট, প্রোটেক্টেড এবং পাবলিক।</p>
+		      </div>
+				</div>
+    		<div class="row">
+                <div class="other-chapters">
+                    <button id="otherChapterLink" type="button" class="toggleExample btn btn-primary">Show other chapter link</button>
+                    <div id="otherChapterLinkExample" class="hide bg-success">
+                        <ul>
+                            <li><a href="program.html">প্রোগ্রাম খায়, পরে না মাথায় দেয়?</a></li>
+                            <li><a href="variable.html">variable বুঝলে, হবে না পয়সা ব্যয়</a></li>
+                            <li><a href="practice.html">প্রোগ্রামিং প্র্যাকটিস করে রাত পোহালে</a></li>
+                            <li><a href="string.html">string এর তালে নাচবে গরু গোয়ালে</a></li>
+                            <br>
+                            <li><a href="ifelse.html">নানীর if-else বুঝে লাফায় নানা </a></li>
+                            <li><a href="array.html">বিস্কুটের array খায় বিড়ালছানা</a></li>
+                            <li><a href="while.html">while লুপকে করলে মালিশ</a></li>
+                            <li><a href="for.html">for লুপ ডাকবে সালিশ</a></li>
+                            <br>
+                            <li><a href="propose.html">প্রেমের প্রপোজ করলে গোটা দশ হালি</a></li>
+                            <li><a href="function.html">function বুঝবে না- কোনটা বউ কোনটা শালী</a></li>
+                            <li><a href="dhar.html">দ্বিগুণ টাকা ধার করে পালালে</a></li>
+                            <li><a href="language.html">প্রোগ্রামিং ল্যাঙ্গুয়েজ খুঁজবে মামা শিয়ালে</a></li>
+                            <li><a href="next.html">হাসবে হাবলু বিজয় মিছিলে</a></li>
+                        </ul>
+                    </div>
+                </div>
+    		</div>
+    	</div>
+        <div class="chapter-overall">
+            <div>
+                <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div id="fb-root"></div>
+    <script src="../scripts/toggleExample.js"></script>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40601505-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

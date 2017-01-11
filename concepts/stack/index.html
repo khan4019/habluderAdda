@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Insertion Sort</title>
+	<link rel="shortcut icon" href="../../images/favicon.png" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle cullapsed" data-toggle="cullapse" data-target="#navbar" aria-expanded="false" aria-contruls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Project name</a> -->
+          <div class="hablu-logo">
+              <a href="../index.html"><img src="../../images/logo.png" height="50" width="60" alt=""></a>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-cullapse cullapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li  class="active"><a href="index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
+            <li><a href="program.html">হাবলু প্রশ্ন</a></li>
+            <li><a href="../jkr/index.html">About Jhankar</a></li>
+          </ul>
+        </div><!--/.nav-cullapse -->
+      </div>
+    </nav>
+    <div class="container">
+    	<div class="jumbotron">
+    		<div class="row text-center chapter-title">
+    			<h1><span class="chapter-title-rest">Object Oriented</span><span class="chapter-title-main"> Programming</span> <span class="chapter-title-rest"> </span></h1>
+    		</div>
+				<div class="row">
+					<h1>Coming Soon</h1>
+					<div>
+						রাস্তার পাশে নতুন একটা বিল্ডিং হচ্ছে। সেই বিল্ডিং এর সামনে একজন বসে বসে ইট ভাঙতেছে। তাকে দেখিয়ে রাশেদ বলে উঠলো- এই যে ইট ভাঙতেছে সেই আঙ্কেল রে দেখ। উনি এইখান থেকে ইট নিয়ে উনি যেখানে বসে বসে ইট ভাঙতেছেন তার ডান পাশে রাখতেছেন। রাখার সময় একটা ইটের উপর আরেকটা ইট রাখতেছেন। ইট ভাঙার সময়, সবচেয়ে উপরের ইট টা আগে নেন। সেটা আগে ভাঙেন। তারপর সবার উপরেরটার নিচে যেটা আছে ছিলো সেটা নিয়ে ভাঙ্গেন।
+
+ইট ভাঙার পাশেই দেখ একজন মাথায় করে ইট আনা-নেয়া করতেছে। একটু খেয়াল করলেই দেখতি পাবি- প্রথমে মাথার উপরে একটা ইট নেয়। তারপর সেই ইটের আরেকটা ইট নেয়। এইভাবে যতটা ইট নিতে পারবে, ততটা মাথার উপরে রাখে। তারপর যে জায়গায় ইট নেয়ার কথা সেখানে ইট নেয়া হয়ে গেলে সবচেয়ে উপরের ইট আগে নামায়। তারপর তার নিচের টা। এইভাবে একটা একটা করে সবগুলা ইট নামিয়ে ফেলে।
+
+
+Stack push and pop
+ধরে চাদর খুলে ফেলার পরেও তোর গরম লাগা কমে নাই। আরো কিছু খুলে ফেলা দরকার। তাই তুই চিন্তা করলে জ্যাকেটটা দেখতে একটু পাঙ্কু আছে। এইটা থাক। তুই বরং ভিতরের সোয়েটারটা খুলে ফেলবি। এখন সমস্যা হচ্ছে জ্যাকেট না খুললে জ্যাকেটের ভিতরের সোয়েটার খুলতে পারবি না। তাই তুই প্রথমেই pop ব্যবহার করে জ্যাকেট খুলবি। তারপর আবারো pop ব্যবহার করে সোয়েটার খুলবি। আর সোয়েটার খোলার পর push ব্যবহার করে সোয়েটার গায়ে দিয়ে দিবি। নিচের মতো করে।
+
+<pre><code>
+	winterClothes.pop();
+	winterClothes.pop();
+	winterClothes.push("jacket");
+</code></pre>
+
+এখন যদি console.log(winterClothes); কোড রান করস তাহলে আউটপুট হিসেবে দেখাবে ["genji", "shirt", "jacket"] কারণ তুই প্রথমে চাদর খুলে ফেলছিলি। এখন জ্যাকেট সোয়েটার খুলে আবার জ্যাকেট গায়ে দিয়ে দিছস। তাই তার গায়ে এখন গেঞ্জি, শার্ট আর জ্যাকেট আছে।
+					</div>
+					<div>
+						স্ট্যাক নিয়ে স্টান্টবাজি:
+এখন তোকে যদি জিজ্ঞেস করে, কোন স্ট্যাকে কয়টা উপাদান আছে? তুই কিন্তু খুব সহজেই স্ট্যাকের তলা থেকে গুনা শুরু করে দিবি। একদম সবার উপর পর্যন্ত। তারপর যে কয়টা জিনিস পাওয়া যাবে, তোর স্ট্যাকে সেই কয়টা উপাদান আছে। আর উপরের তোর স্ট্যাক যেহেতু একটা array এর মধ্যে। আর যেকোন array এর মধ্যে কয়টা উপাদান আছে। সেটা জানা খুবই সোজা। জাস্ট array এর নাম লিখে তারপর ডট(.) চিহ্ন দিয়ে length লিখে দিবি। নিচের মতো করে। তাহলেই স্ট্যাক এর মধ্যে কয়টা উপাদান আছে জেনে যাবি।
+
+<pre><code>
+	winterClothes.length;
+</code></pre>
+
+আগে গেলে বাঘে খায়:
+এখন যদি বলে স্ট্যাকের সবার উপরে কি আছে। তুই জানস, স্ট্যাকের সবার শেষে যে জিনিসটা যোগ করা হইছে সেটাই স্ট্যাকের সবচেয়ে উপরের উপাদান। আর তোর স্ট্যাক যেহেতু একটা array তাই, স্ট্যাকের সবচেয়ে উপরের উপাদান বলতে তোর winterClothes নামক array এর সবচেয়ে শেষ উপাদান।
+
+এখন কথা হচ্ছে কোন একটা array এর সবশেষের উপাদান কিভাবে বের করতে হয়? আচ্ছা সবশেষের উপাদান বের করার আগে, যদি জিজ্ঞেস করে সবার আগের উপাদান কিভাবে বের করতে হয়?
+
+কোন  একটা array এর প্রথম পজিশনে কে আছে সেটা বের করা পানির মতো সোজা।  তুই আগে থেকেই জানস array এর পজিশন শুরু হয় ০ দিয়ে। অর্থ্যাৎ ফার্স্ট পজিশনে যে আছে তার অবস্থান ০ এবং তুই এইটাও জানস যে কোন পজিশনের উপাদান বের করার জন্য জাস্ট array এর নাম লিখে থার্ড ব্র্যাকেটের ভিতরে পজিশনের মান বাসায় দিবি। তাই প্রথম পজিশনের অর্থ্যাৎ ০ পজিশনের উপাদান বের করার জন্য নিচের মতো করে লিখবি।
+
+<pre><code>
+	winterClothes[0];
+</code></pre>
+
+পিছে গেলে টাকা পায়:
+আচ্ছা প্রথমটা না হয় বের করতে পারলি। কিন্ত লাষ্টেরটা কিভাবে বের করবি? লাস্টের টা বের করার জন তোকে তিনটা কাজ করতে হবে। প্রথমেই জানতে হবে array এর মধ্যে মোট কয়টা উপাদান আছে। সেটা জানার জন্য array এর নাম লিখে তারপর ডট(.) চিহ্ন দিয়ে length লিখে দিবি। তারপর তোকে array এর লাষ্ট উপাদানের পজিশন বের করতে হবে।
+
+
+এখন কোন array এর লাষ্ট উপাদানের পজিশন বের করার জন array এর length থেকে ১ বিয়োগ করে দিতে হয়। কারণ array এর প্রথম উপাদানের পজিশন ০। তারমানে উপাদান নম্বর এক আর পজিশন শূন্য। অর্থাৎ উপাদান নম্বর এর চাইতে ১ কম। আবার সেকেন্ড উপাদানটা উপাদান নম্বর দুই কিন্তু পজিশন ১। অর্থাৎ সেটাও উপাদান সংখ্যার চাইতে ১ কম।
+
+এই সিস্টেমে তোর কোন array এর মধ্যে ৫ টা উপাদান থাকলে। প্রথম উপাদানের পজিশন হবে ০, পরেরটার ১, তারপরের টার ২, এর পরেরটার ৩ এবং সবশেষের টার ৪
+
+//draw a simple picture of upadan and position.
+
+উপরের চিত্রে খেয়াল করলে দেখবি শেষ বা পঞ্চম উপাদানের পজিশন সংখ্যা ৪।  এইটাকে যদি array এর length দিয়ে বের করতে চাস। তাহলে array এর length হচ্ছে ৫ আর শেষ উপাদানের পজিশন হচ্ছে ৫ -১ বা ৪
+
+তোর winterClothes নামক স্ট্যাকের উপরে ফিটফাট স্ট্যাক হইলেও ভিতরে যেহেতু array ই আছে। তাই winterClothes স্ট্যাকের সর্বশেষ উপাদান বের করার জন্য প্রথমেই winterClothes এর length বের করবি নিচের মতো করে। তারপর সেটা একটা ভেরিয়েবলে রাখবি। সেই ভেরিয়েবলের নাম দিলি length। আর এইখানে array এর length মানে, array এর মধ্যে কয়টা উপাদান আছে। বা সহজভাবে বললে মোট উপাদান সংখ্যা।
+
+<pre><code>
+	var length = winterClothes.length;
+</code></pre>
+
+যেহেতু তুই winterClothes নামক array এর মোট উপাদান সংখ্যা বা length জানস সেহেতু winterClothes এর লাষ্ট উপাদানের পজিশন বের করতে পারবি। সেটা করার জন্য জাস্ট length ভেরিয়েবলের মান থেকে ১ বিয়োগ করে দিবি। নিচের মতো করে। তারপর সেটা আরেকটা ভেরিয়েবলে রাখবি। যেই ভেরিয়েবলের নাম ডিবি লাষ্ট পজিশন (lastPosition) অথাৎ লাস্ট উপাদানের পজিশন।
+
+<pre><code>
+	var lastPosition = length -1;
+</code></pre>
+
+লাষ্ট উপাদানের পজিশন জেনে গেলে, লাস্ট পজিশনের উপাদান বের করা একদম পানির মতো সোজা। জাস্ট, winterClothes লিখে থার্ড ব্র্যাকেটের ভিতরে পজিশনের মান অর্থাৎ lastPosition ভেরিয়েবলটা বসায় দিবি। তাহলেই array এর লাষ্ট উপাদান অর্থ্যাৎ স্ট্যাকের সবার উপরের উপাদানকে পেয়ে যাবি।
+
+<pre><code>
+	var lastElement = winterClothes[lastPosition];
+</code></pre>
+
+খালি স্ট্যাক বাজে বেশি:
+আচ্ছা, এখন যদি কেউ জিজ্ঞেস করে। একটা স্ট্যাক খালি কিনা সেটা বের করবি কিভাবে? তুই একটু চিন্তা করলেই বুঝতে পারবি। স্ট্যাক খালি মানে সেটার ভিতরে কোন উপাদান নাই। আর কোন উপাদান নাই মানে- স্ট্যাকের ভিতরে উপাদানের সংখ্যা শূন্য। অর্থাৎ স্ট্যাক এর length এর ম্যান ০ এর সমান হবে। সেটা  দুইটা সমান চিহ্ন দিয়ে তুলনা করবি নিচের মতো করে।
+
+<pre><code>
+	winterClothes.length == 0;
+</code></pre>
+
+এই উত্তর দেয়ার পর আবারো যদি প্রশ্ন করে। যে একটা function লিখে দে। যেটাতে ইনপুট হিসেবে নিবি একটা স্ট্যাক তারপর ভিতরে যা যা করার লাগে করে রিটার্ন করবি স্ট্যাকটা খালি কিনা। অর্থাৎ খালি হইলে true রিটার্ন করবি আর খালি না হইলে false রিটার্ন করবি।
+
+এই কথা শুনে তো তোর কান লাল হয়ে হয়ে যাবে। মাথা দিয়ে ধোয়া বের হইতে থাকবে। দৌড় দিয়ে বাথরুমে গিয়ে মাথায় পানি ঢালবি। তারপর মাথা ঠান্ডা করে চিন্তা করলে বুঝতে পারবি- ব্যাপারটা আসলে অতটা জটিল না। তুই জাস্ট function লিখার জন function ওয়ার্ডটা লিখবি তারপর ফাংশনের এর একটা নাম দিবি। তোর এই ফাংশনের কাজ যেহেতু খালি কিনা বলা তাই এইটার নাম দিলি "খালি কিনা" বা ইংরেজিতে isEmpty
+
+এখন isEmpty ফাংশনের ইনপুট হিসেবে যেহেতু একটা স্ট্যাক নেয়া লাগবে তাই ফাংশনের নামের পর প্রথম ব্র্যাকেটের ভিতরে লিখলি ইনপুট স্ট্যাক (inputStack) অর্থাৎ যে স্ট্যাকটা ইনপুট হিসেবে লিখবি। তারপর নিচের মতো করে দুইটা সেকেন্ড ব্র্যাকেট দিলি।
+
+<pre><code>
+	function isEmpty(inputStack){
+
+	}
+</code></pre>
+
+উপরের দুইটা সেকেন্ড ব্র্যাকেটের ভিতরে যাবতীয় কাজ করা লাগবে। যাবতীয় কাজ বলতে- যে স্ট্যাকটা ইনপুট হিসেবে নিছস (inputStack) সেটার উপাদান সংখ্যা বের করতে হবে। inputStack.length তারপর সেটাকে একটা ভেরিয়েবল রাখবি। সেই ভেরিয়েবলের নাম দিলি length
+
+এখন উপাদান সংখ্যা ০ কিনা সেটা যাচাই করার জন্য অর্থ্যাৎ length ভেরিয়েবলের মান ০ এর সমান সমান কিনা সেটা তুলনা করতে if-else ব্যবহার করা লাগবে। তাই if লিখে প্রথম ব্র্যাকেটের ভিতরে length লিখে দুইটা সমান চিহ্ন দিয়ে ০ লিখবে। যদি if এর ভিতরের প্রথম ব্র্যাকেটের তুলনা সত্য হয় অর্থাৎ length এর মান ০ হয় তাহলে if এর পরের সেকেন্ড ব্র্যাকেটের ভিতরের কাজ করবে। তাই if এর পরে সেকেন্ড ব্র্যাকেটের ভিতরে return true লিখে দিবি।
+
+<pre><code>
+	if (length == 0){
+	      return true;
+	   }
+</code></pre>
+
+আর যদি if এর ভিতরের শর্ত সত্যি না হয় তাহলে if এর পরের সেকেন্ড ব্র্যাকেটের ভিতরে যাবে না। বরং if এর সেকেন্ড ব্র্যাকেটের শেষে যে else আছে, সেই else এর পরের সেকেন্ড ব্র্যাকেটের ভিতরে যাবে। সেখানে return false লিখে দিবি। যাতে ফাংশনের আউটপুট হিসেবে false রিটার্ন করে। কারণ inputStack এর মধ্যে উপাদান সংখ্যা ০ এর সমান না। অর্থ্যাৎ উপাদান আছে। তাই স্ট্যাকটা খালি না। মানে খালি কিনা সেটার উত্তর হচ্ছে- না। তাই তুই flase  বা না রিটার্ন করবি।
+
+<pre><code>
+	if (length == 0){
+	      return true;
+	   }
+	  else {
+	     return false;
+	  }
+</code></pre>
+
+এখন পুরা ফাংশনটা একসাথে দেখলে নিচের মতো দেখাবে। যেখানে প্রথমেই winterClothes স্ট্যাকটা আছে। তারপর isEmpty ফাংশন আছে। এবং তারপর winterClothes কে ইনপুট হিসেবে ব্যবহার করে isEmpty ফাংশনকে কল করা হইছে।
+
+<pre><code>
+	var winterClothes = ["genji", "tShirt", "shirt", "sweater", "chador"]
+
+	function isEmpty(inputStack){
+	    var length = inputStack.length;
+	    if (length == 0){
+	      return true;
+	   }
+	  else {
+	     return false;
+	  }
+	}
+	isEmpty(winterClothes);
+</code></pre>
+
+
+
+উপরের প্রোগ্রামটা www.jhankarmahbub.com/console এ গিয়ে টাইপ করে run বাটনে চাপ দিয়ে, পুরা প্রোগ্রামটা কর। মজা পাবি।
+
+আজকের পর কেউ যদি জিজ্ঞেস করে স্ট্যাক কি জিনিস। চোখ বন্ধ করে বলে দিবি- শীতকালে অনেকগুলা
+					</div>
+				</div>
+    		<div class="row">
+                <div class="other-chapters">
+                    <button id="otherChapterLink" type="button" class="toggleExample btn btn-primary">Show other chapter link</button>
+                    <div id="otherChapterLinkExample" class="hide bg-success">
+                        <ul>
+                            <li><a href="program.html">প্রোগ্রাম খায়, পরে না মাথায় দেয়?</a></li>
+                            <li><a href="variable.html">variable বুঝলে, হবে না পয়সা ব্যয়</a></li>
+                            <li><a href="practice.html">প্রোগ্রামিং প্র্যাকটিস করে রাত পোহালে</a></li>
+                            <li><a href="string.html">string এর তালে নাচবে গরু গোয়ালে</a></li>
+                            <br>
+                            <li><a href="ifelse.html">নানীর if-else বুঝে লাফায় নানা </a></li>
+                            <li><a href="array.html">বিস্কুটের array খায় বিড়ালছানা</a></li>
+                            <li><a href="while.html">while লুপকে করলে মালিশ</a></li>
+                            <li><a href="for.html">for লুপ ডাকবে সালিশ</a></li>
+                            <br>
+                            <li><a href="propose.html">প্রেমের প্রপোজ করলে গোটা দশ হালি</a></li>
+                            <li><a href="function.html">function বুঝবে না- কোনটা বউ কোনটা শালী</a></li>
+                            <li><a href="dhar.html">দ্বিগুণ টাকা ধার করে পালালে</a></li>
+                            <li><a href="language.html">প্রোগ্রামিং ল্যাঙ্গুয়েজ খুঁজবে মামা শিয়ালে</a></li>
+                            <li><a href="next.html">হাসবে হাবলু বিজয় মিছিলে</a></li>
+                        </ul>
+                    </div>
+                </div>
+    		</div>
+    	</div>
+        <div class="chapter-overall">
+            <div>
+                <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div id="fb-root"></div>
+    <script src="../scripts/toggleExample.js"></script>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40601505-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

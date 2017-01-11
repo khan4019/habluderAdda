@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Insertion Sort</title>
+	<title>Selection Sort</title>
 	<link rel="shortcut icon" href="../../images/favicon.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/style.css">
@@ -25,8 +25,10 @@
         <div id="navbar" class="navbar-cullapse cullapse">
           <ul class="nav navbar-nav">
             <li><a href="../index.html">Home</a></li>
-            <li  class="active"><a href="index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
-            <li><a href="program.html">হাবলু প্রশ্ন</a></li>
+            <li  class=""><a href="../basic/index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
+						<li><a href="../basic/program.html">হাবলু প্রশ্ন</a></li>
+            <li  class="active"><a href="index.html">প্রোগ্রামিংয়ের বলদ টু বস</a></li>
+            <li><a href="program.html">বলদ প্রশ্ন</a></li>
             <li><a href="../jkr/index.html">About Jhankar</a></li>
           </ul>
         </div><!--/.nav-cullapse -->
@@ -35,16 +37,17 @@
     <div class="container">
     	<div class="jumbotron">
     		<div class="row text-center chapter-title">
-    			<h1><span class="chapter-title-rest">Object Oriented</span><span class="chapter-title-main"> Programming</span> <span class="chapter-title-rest"> </span></h1>
+    			<h1><span class="chapter-title-rest">Selection</span><span class="chapter-title-main"> Sort</span> <span class="chapter-title-rest"> </span></h1>
     		</div>
 				<div class="row">
-					<h1>Coming Soon</h1>
-					<ul>
-						<li><a href="inertance.html">Inheritance</a></li>
-						<li><a href="polymorphism.html">Polymorphism</a></li>
-						<li><a href="encapsulation.html">Encapsulation</a></li>
-						<li><a href="access.html">Access Identifier</a></li>
-					</ul>
+					<div id="selectionSort">
+		        <h2>Access Modifier</h2>
+						<p><strong>কালো পর্দার আন্ধারে, আছস কোন বান্দারে:</strong></p>
+						<p>ধর তোর তিনটা পাখি আছে। কাক, কোকিল আর টিয়া। এই পাখিগুলাকে নিয়ে প্রোগ্রামিং করার সময় তুই চিন্তা করলি পাখিগুলোর কিছু কমন বৈশিষ্ট্য আছে, সেই বৈশিষ্ট্যগুলো নিয়ে তুই Bird নামে কমন একটা ক্লাস ডিক্লেয়ার করলি। যেহেতু সব পাখিই গান গায় সেহেতু Bird ক্লাসে sing নামে একটা মেথড লেখলি। তারপর Bird ক্লাসকে extend করে কাকে, কোকিল আর টিয়া পাখির জন্য Crow, Cuckoo এবং Parrot ক্লাস বানালি।  </p>
+						<p>যদিও Bird ক্লাসে sing নামে একটা মেথড আছে। তারপরেও কাক যেভাবে গান গাইবে কোকিল আর টিয়া কিন্তু সেই সুরে গান গাইবে না। আবার কোকিল যেভাবে গাইবে অন্যরা সেইভাবে গাইবে না। তাই Crow, Cuckoo এবং Parrot ক্লাসের ভিতরেও একটা করে sing মেথড ডিক্লেয়ার করা হবে যেটা কমন ক্লাসের sing মেথডের মতো। যাতে কাককে গান গাইতে বললে সে নিজের মতো গান গাইতে পারে। কোকিলকে গান গাইতে বললে সে তার মতো গান গাইতে পারে। আপাতত: এইটুক বুঝে সামনে আগাইতে থাক।</p>
+						<p>এখন ধর তোর সামনে খাঁচায় করে একটা পাখি নিয়ে আসা হইসে, এবং খাঁচাটা কালো পর্দা দিয়ে ঢাকা। তুই জোনস না খাঁচার ভিতরে কোন পাখি আছে। তারপরেও তুই sing মেথডকে কল করলে খাঁচার ভিতরে যে পাখি আছে সে তার মতো করে গান গাইবে। যদি কাক থাকে তাহলে কা কা করবে, কোকিল থাকলে কুউ কুউ করবে আর টিয়া থাকলে সে তার মতো গান গাইবে। </p>
+						<p>এই যে তুই জানস না কোন পাখি। তারপরেও একটা কমন মেথডকে কল করে যে পাখি আছে তাকে দিয়ে গান গাওয়াই নিছস। এইটাকে প্রোগ্রামিংয়ের ভাষায় Polymorphism বলে। এই Polymorphism একটা কঠিন ইংরেজি শব্দ। এই শব্দের প্রথম অংশে আছে poly আর poly মানে হচ্ছে বহু। আর morphism আরো কঠিন শব্দ যেটার মানে রূপ বা শেইপ চেইঞ্জ হওয়া। তবে সহজভাবে Polymorphism বলতে একই জিনিসের আলাদা আলাদা রূপ মনে করতে পারস। যেমন একটু আগে গান গাওয়ার কাজটারই আলাদা আলাদা রূপ ছিলো। একটাই মেথড কিন্তু ক্লাসের অবজেক্ট একই সিস্টেমে গান গাইছে।</p>
+		      </div>
 				</div>
     		<div class="row">
                 <div class="other-chapters">
