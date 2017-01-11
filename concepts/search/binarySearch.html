@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>বিস্কুটের array খায় বিড়াল ছানা</title>
-	<link rel="shortcut icon" href="../images/favicon.png" />
+	<title>Insertion Sort</title>
+	<link rel="shortcut icon" href="../../images/favicon.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/style.css">
 </head>
@@ -19,7 +19,7 @@
           </button>
           <!-- <a class="navbar-brand" href="#">Project name</a> -->
           <div class="hablu-logo">
-              <a href="../index.html"><img src="../images/logo.png" height="50" width="60" alt=""></a>
+              <a href="../index.html"><img src="../../images/logo.png" height="50" width="60" alt=""></a>
           </div>
         </div>
         <div id="navbar" class="navbar-cullapse cullapse">
@@ -35,10 +35,77 @@
     <div class="container">
     	<div class="jumbotron">
     		<div class="row text-center chapter-title">
-    			<h1><span class="chapter-title-rest">প্রোগ্রামিংয়ের </span><span class="chapter-title-main"> বলদ টু বস</span> <span class="chapter-title-rest"> </span></h1>
+    			<h1><span class="chapter-title-rest">Object Oriented</span><span class="chapter-title-main"> Programming</span> <span class="chapter-title-rest"> </span></h1>
     		</div>
 				<div class="row">
-					<h1>Coming soon...</h1>
+					<h1>Coming Soon</h1>
+					<div id="binarySearch">
+						<h2>binary search</h2>
+						<p><strong>Question:</strong> How to implement binary search algorithm?</p>
+						<p><strong>Answer:</strong>Binary search tries to find an item in a sorted list. For example, if you have an array like <code>[3,9,11,21,32,37,43,56,63,69,78]</code> and you are looking for 69.</p>
+						<p><strong>How it works:</strong>Lets select the middle one, you got: 37. You are looking for 69. As you know, the array is sorted, you will know that 69 will be after 37. This means upper half of the array. Now, you will go and check the middle item of the upper half of the array. In that way, you are saving time to search the item in the lower half of the array.</p>
+						<p>The middle item of the upper half of the array is 63. Which is smaller than the number you are looking for. Hence, you can skip the lower part of the upper half. This means, your item will be in the top most quarter of the array. Now, you will keep the right side and pick the middle</p>
+						<p>The middle of the right side is 69. Thats what you were looking for.</p>
+						<p><strong>Why binary search</strong> If you were using linear search (start from the left and check one by one), you have to check 10 times to find the item. If you use binary search, you get after three times. You see the benefits!!</p>
+						<img src="images/binarySearch.png" alt="">
+						<p>Now if you have a million items in an array. For example, you have number 0 to 1000,000 and you want to find out 696,969. The binary search will take only 17 steps to find the item. where as if you start a linear search, it will take 696,969 steps to find the item.</p>
+						<pre><code>
+		function binarySearchIterative(arr, val){
+			 var start = 0,
+					 end = arr.length-1,
+					 mid,
+					 midVal;
+
+			 while(end >= start){
+				 mid = Math.floor((start+end)/2);
+
+				 midVal = arr[mid];
+
+				 if(midVal==val)
+						 return mid;
+
+				 if(val&lt;midVal)
+						 end = mid - 1;
+				 if(val&gt;midVal)
+						 start = mid + 1;
+
+			}
+			return -1;
+		}
+
+		//try it now
+		binarySearchIterative([1,2,3,4,5], 1); //0
+		binarySearchIterative([1,2,3,4,5], 5); //4
+		binarySearchIterative([1,2,3,4,5], 55); //-1
+						</code></pre>
+						<p><strong>Complexity</strong></p>
+						<pstrong  Performance</p>
+						<p>Recusrive algo</p>
+						<pre><code>
+		function binarySearchRecursive(arr, val, startIdx, endIdx){
+			 var mid = Math.floor((startIdx + endIdx)/2),
+					 midVal = arr[mid];
+
+			 if(midVal == val)
+					return mid;
+			 if (endIdx &lt; startIdx)
+					return -1;
+
+			 if (val&lt;midVal)
+					return binarySearchRecursive(arr, val, startIdx, mid -1);
+			 else if (val &gt; midVal)
+					return binarySearchRecursive(arr, val, mid + 1, endIdx);
+
+		}
+
+		//try it now
+		binarySearchRecursive([1,2,3,4,5], 1, 0, 4); //0
+		binarySearchRecursive([1,2,3,4,5], 5, 0, 4); //4
+		binarySearchRecursive([1,2,3,4,5], 2, 0, 4); //1
+		binarySearchRecursive([1,2,3,4,5], 22, 0, 4); //-1
+						</code></pre>
+						<p>ref: <a href="http://en.wikipedia.org/wiki/Binary_search_algorithm">binary search</a></p>
+					</div>
 				</div>
     		<div class="row">
                 <div class="other-chapters">
