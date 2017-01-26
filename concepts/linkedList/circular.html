@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Selection Sort</title>
+	<title>Circular Linked List</title>
 	<link rel="shortcut icon" href="../../images/favicon.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -26,8 +26,9 @@
           <ul class="nav navbar-nav">
             <li><a href="../index.html">Home</a></li>
             <li  class=""><a href="../basic/index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
+						<li><a href="../">প্রোগ্রামিং কনসেপ্ট</a></li>
+						<li class="active"><a href="index.html">Circular Linked List</a></li>
 						<li><a href="../basic/program.html">হাবলু প্রশ্ন</a></li>
-            <li  class="active"><a href="index.html">প্রোগ্রামিংয়ের বলদ টু বস</a></li>
             <li><a href="program.html">বলদ প্রশ্ন</a></li>
             <li><a href="../jkr/index.html">About Jhankar</a></li>
           </ul>
@@ -40,31 +41,53 @@
     			<h1><span class="chapter-title-rest">Ciruclar</span><span class="chapter-title-main"> Linked List</span> <span class="chapter-title-rest"> </span></h1>
     		</div>
 				<div class="row">
-					<h1>Coming Soon</h1>
+					<p>খুব শিগ্রই বাংলায় সহজ করে লেখা হবে</p>
+					<p>তখন ইমেইলে আপডেট পেতে রেজিস্ট্রেশন করো: <a href="registration/">এই খানে</a></p>
+					<h2>circular Linked List</h2>
+			 <p>If the next pointer of the last node points to the head node, it becomes circular linked list. On Singly or Doubly Linked List, you will know you hit the tail when you hit null. For circular linked list, you will know you hit the tail when you hit the head (the next of last one pointed to head).</p>
+			 <pre><code>
+
+function CircularLinkedList(){
+ this.head = null;
+}
+
+
+CircularLinkedList.prototype.push = function(val){
+	var head = this.head,
+			current = head,
+			node = {value: val, next: null, previous: null};
+
+	if(!head){
+		 node.next = node;
+		 node.previous = node;
+		 this.head = node;
+	}
+	else{
+		 while(current.next != head){
+				current = current.next;
+		 }
+
+		 node.next = head;
+		 node.previous = current;
+
+		 head.previous = node;
+		 current.next = node;
+	}
+}
+			 </code></pre>
+			 <pre><code>
+var cll = new CircularLinkedList();
+cll.push(3);
+cll.push(4);
+cll.push(5);
+//trust me dude, it works
+			 </code></pre>
+			 <p>Now you can play with it to remove, sort, or insert into sorted or remove duplicate, blah blah blah</p>
+			 <p>ref: <a href="http://www.martinbroadhurst.com/articles/circular-linked-list.html">circular linked list</a></p>
 				</div>
     		<div class="row">
-                <div class="other-chapters">
-                    <button id="otherChapterLink" type="button" class="toggleExample btn btn-primary">Show other chapter link</button>
-                    <div id="otherChapterLinkExample" class="hide bg-success">
-                        <ul>
-                            <li><a href="program.html">প্রোগ্রাম খায়, পরে না মাথায় দেয়?</a></li>
-                            <li><a href="variable.html">variable বুঝলে, হবে না পয়সা ব্যয়</a></li>
-                            <li><a href="practice.html">প্রোগ্রামিং প্র্যাকটিস করে রাত পোহালে</a></li>
-                            <li><a href="string.html">string এর তালে নাচবে গরু গোয়ালে</a></li>
-                            <br>
-                            <li><a href="ifelse.html">নানীর if-else বুঝে লাফায় নানা </a></li>
-                            <li><a href="array.html">বিস্কুটের array খায় বিড়ালছানা</a></li>
-                            <li><a href="while.html">while লুপকে করলে মালিশ</a></li>
-                            <li><a href="for.html">for লুপ ডাকবে সালিশ</a></li>
-                            <br>
-                            <li><a href="propose.html">প্রেমের প্রপোজ করলে গোটা দশ হালি</a></li>
-                            <li><a href="function.html">function বুঝবে না- কোনটা বউ কোনটা শালী</a></li>
-                            <li><a href="dhar.html">দ্বিগুণ টাকা ধার করে পালালে</a></li>
-                            <li><a href="language.html">প্রোগ্রামিং ল্যাঙ্গুয়েজ খুঁজবে মামা শিয়ালে</a></li>
-                            <li><a href="next.html">হাসবে হাবলু বিজয় মিছিলে</a></li>
-                        </ul>
-                    </div>
-                </div>
+					<p><a href="single.html">Singly Linked List</a></p>
+					<p><a href="double.html">Doubly Linked List</a></p>
     		</div>
     	</div>
         <div class="chapter-overall">
