@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Binary Search Tree Coding</title>
+	<link rel="shortcut icon" href="../../images/favicon.png" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle cullapsed" data-toggle="cullapse" data-target="#navbar" aria-expanded="false" aria-contruls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Project name</a> -->
+          <div class="hablu-logo">
+              <a href="../index.html"><img src="../../images/logo.png" height="50" width="60" alt=""></a>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-cullapse cullapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li  class="active"><a href="index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
+            <li><a href="program.html">হাবলু প্রশ্ন</a></li>
+            <li><a href="../jkr/index.html">About Jhankar</a></li>
+          </ul>
+        </div><!--/.nav-cullapse -->
+      </div>
+    </nav>
+    <div class="container">
+    	<div class="jumbotron">
+    		<div class="row text-center chapter-title">
+    			<h1><span class="chapter-title-rest">Binary Search</span><span class="chapter-title-main"> Tree Coding</span> <span class="chapter-title-rest"> </span></h1>
+    		</div>
+				<div class="row">
+					<p>খুব শিগ্রই বাংলায় সহজ করে লেখা হবে</p>
+					<p>তখন ইমেইলে আপডেট পেতে রেজিস্ট্রেশন করো: <a href="registration/">এই খানে</a></p>
+
+				</div>
+    		<div class="row">
+					<p>Below content is a draft. not tested yet. Read at your own risk</p>
+					জেলখানার খেলোয়াড়দের জন্য যে বাইনারি সার্চ ট্রি দেখছিলি, সেটার প্রত্যেকটা খেলোয়াড় হচ্ছে এক একজন নোড। সেই নোডগুলোর জার্সিতে একটা সংখ্যা লেখা আছে। আবার দুই হাতে দুইজনের কোমড়ের দড়ি ধরা আছে। তাই তুই যদি কিছু নোড অবজেক্ট বানাতে চাস, তাহলে প্রথমেই Node নামে একটা ক্লাস ডিক্লেয়ার করবি জেতার তিনটা বৈশিষ্ট্য থাকবে। জার্সি নাম্বার বা মান, ডানহাত এবং বামহাত। ডানহাতকে সংক্ষেপে  right আর বামহাতকে সংক্ষেপে left বলতে পারস।
+
+ক্লাস ডিক্লেয়ার করার সিস্টেম আগেই বলছি। জাস্ট class লিখে ক্লাসের নাম লিখবি তারপর সেকেন্ড ব্র্যাকেটের ভিতরে constructor নামে ফাংশন লিখে সেটার ভিতরে বৈশিষ্ট্যগুলো লিখবি। যেহেতু নোড যোগ হওয়ার সময়ই তাদের জার্সি নাম্বার লেখা থাকে তাই constructor ফাংশনের ইনপুট হিসেবে একটা ভ্যালু নিবি। সেটা node এর value বৈশিষ্ট্য এর মান হয়ে যাবে। আর যখন নতুন একটা নোড যোগ করা হয়, তখন শুরুতেইনতুন নোড এর ডান, বাম ঠিক করা থাকে না। তাই constructor ফাংশনের ভিতরে right এবং left প্রপার্টি এর মান হবে undefined। undefined মানে এই দুইটা প্রপার্টি এর মান এখনো ডিফাইন করা হয় নাই।
+
+
+<pre><code>
+class Node {
+   constructor(value){
+      this.value = value;
+      this.left = undefined;
+      this.right = undefined;
+   }
+}
+
+</code></pre>
+
+একবার Node যেহেতু ডিক্লেয়ার করে ফেলতে পারলে বাইনারি সার্চ ট্রি ডিক্লেয়ার করা একদম পানি-ভাত। জাস্ট Node এর মতো আরেকটা ক্লাস ডিক্লেয়ার করা লাগবে। যেই ক্লাসের নাম দিবি বাইনারি সার্চ ট্রি (BinarySearchTree) আর এইটা যেহেতু ক্লাস সেজন্য তার নামের আগে class শব্দটা লিখতে হবে। তারপর আগের মতো ভিতরে কনস্ট্রাক্টর ফাংশন লিখবি। আর কনস্ট্রাক্টর ফাংশনের ভিতরে শুধু মাত্র একটা প্রপার্টি থাকবে। সেই প্রপার্টি এর নাম হবে রুট (root)।
+
+এই BinarySearchTree ক্লাসের কনস্ট্রাক্টর ফাংশনের ইনপুট প্যারামিটার হিসেবে একটা নোড নিবি। সেই ইনপুটের নাম হবে রুট (root)। কারণ এই ইনপুট প্যারামিটার তুই যে বাইনারি সার্চ ট্রি বানাবি তার রুট হয়ে যাবে। সেই হিসেবে constructor ফাংশনের ভিতরে this.root এর মান সেট করে ফেলবি। তাহলেই কাজ শেষ। এখন তোর বাইনারি সার্চ ট্রি এর ক্লাস টা হবে নিচের মতো
+
+<pre><code>
+class BinarySearchTree{
+   constructor(value){
+       this.root = new Node(value);
+   }
+}
+</code></pre>
+
+
+এখন বাইনারি সার্চ ট্রি (BinarySearchTree) ক্লাস থেকে নতুন একটা বাইনারি ট্রি বানানোর জন্য প্রথমেই রুট নোড যে হবে তাকে বানাতে হবে। আর  রুট নোড যেহেতু একটা নোড, তাই সেটা বানানোর জন্য Node ক্লাস ব্যবহার করা লাগবে। একটু আগে যে ট্রি বানাইছিলি সেটার রুটে ছিলো ক্যাপ্টেন আর তার জার্সিতে ছিল ৪০। তাই তুই ৪০ দিয়ে Node ক্লাস কে কল করে একটা root অবজেক্ট বানাবি নিচের মতো করে।
+
+<pre><code>
+var root = new Node(40);
+</code></pre>
+
+এখন root নোড ব্যবহার করে BinarySearchTree থেকে একটা ক্লাস বানালেই সেটা তোর জীবনের প্রথম বাইনারি সার্চ ট্রি প্রোগ্রাম লিখা হয়ে যাবে।
+
+<pre><code>
+var teamTree = new BinarySearchTree(40);
+</code></pre>
+
+
+এখন এই ট্রি তা আউটপুট হিসেবে দেখতে চাইলে সেটাকে console.log(teamTree) করে দে। তাহলে নিচের মতো আউটপুট দেখাবে।
+
+<pre><code>
+{
+  "root": {
+    "value": 40
+  }
+}
+</code></pre>
+
+উপরের আউটপুটে value প্রপার্টি এর পাশে left বা right প্রপার্টি দেখাচ্ছে না। কারণ সেগুলা তুই এখনো সেট করছ নাই। কারণ এই ট্রি এর মধ্যে রুট ছাড়া আর অন্য কোন উপাদান বা নোড নাই। তবে নতুন মান যোগ করতে চাইলে তোর BinarySearchTree ক্লাসে নূতন আরেকটা ফাংশন যোগ করতে হবে। যেটার নাম দিবি add। তাছাড়া তুই তো জানস কোন একটা ক্লাসের মধ্যে নতুন ফাংশন যোগ করতে চাইলে function শব্দটা ব্যবহার করা লাগে না। তাই BinarySearchTree ক্লাসের ভিতরে গিয়ে ডাইরেক্ট add লিখে প্রথম ব্র্যাকেট দিয়ে দিবি। আর এই ফাংশনের ইনপুট প্যারামিটার হিসেবে একটা নোড নিতে হবে, যেটাকে তুই ট্রি এর মধ্যে যোগ করতে চাস। আর এইটা যেহেতু নতুন নোড তাই এই ইনপুট প্যারামিটারের নাম দিবি newNode।
+
+
+এখন add ফাংশনের মধ্যে ভবিষ্যতের কাজের সুবিধার জন্য একটা ভেরিয়েলব ডিক্লেয়ার করে নে। যেটার নাম হবে  root। এই root ভেরিয়েবলের মান হবে this.root নোড। অর্থাৎ তুই এখন যেই BinarySearchTree নিয়ে কাজ করছস সেটার রুট। যখন যে ক্লাস নিয়ে কাজ করবি তার নিজের প্রপার্টি বুঝতে এই বা ইংরেজিতে this ব্যবহার করা হয়। আর সেই ট্রি এর রুট বলতে this.root লেখা হয়। সেজন্যই তোর root ভেরিয়েবলের মান this .root।
+
+
+root ভেরিয়েবল ডিক্লেয়ার করা হয়ে গেলে। তোর কাজ হবে সেটাকে- "বামে কম, ডানে বেশি" মূলনীতি এপ্লাই করা। সেটা করার জন্য root নোডের মানের সাথে newNode এর মানের তুলনা করবি। আর পোগ্রামিং এ তুলনা করার সময় if ব্যবহার করা হয় সেটা তুই লেংটা কাল থেকেই জানস। আর newNode যেহেতু একটা অবজেক্ট তাই আর value প্রপার্টি এর মান জানার জন্য ডট দিয়ে কট করবি। অর্থাৎ newNode.value লিখে newNode এর value এর মান বা জার্সি নাম্বার জানবি। আর একটু আগে যে root ভেরিয়েবল লিখছিলি সেটা ছিল এই ট্রি এর রুট। এখন root এর মান জানার জন্য root.value লিখলেই হবে।
+
+
+এখন তোর কাজ হচ্ছে নতুন নোডের মান আর রুটের মান তুলনা করা। তাই if এর পরে প্রথম ব্র্যাকেটের ভিতরে শর্ত হিসেবে  newNode.value < root.value লিখবি। এই শর্ত সত্য হইলে newNode এর মান রুটের চাইতে ছোট। তাই newNode বামপাশে চলে যাবে। সেজন্যই শর্তের পরে ব্র্যাকেটের ভিতরে লিখবি root.left = newNode লিখবি। অর্থাৎ root অবজেক্টের left প্রপার্টির ম্যান হবে newNode আর ঘুরায় বললে newNode টা root নোডের বামে চলে গেছে। আর if এর ভিতরের শর্ত মিথ্যা হলে newNode এর মান root নোডের মানের চাইতে বেশি তাই সেটা ডানপাশে চলে যাবে। আর শর্ত মিথ্যা হইলে যেহেতু else এর অংশ কাজ করে। তাই এলসি ভিতরে root.right = newNode লিখবি। যাতে newNode টা রুটের ডানপাশে চলে যায়। এত্তক্ষন যা যা বলছি সেটা দেখতে নিচের মতো হবে
+
+<pre><code>
+var root = this.root;
+if(newNode.value < root.value){
+   root.left = newNode;
+}
+else{
+   root.right = newNode;
+}
+</code></pre>
+
+আর পুরো BinarySearchTree ক্লাসটা দেখতে  এই রকম হবে।
+
+<pre><code>
+class BinarySearchTree{
+   constructor(value){
+       this.root = new Node(value);
+   }
+
+   add(newNode){
+      var root = this.root;
+      if(newNode.value < root.value){
+          root.left = newNode;
+      }
+      else{
+          root.right = newNode;
+      }
+    }
+}
+</code></pre>
+
+এখন এইটা দিয়ে একটা ট্রি ডিক্লেয়ার করতে চাইলে আগের মতো ৪০ দিয়ে root নোড বানিয়ে treeTeam নামে একটা BinarySearchTree বানাতে হবে। তারপর সেটাতে ২৫ নামে একজন খেলোয়াড় যোগ করতে চাইলে, ২৫ ব্যবহার করে Node ক্লাস কল করে একটা নোড অবজেক্ট বানায় নিবি। তারপর সেই নোড treeTeam এ add করে দিবি। আবার ২৫ এর পরে ৭৮ যোগ করতে চাইলেও একই সিস্টেমে যোগ করে ফেলবি।
+
+<pre><code>
+var root = new Node(40);
+var treeTeam = new BinarySearchTree(root);
+
+var firstNode = new Node(25);
+treeTeam.add(firstnode);
+
+var secondNode = new Node(78)
+treeTeam.add(secondNode);
+</code></pre>
+
+আর treeTeam কে console.log(myTree) করে দিলে নিচের মতো আউটপুট দেখতে পাবি।
+
+<pre><code>
+{
+  "root": {
+    "value": 40,
+    "left": {
+      "value": 25
+    },
+    "right": {
+      "value": 78
+    }
+  }
+}
+</code></pre>
+
+উপরের সিস্টেমে ট্রি ডিক্লেয়ার করার পর দুইটা মান add করতে পারবি। তারচেয়ে বেশি করতে গেলে উপরের add ফাংশনটা তালগোল পাকিয়ে ফেলবে। কারণ সে শুধু নতুন নোডের মান root নোডের মানের সাথেই তুলনা করতে জানে। নোড সংখ্যা বেশি হয়ে গেলে যে ডানপাশের নোড বা বামপাশের নোডের সাথে গিয়ে যে newNode এর মান তুলনা করবে, সেই সিস্টেম তোর আগের add ফাংশনে লেখা নাই। সেটা করতে হলে add ফাংশনটাকে আরেকটু টেনেটুনে তার ভিতরে একটা while লুপ লিখতে হবে।
+
+
+কিছুক্ষণ আগে নতুন নতুন আইটেম যোগ করার সময় একটার পর একটা নোড এ গিয়ে সেটার মানের সাথে যে নোড টা যোগ করতে চাচ্ছিলি সেটার মান তুলনা করছিলি। যেমন ধর, ২৫ এবং ৭৮ যোগ করার পর ৩২ যোগ করার সময় তুই প্রথমে ৪০ এর সাথে তুলনা করছিলি তারপর আবার ২৫ এর সাথে তুলনা করছিলি। তারমানে তুলনা করার কাজ দুইবার করা লাগছে। আবার অনেকগুলা সংখ্যা যোগ পর যখন ৭৫ যোগ করছিলি তখন প্রথমেই ৪০ এর সাথে, তারপর ৭৮ এর সাথে তারপর ৬৫ এর সাথে। তারমানে ট্রি যত বড় হবে, তুলনা করার পরিমাণ তত বাড়তে থাকবে। এবং কয়বার তুলনা করা লাগবে সেটা নিদৃস্ট না। বরং ট্রি এর সাইজ, কি সংখ্যা যোগ করবি এবং খালি জায়গা পাওয়ার উপর নির্ভর করবে। যেহেতু কয়বার তুলনা করবি সেটা নিদৃস্ট না, তাই for লুপ ব্যবহার না করে while লুপ ব্যবহার করবি।
+
+আগের মতো newNode কে ইনপুট প্যারামিটার হিসেবে নিবি। তারপর root নোডের মান নিয়ে একটা ভেরিয়েবল রাখবি। আগেরবার এই ভেরিয়েবলের নাম দিছিলি root আর এইবার নামটা বদলায়ে currentNode নাম দে। কারণ এইবার তোকে তুলনা করার কাজটা বারবার করা লাগবে। আর যখন যেই নোডের সাথে তুলনা করবি তখন সেই নোড টাই হবে তখনকার নোড(currentNode)।
+
+এরপর বারবার চেক করার জন্য while লুপ লিখবি। আর while লিখে তারপর প্রথম ব্র্যাকেট দিয়ে একটা শর্ত দিবি। আর এই while লুপ ততক্ষণ চলবে যতক্ষণ পর্যন্ত খালি জায়গা না পাওয়া যায়। উল্টাভাবে বললে যতক্ষণ পর্যন্ত currentNode এর মান ডিফাইন করা না থাকবে বা undefined না হবে ততক্ষন পর্যন্ত চলতে থাকবে। তাই while এর পরে শর্ত হিসেবে লিখবি currentNode != undefined । এখন while এর ভিতরে প্রথম শর্তটা আগের মতোই। জাস্ট তুলনা করবি newNode এর value এর মান currentNode এর value এর চাইতে ছোট কিনা। এইটুক পর্যন্ত দেখলে নিচের মতো হবে।
+
+<pre><code>
+var currentNode= this.root;
+while(currentNode != undefined){
+    if(newNode.value < currentNode.value){
+    }
+    else {
+    }
+}
+</code></pre>
+
+
+ধর, if এর পরের শর্ত সত্য হইছে অর্থাৎ newNode এর value, currentNode এর value এর চাইতে কম। আর কম হইলে আগে থেকেই জানস যে বামে যাবে। এখন বামে যেতে চাইলে দুইটা অবস্থা হইতে পারে। এক: বামে জায়গা খালি অর্থাৎ সেখানে কেউ নাই। আর খালি জায়গা থাকলে সেখানে newNode টা বসে যাবে। আর যদি বামের জায়গা খালি না থাকে তাহলে বামের নোডের মানের সাথে newNode এর মান আবার তুলনা করতে হবে।
+
+এই যে হয় বামের জায়গাটা খালি কিনা সেটাও কিন্তু একটা if-else দিয়েই তুলনা করে দেখতে হবে। তাই বাইরের if-else এর ভিতরে আরেকটা if-else বসাবি। এই ভিতরের if দিয়ে দেখবি currentNode এর বামপাশটা খালি কিনা। অর্থাৎ currentNode.left ডিফাইন করা হইছে কিনা। যদি ডিফাইন করা না হয় তাহলে currentNode.left এর মান undefined হবে। তাই if এর পরে প্রথম ব্র্যাকেট দিয়ে লিখবি currentNode.left == undefined । যদি এই  currentNode.left == undefined শর্ত এর মান সত্য হয়। তাহলে এই জায়গা খালি জায়গায় নতুন নোড বসে যাবে। তাই সেকেন্ড ব্র্যাকেটের ভিতরে লিখবি currentNode.left == newNode । তাহলেই তোর কাজ শেষ। তাই পরের লাইনে একটা break লিখে দিবি। অর্থাৎ গাড়ির ব্রেক চাপার মতো করে তোর কাজ শেষ করে দিবি।
+
+তবে যদি currentNode এর left এর মান undefined না হইলে। অর্থাৎ সেখানে কোন নোড থাকলে সেটার মানের সাথে নতুন যে নোড ঢুকাইতে চাস সেটার মান তুলনা করে দেখতে হবে। এই যে newNode এর মানের সাথে তুলনা সেটা কিন্তু while লুপের ভিতরের প্রথম if এর পরের শর্তেই করা আছে। তুই সেই একই তুলনা ব্যবহার করতে চাইলে তুই জাস্ট currentNode এর মান চেইঞ্জ করে দে।  অর্থাৎ currentNode এর left এ যেই নোড আছে সেটাই currentNode এর মান হবে।  যাতে এই মানটা while লুপ আরেকবার চালিয়ে while লুপের ভিতরের প্রথম লাইনে যে তুলনা আছে সেটা ব্যবহার করে। এইটাই while লুপের মজা। যতক্ষণ পর্যন্ত বামপাশে নোড থাকবে ততক্ষন পর্যন্ত নতুন নতুন মান দিয়ে currentNode এর মান সেট করবে এবং while লুপ চালাইতে থাকবে।  শুধু while এর ভিতরের if এর প্রোগ্রামটা দেখতে চাইলে সেটা নিচের মতো হবে।
+
+<pre><code>
+while(currentNode != undefined){
+    if(newNode.value < currentNode.value){
+        if(currentNode.left == undefined){
+            currentNode.left = newNode;
+             break;
+        }
+        else{
+              currentNode = currentNode.left;
+        }
+    }
+    else {
+   }
+}
+</code></pre>
+
+এই যে while লুপের ভিতরের if ছাড়াও একটা else অংশ আছে। সেটার কাহিনী অনেকটা if ভিতরের মতোই হবে। শুধু if এর ব্যাপার ছিলো বামপাশে আর else এর ব্যাপারটা হবে ডানপাশে। কারণ if এর শর্ত মিথ্যা হইছে। অর্থাৎ newNode এর value এর মান currentNode এর value এর মানের চাইতে কম না। আর কম না হইলে বেশি হবে। বেশি হইলে ডানে যাবে।  তাই ডানে গিয়ে আরেকটা if চালিয়ে দেখবে currentNode এর right এর জায়গা খালি কিনা। খালি হইলে currentNore এর right এ newNode টা বসে যাবে। তোর কাজ শেষ হয়ে যাবে। তাই তুই break লিখে কাজ শেষ করে ফেলবি।
+
+আর যদি খালি না হয়। অর্থাৎ if এর পরের শর্ত সত্য না হয়। তাহলে else অংশে যাবে। আর জায়গা খালি না হওয়ার মানে সেখানে আরেকটা মান বা নোড আছে। সেই নোডের মান তুলনা করে দেখতে হবে।  আর তুলনা করার জন্য else এর ভিতরে তাহলে সেটার মানও যাচাই করতে হবে। আর যাচাই করার জন্য currentNode এর right সাইডের নোড টাই হবে তোর নতুন currentNode।  এখন পুরা push এর প্রোগ্রামটা নিচে ভালো করে কয়েকবার দেখ। যান বুঝলেও, কমপক্ষে পাঁচবার দেখবি। তারপরেও না বুঝলে দেখে দেখে টাইপ করবি।
+
+<pre><code>
+var currentNode= this.root;
+while(currentNode != undefined){
+    if(newNode.value < currentNode.value){
+        if(currentNode.left == undefined){
+            currentNode.left = newNode;
+             break;
+        }
+        else{
+              currentNode = currentNode.left;
+        }
+    }
+    else {
+        if(currentNode.right == undefined){
+            currentNode.right = newNode;
+            break;
+        }
+        else{
+           currentNode = currentNode.right;
+        }
+    }
+}
+</code></pre>
+
+
+আর পুরা বাইনারি সার্চের প্রোগ্রামটা একসাথে দেখতে চাইলে বা www.jhankarmahbub.com/console এ গিয়ে টাইপ কর। সেখানে প্রথমেই Node নামের একটা class ডিক্লেয়ার করতে হবে। তারপরে এত্তক্ষন যে বকর বকর করছি। সেটার মতো করে constructor এবং push নামের ফাংশন লিখতে হবে।
+
+<pre><code>
+class Node {
+   constructor(value){
+      this.value= value;
+      this.left = undefined;
+      this.right = undefined;
+   }
+}
+
+class BinarySearchTree{
+   constructor(root){
+       this.root = root;
+   }
+
+   add(newNode){
+      var currentNode = this.root;
+      while(currentNode){
+         if(newNode.value < currentNode.value){
+            if(currentNode.left == undefined){
+               currentNode.left = newNode;
+               break;
+            }
+            else{
+              currentNode = currentNode.left;
+           }
+         }
+         else{
+            if(currentNode.right == undefined){
+               currentNode.right = newNode;
+               break;
+            }
+            else{
+              currentNode = currentNode.right;
+           }
+        }
+      }
+    }
+}
+</code></pre>
+
+এখন এই কোড ব্যবহার করে নতুন ট্রি ডিক্লেয়ার করে সেখানে গণহারে যোগ করতে চাইলে একটা একটা করে নোড বানাবি। তারপর সেটা treeTeam নামক ট্রি এর add ফাংশন কে কল করে যোগ করে ফেলবি। যখন সব কোড লেখা হয়ে যাবে তখন Run বাটনে চাপ দিয়ে দিবি।
+<pre><code>
+var root = new Node(40);
+var treeTeam = new BinarySearchTree(root);
+
+var first = new Node(25);
+treeTeam.add(first);
+
+var second = new Node(78);
+treeTeam.add(second);
+
+var third = new Node(10);
+treeTeam.add(third);
+
+var fourth = new Node(65);
+treeTeam.add(fourth);
+
+var fifth = new Node(75);
+treeTeam.add(fifth);
+
+Var sixth = new Node(30);
+treeTeam.add(sixth);
+</code></pre>
+
+
+আর আউটপুট দেখতে চাইলে myTree কে console.log করে দে।
+
+<pre><code>
+console.log(treeTeam);
+</code></pre>
+
+//u can skip this example. Or if keep it...update it
+<pre><code>
+{
+  "root": {
+    "value": 40,
+    "left": {
+      "value": 25,
+      "left": {
+        "value": 10
+      },
+      "right": {
+        "value": 32
+      }
+    },
+    "right": {
+      "value": 78
+    }
+  }
+}
+
+</code></pre>
+
+    		</div>
+    	</div>
+        <div class="chapter-overall">
+            <div>
+                <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div id="fb-root"></div>
+    <script src="../scripts/toggleExample.js"></script>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40601505-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

@@ -84,6 +84,115 @@ dll.push(5);
 			 <p>get most of it from: <a href="https://github.com/nzakas/computer-science-in-javascript/blob/master/data-structures/doubly-linked-list/doubly-linked-list.js">doubly linked list</a></p>
 		 </div>
 				</div>
+				<div class="row">
+					<h2>Alternative implementation</h2>
+<pre><code>
+//code
+class Node{
+  constructor(value){
+    this.value = value;
+    this.left = undefined;
+    this.right = undefined;
+  }
+}
+
+class LinkedList {
+  constructor(value) {
+    this.head = new Node(value);
+  }
+  add(value){
+      var newNode = new Node(value);
+      var currentNode = this.head;
+      var previousNode = currentNode;
+      while(currentNode.right != undefined){
+        previousNode = currentNode;
+        currentNode = currentNode.right;
+      }
+      newNode.left = previousNode;
+      currentNode.right = newNode;
+  }
+}
+
+
+var head = new Node("amader");
+var mBondon = new LinkedList(head);
+var first = new Node("pant");
+mBondon.add(first);
+console.log(mBondon)
+
+
+//count
+class Node{
+  constructor(value){
+    this.value = value;
+    this.previous = undefined;
+    this.next = undefined;
+  }
+}
+
+class LinkedList {
+  constructor(head) {
+    this.head = head;
+  }
+  add(node){
+      var current = this.head;
+      var previous = current;
+      while(current.next){
+        previous = current;
+        current = current.next;
+      }
+      node.previous = previous;
+      current.next = node;
+  }
+  nodeCount(){
+    var current = this.head;
+    var count = 1;
+    while(current.next){
+      count = count + 1;
+      current = current.next;
+    }
+    return count;
+  }
+
+}
+
+
+//
+var head = new Node("amader");
+var mBondon = new LinkedList(head);
+mBondon.nodeCount()
+//1
+
+
+var second = new Node("pant");
+mBondon.add(second);
+mBondon.nodeCount();
+//2
+
+
+
+//TODO
+//remove a node by text
+
+</code></pre>
+//TODO
+//insert node in a particular position
+Circular linked list:
+Cricket khela or football khela
+Cricket khelar somoy winning lapse
+
+Ultimate link: Move it to habluder adda http://khan4019.github.io/front-end-Interview-Questions/linkedList.html#doublyLinkedList
+Advantages
+Linked lists are a dynamic data structure, which can grow and be pruned, allocating and deallocating memory while the program is running.
+Insertion and deletion node operations are easily implemented in a linked list.
+Linear data structures such as stacks and queues can be implemented using a linked list.
+They can reduce access time and may expand in real time without memory overhead.
+Disadvantages
+They use more memory than arrays because of the storage used by their pointers.
+Nodes in a linked list must be read in order from the beginning as linked lists are inherently sequential access.
+Nodes are stored incontiguously, greatly increasing the time required to access individual elements within the list, especially with a CPU cache.
+Difficulties arise in linked lists when it comes to reverse traversing. For instance, singly linked lists are cumbersome to navigate backwards[1] and while doubly linked lists are somewhat easier to read, memory is wasted in allocating space for a back-pointer.
+				</div>
     		<div class="row">
                 <p><a href="single.html">Singly Linked List</a></p>
                 <p><a href="circular.html">Circular Linked List</a></p>

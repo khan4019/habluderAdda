@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Selection Sort</title>
+	<title>Binary Search Tree</title>
 	<link rel="shortcut icon" href="../../images/favicon.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -25,10 +25,8 @@
         <div id="navbar" class="navbar-cullapse cullapse">
           <ul class="nav navbar-nav">
             <li><a href="../index.html">Home</a></li>
-            <li  class=""><a href="../basic/index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
-						<li><a href="../basic/program.html">হাবলু প্রশ্ন</a></li>
-            <li  class="active"><a href="index.html">প্রোগ্রামিংয়ের বলদ টু বস</a></li>
-            <li><a href="program.html">বলদ প্রশ্ন</a></li>
+            <li  class="active"><a href="index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
+            <li><a href="program.html">হাবলু প্রশ্ন</a></li>
             <li><a href="../jkr/index.html">About Jhankar</a></li>
           </ul>
         </div><!--/.nav-cullapse -->
@@ -37,446 +35,66 @@
     <div class="container">
     	<div class="jumbotron">
     		<div class="row text-center chapter-title">
-    			<h1><span class="chapter-title-rest">Selection</span><span class="chapter-title-main"> Sort</span> <span class="chapter-title-rest"> </span></h1>
+    			<h1><span class="chapter-title-rest">Binary Search</span><span class="chapter-title-main"> Tree</span> <span class="chapter-title-rest"> </span></h1>
     		</div>
 				<div class="row">
-					<div id="bst">
-		        <h2>Binary Search Tree</h2>
-		        <p><strong>Question:</strong> How would you create a binary search tree?</p>
-		        <p><strong>Answer:</strong></p>
-		        <p>to create a tree you need a node. a node in a tree looks like</p>
-		        <pre><code>
-		function Node(val){
-		  this.value = val;
-		  this.left = null;
-		  this.right = null;
-		}
-		        </code></pre>
-		        <p>Create a constructor for binary search tree</p>
-		        <pre><code>
-		function BinarySearchTree(){
-		  this.root = null;
-		}
-		        </code></pre>
-		        <p>Now you need to understand the structure of a binary search tree. For every node value in the left is smaller than the value of the node and value at the right is higher than the value of the root.</p>
-		        <p>so while inserting a value you have to find the appropriate location</p>
-		        <pre><code>
-		BinarySearchTree.prototype.push = function(val){
-		   var root = this.root;
+					<p>খুব শিগ্রই বাংলায় সহজ করে লেখা হবে</p>
+					<p>তখন ইমেইলে আপডেট পেতে রেজিস্ট্রেশন করো: <a href="registration/">এই খানে</a></p>
 
-		   if(!root){
-		      this.root = new Node(val);
-		      return;
-		   }
-
-		   var currentNode = root;
-		   var newNode = new Node(val);
-
-		   while(currentNode){
-		      if(val &lt; currentNode.value){
-		          if(!currentNode.left){
-		             currentNode.left = newNode;
-		             break;
-		          }
-		          else{
-		             currentNode = currentNode.left;
-		        }
-		     }
-		     else{
-		         if(!currentNode.right){
-		            currentNode.right = newNode;
-		            break;
-		         }
-		         else{
-		            currentNode = currentNode.right;
-		         }
-		     }
-		  }
-
-		}
-		        </code></pre>
-		        <pre><code>
-		var bst = new BinarySearchTree();
-		bst.push(3);
-		bst.push(2);
-		bst.push(4);
-		bst.push(1);
-		bst.push(5);
-		        </code></pre>
-		      </div>
-		      <div id="bredthFirstSearch">
-		        <h2>Breadth First Search</h2>
-		        <p><strong>Question:</strong> How do you implement Breadth First Search</p>
-		        <p><strong>Answer:</strong></p>
-		        <pre><code>
-		BinarySearchTree.prototype.breadthFirstSearch = function() {
-		  var queue = [];
-		  queue.push(this);
-		  while (queue.length) {
-		    var node = queue.shift();
-		    console.log(node.value);
-		    if (node.left) {
-		      queue.push(node.left);
-		    }
-		    if (node.right) {
-		      queue.push(node.right);
-		    }
-		  }
-		};
-		        </code></pre>
-		        <p>ref: <a href="http://stackoverflow.com/a/13633354/1535443">stackoverflow</a></p>
-		        <p>ref: <a href="https://github.com/duereg/js-algorithms">js algorithms</a></p>
-		      </div>
-		      <div id="inorderTraversal">
-		        <h2>Depth first search</h2>
-		        <p><strong>Question:</strong> How to perform in order traversal</p>
-		        <p><strong></strong></p>
-		        <pre><code>
-		function dfs(node){
-		  if(node){
-		    console.log(node.value);
-		    dfs(node.left);
-		    dfs(node.right);
-		  }
-		}
-		        </code></pre>
-		      </div>
-		      <div id="inorder">
-		        <h2>In order Traversal</h2>
-		        <p><strong>Question:</strong></p>
-		        <p><strong>Answer:</strong></p>
-		        <p><strong></strong></p>
-		        <img src="images/inorder.jpg" alt="">
-		        <pre><code>
-		function inorder(node){
-		   if(node){
-		      inorder(node.left);
-		      console.log(node.value);
-		      inorder(node.right);
-		   }
-		}
-		        </code></pre>
-		        <p>ref: <a href="http://www.javabeat.net/binary-search-tree-traversal-java/">source of image</a> </p>
-		      </div>
-		      <div id="preorder">
-		        <h2>pre order</h2>
-		        <p><strong></strong></p>
-		        <p><strong></strong></p>
-		        <img src="images/preorder.jpg" alt="">
-		        <pre><code>
-		//code here
-		        </code></pre>
-		        <p>ref: <a href="http://en.wikipedia.org/wiki/Tree_traversal">wiki pseudocode doesnt work for JavaScript</a></p>
-		      </div>
-		      <div id="postOrder">
-		        <h2>Post order</h2>
-		        <img src="images/postorder.jpg" alt="">
-		        <pre><code>
-		//code here
-		        </code></pre>
-		      </div>
-		      <div id="minMax">
-		        <h2>min and max value</h2>
-		        <p><strong>Question:</strong> How can you find the min value in a bst</p>
-		        <p>finding min is super simple. the go through the left node and left most node is the minimum node</p>
-		        <p><strong></strong></p>
-		        <pre><code>
-		function minNode(node){
-		   if(!node){
-		      return 0;
-		   }
-		   if(node.left){
-		     return minNode(node.left)
-		  }
-		  return node.value
-		}
-		        </code></pre>
-		        <p><strong>Question:</strong> How can you find the max value in a bst</p>
-		        <p><strong></strong></p>
-		        <pre><code>
-		function maxNode(node){
-		   if(!node){
-		     return 0;
-		  }
-		  if(node.right){
-		     return maxNode(node.right)
-		  }
-		  return node.value;
-		}
-		        </code></pre>
-		      </div>
-		      <div id="balanced">
-		        <h2>Balanced and Unbalanced Tree</h2>
-		        <p><strong>Question:</strong>What is balanced and unbalanced tree</p>
-		        <p><strong>Answer:</strong></p>
-		        <ol>
-		          <li>The left and right subtrees' heights differ by at most one, AND</li>
-		          <li>The left subtree is balanced, AND</li>
-		          <li>The right subtree is balanced</li>
-		        </ol>
-
-		        <p>ref: <a href="http://stackoverflow.com/questions/8015630/definition-of-a-balanced-tree">Get answer from here</a></p>
-		      </div>
-		      <div id="checkBST">
-		        <h2>Check BST</h2>
-		        <p><strong>Question:</strong> check a binary tree is BST or not?</p>
-		        <p><strong>Answer:</strong></p>
-		        <h4>Simple but wrong approach</h4>
-		        <p><strong>Step-1:</strong> if node is null, its BST</p>
-
-		        <pre><code>
-		function isBST(node){
-		   if(!node){
-		     return true;
-		  }
-
-		  if(node.left != null && node.left.value > node.value){
-		    return false;
-		  }
-
-		  if(node.right !=null && node.right.value < node.value) {
-		    return false;
-		  }
-
-		  if(!isBST(node.left) || !isBST(node.right)) {
-		    return false;
-		  }
-
-		  return true;
-		}
-		        </code></pre>
-		        <p>The reason this method will generate wrong result is for</p>
-		        <img src="images/bstWrong.gif" alt="">
-		        <h4>do in order traversal</h4>
-		        <p><strong></strong></p>
-		        <pre><code>
-		          //use method 4 in the link below
-		        </code></pre>
-		        <p>ref: <a href="http://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/">taken from geeksforgeeks</a></p>
-		      </div>
-		      <div id="checkBalance">
-		        <h2>Check balanced</h2>
-		        <p><strong>Quetion:</strong> How could you check a tree is balanced or not</p>
-		        <p><strong>Answer: </strong></p>
-		        <p>check multiple example whether it is balanced. <a href="http://webdocs.cs.ualberta.ca/~holte/T26/balanced-trees.html">check balanced tree example</a></p>
-		        <p>ref: <a href="http://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/">get the answer from here</a></p>
-		      </div>
-		      <div id="height">
-		        <h2>Height of a tree</h2>
-		        <p><strong></strong></p>
-		        <p><strong></strong></p>
-		        <pre><code>
-		function height(node){
-		   if(!node) return 0;
-		   var leftHeight = height(node.left);
-		   var rightHeight = height(node.right);
-
-		   return Math.max(leftHeight, rightHeight) + 1;
-		}
-		        </code></pre>
-		      </div>
-		      <div id="printAncestor">
-		        <h2>print ancestor</h2>
-		        <p><strong>Question:</strong></p>
-		        <p><strong>Answer:</strong></p>
-		        <pre><code>
-		function printAncestor(node, target){
-		   if(!node) return false
-
-		   if(node.value == target) return true;
-
-		   if(printAncestor(node.left, target) || printAncestor(node.rigth, target)){
-		     console.log(node.value);
-		     return true;
-		  }
-
-		  return false
-		}
-		        </code></pre>
-		        <p>ref: <a href="http://stackoverflow.com/questions/12052192/printing-ancestors-of-a-node-in-binary-tree">from stack overflow</a></p>
-		        <h3 class="text-danger">Doesnt work for intermediate nodes. Debug this</h3>
-		      </div>
-		      <div id="nodesBetweenTwo">
-		        <h2>Print all nodes between two nodes</h2>
-		        <p><strong>Question:</strong></p>
-		        <p><strong>Answer:</strong></p>
-		        <pre><code>
-		//put the code
-		        </code></pre>
-		        <p>ref: <a href="http://www.geeksforgeeks.org/given-binary-tree-print-nodes-two-given-level-numbers/">Get the code form here</a></p>
-		      </div>
-		      <div id="commonAncestor">
-		        <h2>common ancestor</h2>
-		        <p><strong></strong></p>
-		        <p><strong></strong></p>
-		        <p>this will work for bst only. If you are dealing with binary tree..this needs to be modified</p>
-		        <h4 class="text-danger">Make this code better</h4>
-		        <pre><code>
-		function commonAncestor(node, n1, n2){
-		   if(!node) return;
-		   var val = node.value;
-		   if(n1 &lt; val && n2&lt;val){
-		     return commonAncestor(node.left, n1, n2);
-		   }
-		   if(n1&lt;val && n2&lt;val){
-		     return commonAncestor(node.right, n1, n2);
-		  }
-		  console.log('lowest common ancestor value: ', val);
-		  return node;
-		}
-		        </code></pre>
-		        <p>ref: <a href="http://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/">common ancesotr</a></p>
-
-		        <h4>coomon ancestor for binary tree</h4>
-		        <pre><code>
-		function commonAncestorBT(node, n1, n2){
-		   if(!node) return;
-		   var val = node.value;
-		   if(n1 == val || n2 ==val){
-		     return node;
-		   }
-		   var left = commonAncestorBT(node.left, n1, n2);
-		   var right = commonAncestorBT(node.right, n1, n2);
-		   if(left && right){
-		     return node;
-		  }
-		  return (left) ? left : right;
-		}
-		        </code></pre>
-		        <p>ref: <a href="http://www.fusu.us/2013/06/p2-lowest-common-ancestor-in-binary-tree.html">try pavels blog</a></p>
-		        <p>ref: <a href="http://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/">common ancestor for binary tree</a></p>
-		      </div>
-		      <div id="heightBalance">
-		        <h2>check bst is height balanced</h2>
-		        <p><strong>Qustion</strong></p>
-		        <p><strong></strong></p>
-		        <p>ref: <a href="http://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/">get code from here</a></p>
-		      </div>
-		      <div id="topView">
-		        <h2>Top view</h2>
-		      </div>
-		      <div id="bottomView">
-		        <h2>bottom view</h2>
-		      </div>
-		      <div id="leftView">
-		        <h2>leftview</h2>
-		        <p> ref: <a href="http://www.geeksforgeeks.org/print-left-view-binary-tree/">bst left view</a></p>
-		      </div>
-		      <div id="rightView">
-		        <h2>Right view</h2>
-		        <p> ref: <a href="http://www.geeksforgeeks.org/print-right-view-binary-tree-2/">print right view</a></p>
-		      </div>
-		      <div id="mergeSorted">
-		        <h2>Merge two BST</h2>
-		        <p> ref: <a href="http://www.geeksforgeeks.org/merge-two-bsts-with-limited-extra-space/">merge two bst</a></p>
-		      </div>
-		      <div id="binaryToBST">
-		        <h2>convert binary to BST</h2>
-		        <p> ref: <a href="http://www.geeksforgeeks.org/binary-tree-to-binary-search-tree-conversion/">binary tree to bst</a></p>
-		      </div>
-		      <div id="checkSubTree">
-		        <h2>Check Sub tree</h2>
-		        <p>ref: <a href="http://www.geeksforgeeks.org/check-binary-tree-subtree-another-binary-tree-set-2/">check subtree</a></p>
-		      </div>
-		      <div id="diagonalSum">
-		        <h2>Diagonal Sum</h2>
-		        <p>ref: <a href="http://www.geeksforgeeks.org/diagonal-sum-binary-tree/">gfg</a></p>
-		      </div>
-		      <div id="selfBalancing">
-		        <h2>Self Balancing or Height Balanced Tree</h2>
-		        <p><strong>Question:</strong></p>
-		        <p><strong>Answer:</strong></p>
-		        <p>A binary tree whose height of the left subtree and height of the right subtree differ at most one.</p>
-		      </div>
-		      <div id="avlTree">
-		        <h2>AVL Tree</h2>
-		        <p><strong>Question:</strong></p>
-		        <p><strong>Answer:</strong></p>
-		        <p>It is Self balancing binary search tree. This means in an AVL tree, heights of two child subtrees of any node differ by at most one. If at any time if heights differ more than one, re-balancing is done to restore the height balance property.</p>
-		        <p>Lookup, insertion and deletion all takes O(logn) in average and worst case</p>
-		      </div>
-		      <div id="insertAVL">
-		        <h2>Insert, delete Into AVL</h2>
-		      </div>
-		      <div id="redBlackTree">
-		        <h2>Red Black Tree</h2>
-		        <p><strong>Question:</strong></p>
-		        <p><strong>Answer:</strong>A red-black tree is a binary search tree with one extra attribute for each node: the colour, which is either red or black.</p>
-		        <ul>
-		          <li>Every node is either red or black.</li>
-		          <li>Every leaf (NULL) is black.</li>
-		          <li>If a node is red, then both its children are black. However, two black node may be adjacent</li>
-		          <li>Every simple path from a node to a descendant leaf contains the same number of black nodes.</li>
-		          <li>Root node will always be black</li>
-		        </ul>
-		        <img src="images/rb_tree1a.gif" alt="">
-		        <p>ref: <a href="https://www.cs.auckland.ac.nz/software/AlgAnim/red_black.html">Red Black Trees</a></p>
-		      </div>
-		      <div id="redBlackInsertion">
-		        <h2>Insert into Red Black Tree</h2>
-		      </div>
-		      <div>
-		        <h2>Questions list</h2>
-		        <h4>from cracking the coding interview</h4>
-		        <ul>
-		          <li><a href="http://www.ardendertat.com/2011/10/10/programming-interview-questions-7-binary-search-tree-check/">check binary tree is balanced</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/check-two-nodes-cousins-binary-tree/">two nodes are cusin</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/">lowest common ancestor</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/find-k-th-smallest-element-in-bst-order-statistics-in-bst/">k th smalled node</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/inorder-predecessor-successor-given-key-bst/">in order successor and precessor</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/find-maximum-path-sum-two-leaves-binary-tree/">maximum path between two nodes</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/print-nodes-distance-k-given-node-binary-tree/">all nodes of k distance</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/print-binary-tree-vertical-order/">vertical order</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/print-nodes-dont-sibling-binary-tree/">nodes that doesnt have siblings</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/convert-given-binary-tree-doubly-linked-list-set-3/">bst to doubly linked list</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/deepest-left-leaf-node-in-a-binary-tree/">deepest left node</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/check-leaves-level/">check leaves</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/difference-between-sums-of-odd-and-even-levels/">sum of odd levels and even levels node</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/tree-isomorphism-problem/">isporphisom: dont know what is this</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/find-a-pair-with-given-sum-in-bst/">pair with a given sum</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/floor-and-ceil-from-a-bst/">floor and ceil of bst</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/fix-two-swapped-nodes-of-bst/">two nodes swapped, correct bst</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/check-if-a-given-binary-tree-is-complete-tree-or-not/">check complete or not</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/maximum-width-of-a-binary-tree/">max width of bst</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/given-a-binary-tree-print-all-root-to-leaf-paths/">all root to leaf path</a></li>
-		          <li>BST from sorted array</li>
-		          <li>From BST, linked list for each level</li>
-		          <li>check binary tree is BST</li>
-		          <li>next node (in-order successor) of BST</li>
-		          <li>First common ancestor of two nodes in BT</li>
-		          <li>Very large two BT. check one is sub tree of another</li>
-		          <li>all path that sums to a number in BT</li>
-		          <li><a href="http://www.crazyforcode.com/tree/">carzy for code list of tree questions</a></li>
-		          <li><a href="http://www.geeksforgeeks.org/forums/forum/trees-specific-questions/">geeks for geeks questions</a></li>
-		          <li><a href="http://www.glassdoor.com/Interview/binary-trees-interview-questions-SRCH_KT0,12.htm">glassdoor questions</a></li>
-		          <li><a href="https://www.youtube.com/playlist?list=PLC3855D81E15BC990">you tube got some questions as well</a></li>
-		          <li><a href="http://www.careercup.com/page?pid=trees-and-graphs-interview-questions">career cup list of question</a></li>
-		        </ul>
-		      </div>
 				</div>
     		<div class="row">
-                <div class="other-chapters">
-                    <button id="otherChapterLink" type="button" class="toggleExample btn btn-primary">Show other chapter link</button>
-                    <div id="otherChapterLinkExample" class="hide bg-success">
-                        <ul>
-                            <li><a href="program.html">প্রোগ্রাম খায়, পরে না মাথায় দেয়?</a></li>
-                            <li><a href="variable.html">variable বুঝলে, হবে না পয়সা ব্যয়</a></li>
-                            <li><a href="practice.html">প্রোগ্রামিং প্র্যাকটিস করে রাত পোহালে</a></li>
-                            <li><a href="string.html">string এর তালে নাচবে গরু গোয়ালে</a></li>
-                            <br>
-                            <li><a href="ifelse.html">নানীর if-else বুঝে লাফায় নানা </a></li>
-                            <li><a href="array.html">বিস্কুটের array খায় বিড়ালছানা</a></li>
-                            <li><a href="while.html">while লুপকে করলে মালিশ</a></li>
-                            <li><a href="for.html">for লুপ ডাকবে সালিশ</a></li>
-                            <br>
-                            <li><a href="propose.html">প্রেমের প্রপোজ করলে গোটা দশ হালি</a></li>
-                            <li><a href="function.html">function বুঝবে না- কোনটা বউ কোনটা শালী</a></li>
-                            <li><a href="dhar.html">দ্বিগুণ টাকা ধার করে পালালে</a></li>
-                            <li><a href="language.html">প্রোগ্রামিং ল্যাঙ্গুয়েজ খুঁজবে মামা শিয়ালে</a></li>
-                            <li><a href="next.html">হাসবে হাবলু বিজয় মিছিলে</a></li>
-                        </ul>
-                    </div>
-                </div>
+					<p>Below content is a draft. Read at your own risk</p>
+					এলাকার মাঠে ফুটবল খেলা হচ্ছে। সেই মাঠের পাশ দিয়ে কয়েকটা কুরবানীর গরু নিয়ে যাচ্ছে একজন। যে গরু নিয়ে যাচ্ছে তাকে দেখিয়ে রাশেদ বলতে শুরু করলো- শুধু গরু, ছাগল, হাতি, ঘোড়া দড়ি দিয়ে বেঁধে রাখে তা কিন্তু না। মাঝে মধ্যে মানুষকেও এই রকম দড়ি দিয়ে বেঁধে রাখে। স্পেশালি জেলখানার দাগী আসামিদের। তাদের কোমড়ে দড়ি দিয়ে বেঁধে রাখে।
+
+					তারপর ফুটবল খেলার দিকে তাকিয়ে বললো- এই যে যারা ফুটবল খেলতে নামছে। তাদের সবারই জার্সিতে একটা করে নাম্বার লেখা আছে। এই জার্সি নাম্বারই সেই খেলোয়াড়ের নাম্বার। সে ছাড়া তার টিমের আর কোন খেলোয়াড়ের সেই জার্সি নাম্বার নাই। তারমানে জার্সি নাম্বারগুলা ইউনিক। এই রকম জার্সি নাম্বারের মতো, কিছু কিছু জেলখানার দাগী আসামিদের জামায়ও তাদের আসামি নম্বর লেখা থাকে। এখন একজন আসামি এর কথা চিন্তা কর যার কোমড়ে দড়ি দিয়ে লাগানো এবং গায়ের জামায় একটা জার্সি নাম্বার লেখা আছে।
+
+					আরেকটা কথা মনে রাখবি-ফুটবল বা যেকোন খেলা শুরু করার সময়, যেকোন টিমের ক্যাপ্টেন সবার আগে মাঠে নামে। তারপর ক্যাপ্টেনের পিছনে পিছনে বাকি খেলোয়াড়রা মাঠে নামে।
+
+					এখন কোন একটা উন্নত বিশ্বের জেলখানার কথা চিন্তা কর। যেখানে জেলখানার ভিতরে ফুটবল খেলার মাঠে আছে। সেই মাঠে ফুটবল খেলার একটা টিম মাঠে নামতেছে। তাই সবার আগে মাঠে নামলো টিমের ক্যাপ্টেন। ক্যাপ্টেনের জার্সিতে লেখা আছে ৪০। আর সেই জেলখানার নিয়ম হচ্ছে ক্যাপ্টেনের পরে যে নামবে তার জার্সি নাম্বার যদি ক্যাপ্টেনের জার্সি নাম্বারের চাইতে বেশি হয় তাহলে সে ক্যাপ্টেনের ডানপাশে থাকবে। আর যদি তার জার্সি নাম্বার ক্যাপ্টেনের জার্সি নাম্বারের কম হয় তাহলে সে ক্যাপ্টেনের বামপাশে থাকবে।
+
+					এইটা যেহেতু একটা জেলখানার ভিতরে হচ্ছে। তাই জেলখানার আরেকটা নিয়ম হচ্ছে যে ডানপাশে থাকবে তার কোমরের দড়ি সামনে যে আছে সে ডান হাত দিয়ে ধরে রাখবে। আর বামে যে আছে তার কোমড়ের দড়ি বাম হাত দিয়ে ধরে রাখবে। শুধু যে ক্যাপ্টেন তার কোমড়ের দড়ি কেউ ধরবে না এবং সে সবার আগে নামবে।
+
+					একটু আগে বলছিলাম ক্যাপ্টেনের জার্সি নাম্বার ৪০। এখন ক্যাপ্টেনের পরে যে আছে তার জার্সি নাম্বার ৭৮। তাই সে ক্যাপ্টেনের ডান পাশে যাবে। এবং ক্যাপ্টেন ডান হাত দিয়ে ৭৮ জার্সি ওয়ালা কয়েদি এর কোমড়ের দড়ি ধরবে। তারপর আসলো ২৫ নম্বর জার্সিওয়ালা কয়েদি। তার জার্সি নাম্বার যেহেতু ক্যাপ্টেনের জার্সি নাম্বারের চাইতে কম তাই সে ক্যাপ্টেনের বামপাশে যাবে। এবং ক্যাপ্টেন বাম হাত দিয়ে ২৫ নম্বর জার্সিওয়ালা কয়েদি এর কোমড়ের দড়ি ধরলো। এখন যদি শুধু এই তিন জন। অর্থাৎ ক্যাপ্টেন (৪০ লেখা জার্সি), ৭৮ লেখা জার্সি আর ২৫ লেখা জার্সি যদি মাঠে নামে  তাহলে তাদেরকে দেখতে নিচের মতো লাগবে।
+
+					//todo: get illustration and cut it small to present here.
+					<img src="../../images/concepts/tree/bst1.png" alt="">
+
+
+					এই যে ক্যাপ্টেনের জার্সি নাম্বারের চাইতে বেশি হইলে ডানে আর কম হইলে বামে। এই কথাটা সহজে মনে রাখার জন্য- "বামে কম, ডানে বেশি" বলতে পারিস। এই "বামে কম, ডানে কম বেশি।" কথাটা মনে রাখার সহজ উপায় হচ্ছে- যারা ডানহাতি। তারা বেশির ভাগ কাজ ডানহাতে করে। বাম হাত দিয়ে কম কাজ করে। কারন ডান হাতে শক্তি বেশি। বাম হাতে কম। তাই কোন হাতে শক্তি বেশি সেটা চিন্তা করলে বলে দিতে পারবি- বামে কম, ডানে বেশি।
+
+					বামে কম ডানে বেশি- নীতি বজায় রেখে আগের ফুটবল খেলার টিমে যদি ৩২ লেখা কয়েদি এসে যোগ দিতে চায় তাহলে কি হবে? খুবই সিম্পল। ৩২ নাম্বার ওয়ালা জার্সি এসে প্রথমেই আসবে ক্যাপ্টেনের সামনে। তারপর ক্যাপ্টেনের জার্সির ৪০ এর সাথে তার জার্সি নাম্বার তুলনা করে দেখবে ৩২ হচ্ছে ৪০ এর চাইতে ছোট। তাই ক্যাপ্টেন বলবে- তুই ছোট তুই ডানে যাইতে পারবি না, বামে যা। এখন ৩২ জার্সি ওয়ালা ক্যাপ্টেনের বামে গিয়ে দেখবে সেখানে অলরেডি ২৫ জার্সি ওয়ালা দাঁড়ায় আছে।
+
+
+					তাই সে ২৫ এর সাথে তার জার্সির নাম্বার তুলনা করে দেখে বুঝবে, ৩২ হচ্ছে ২৫ এর চাইতে বেশি। তাই ৩২ জার্সি ওয়ালা ২৫ এর ডানপাশে যাবে। কারন আগেই বলা ছিল- "বামে কম, ডানে বেশি"। এখন ২৫ এর ডানপাশে যেহেতু কেউ নাই। অর্থাৎ জায়গা খালি আছে তাই ৩২ গিয়ে ২৫ জার্সি ওয়ালার পাশে দাঁড়ায় যাবে। আর যেহেতু এইটা জেলখানা এবং ক্যাপ্টেন ছাড়া বাকি সবার কোমাড়ের দড়ি ধরে রাখতে হবে। তাই ২৫ এর ডানপাশে ৩২ থাকায়, 25 ডান হাত দিয়ে 32 এর কোমড়ের দড়ি ধরে রাখবে। এখন তাদের টিম দেখতে নিচের মতো হবে।
+<img src="../../images/concepts/tree/bst2.png" alt="">
+
+
+					৩২ ঢুকানোর পর যদি ৬৫ কে ঢুকাতে চাস। তাহলে আগের মতো তাকেও ক্যাপ্টেনের কাছ থেকে শুরু করতে হবে। তাই সে ক্যাপ্টেনের কাছে গিয়ে দেখবে ক্যাপ্টেনের জার্সি ৪০। আর ৬৫ হচ্ছে ৪০ এর চাইতে বেশি। তারপর সে ক্যাপ্টেনকে জিজ্ঞেস করবে-ভাই, আমি তোমার ডানপাশে দাঁড়াতে পারি? ক্যাপ্টেন বলবে- না। কারণ সেখানে অলরেডি একজন দাঁড়িয়ে আছে। তুমি তার কাছে যাও। তারপর ৬৫ ক্যাপ্টেনের ডানপাশে গিয়ে গিয়ে ৭৮ কে দেখবে।
+
+					এখন ৭৮ এ কাছে গিয়ে ৭৮ এর সাথে তুলনা করে দেখবে। ৬৫ হচ্ছে ৭৮ এর চাইতে ছোট। যেহেতু ছোট তাই সে বামপাশে যাবে। তাই ৭৮ কে জিজ্ঞেস করবে-ভাই, আমি কি তোমার বামপাশে দাঁড়াতে পারি? যেহেতু ৭৮ বামহাত খালি। অর্থাৎ সেখানে কেউ নাই। তাই ৭৮ মুলা মার্কা হাসি দিয়ে বলবে- সমস্যা নাই, জায়গা খালি আছে তুমি দাঁড়ায় যাও। আমি তোমার কোমড়ের দড়ি বামহাত দিয়ে ধরে রাখতেছি।
+
+<img src="../../images/concepts/tree/bst3.png" alt="">
+
+
+					৩২ ও ৬৫ টিমে যোগ দেয়ার পর আসবে ১০। সবার একই সিস্টেম, শুরু করবে ক্যাপ্টেনের কাছ থেকে। তারপর বামে কম, ডানে বেশি ফর্মুলা এপ্লাই করে জিজ্ঞেস করতে থাকবে। ১০ যেহেতু ৪০ চাইতে ছোট সে যাবে বামে। বামে গিয়ে দেখবে ২৫। ১০ আবারও ২৫ এর চাইতে ছোট তাই সে যাবে ২৫ এর বামে। আর ২৫ বামে জায়গা খালি। তাই ১০ গিয়ে ২৫ বামপাশে দাঁড়ায় যাবে। আর ২৫ বামহাত দিয়ে ১০ এর কোমড়ের দড়ি রাখবে।
+
+<img src="../../images/concepts/tree/bst4.png" alt="">
+					সিস্টেম কিন্তু এইটাই। এখন যদি ৮৫ লেখা জার্সি ঢুকতে গেলে। সেও ক্যাপ্টেনের কাছ থেকে তুলনা করে ডানে গিয়ে ৭৮ এর সাথে তুলনা করে ৭৮ এর ডানপাশে দাঁড়িয়ে যাবে। তারপর ৭৫ যোগ দিতে চাইলে সে- প্রথমে ক্যাপ্টেনের কাছে গিয়ে, তারপর ৭৮ এর বামপাশে যাবে। তারপর ৬৫ এর চাইতে বড় হওয়ায় ৬৫ এর ডানপাশে গিয়ে দাঁড়িয়ে যাবে। এই একই সিস্টেমে ৩০ জার্সিওয়ালা কয়েদিও টিমে ঢুকে যেতে পারবে। সে ক্যাপ্টেনের বামে গিয়ে, ২৫ এর ডানে গিয়ে, ৩২ এর বামপাশে দাঁড়িয়ে যাবে।
+
+<img src="../../images/concepts/tree/bst5.png" alt="">
+
+					উপরের টিম একটা ট্রি ডাটা স্ট্রাকচার। যার রুটে বা মুলে আছে ক্যাপ্টেন। এবং খেয়াল করলে বুঝতে পারবি কোন নোডেরই দুইটার বেশি সন্তান নাই। তাইলে এই ট্রিটাকে পরিবার পরিকল্পনা গাছ বা বাইনারি ট্রি বলতে পারস। কারণ কোন নোডেরই দুইটার বেশি চাইল্ড নাই। আবার এই ট্রি এর আরেকটা স্পেশাল বৈশিষ্ট্য হচ্ছে এইটা "বামে কম, ডানে বেশি" ফর্মুলা অনুসরণ করছে। তাই এইটাকে একটা স্পেশাল বাইনারি ট্রি বলে। সেই স্পেশাল হওয়ায় এইটাকে প্রোগামিং এর ভাষায় বাইনারি সার্চ ট্রি (binary search tree) বলা হয়। কারণ এইটাতে কোন একটা জিনিস সার্চ করা বা খুঁজে বের করা অনেক সোজা।
+
+					ধরে তুই ৭৫ জার্সি ওয়ালা কয়েদিকে খুঁজে বের করতে চাস। তুই ক্যাপ্টেনের কাছে গেছস এবং দেখলি ক্যাপ্টেনের জার্সিতে ৪০ লেখা আছে। আর তুইতো জানস এই ট্রিতে বামে কম ডানে বেশি ফর্মুলা এপ্লাই করা আছে। তাই ৪০ এর বামপাশের যত নোড আছে সবগুলার (শুধু চাইল্ড বা সন্তান না। বরং সন্তানের নিচে নাতি, নাতির নিচের খুনতি) সবই ৪০ এর চাইতে ছোট। বিশ্বাস না হলে, ট্রি টার দিকে ভালো করে তাকিয়ে দেখ। তুই যেহেতু রুট বা ক্যাপ্টনের মানের চাহিতে বড় মান খুজতেছস- তাই রুটের বামপাশে খোঁজার একদম দরকার নাই। ডাইরেক্ট এক লাফে ডানপাশে চলে যাবি।
+
+					এইবার ক্যাপ্টেনের ডানপাশের দেখবি ৭৮। তুই যেহেতু ৭৫ খুজতেছস, সেটা ৭৮ এর চাইতে ছোট। তাই সেটা ৭৮ এর ডানপাশে থাকবে না। বরং বামপাশে থাকবে। তাই তুই নিশ্চিন্ত মনে ৭৮ এর বামপাশে হাঁটা শুরু করে দিলি। এখন ৭৮ এর বামপাশে আছে ৬৫। তুই জানস ৬৫ এর চাইতে ৭৫ বড়। তাই তুই ৬৫ এর ডানপাশে হাটা দিলি। আর এক কদম হাটা দিলেই ৭৫ এর দেখা পেয়ে যাবি।
+
+					এইবার গুণে দেখ উপরের ট্রি তে সর্বমোট ৯ টা নোড আছে। তবে ৭৫ খুঁজে বের করার জন্য তোকে ৯ টা নোডের সবগুলাতে গিয়ে চেক করা লাগে নাই।  বরং তুই চারটা নোড চেক করেই ৭৫ পেয়ে গেছস। চারটা নোড মানে তুই প্রথমে রুট বা ৪০ চেক করছস। তারপর ৭৮। এরপর ৬৫। তারপরেই ৭৫ কে পেয়ে গেছস। তারমানে বামে কম ডানে বেশি হইলে খুঁজে বের করা অনেক দ্রুত ও সহজ হয়। তাই এইটাকে বাইনারি সার্চ ট্রি বলে।
+
+					আজকের পর কেউ যদি জিজ্ঞেস করে বাইনারি সার্চ ট্রি কি জিনিস। এইটা কি খায় পিন্দে না মাথায় দেয়। তাহলে চোখ বন্ধ করে বলে দিবি- যে পরিবার পরিকল্পনা ট্রি বামে কম ডানে বেশি ফর্মুলা মেনে চলে, সেটাই বাইনারি সার্চ ট্রি।
+
+					প্রশ্ন: 30,85,65,24,12,23,56,78 সংখ্যাগুলো দিয়ে একটা বাইনারি সার্চ ট্রি বানিয়ে দেখা
+
     		</div>
     	</div>
         <div class="chapter-overall">
