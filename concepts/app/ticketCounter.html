@@ -5,7 +5,7 @@
 	<title>বিস্কুটের array খায় বিড়াল ছানা</title>
 	<link rel="shortcut icon" href="../images/favicon.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -19,7 +19,7 @@
           </button>
           <!-- <a class="navbar-brand" href="#">Project name</a> -->
           <div class="hablu-logo">
-              <a href="../index.html"><img src="../images/logo.png" height="50" width="60" alt=""></a>
+              <a href="../index.html"><img src="../../images/logo.png" height="50" width="60" alt=""></a>
           </div>
         </div>
         <div id="navbar" class="navbar-cullapse cullapse">
@@ -38,7 +38,76 @@
     			<h1><span class="chapter-title-rest">প্রোগ্রামিংয়ের </span><span class="chapter-title-main"> বলদ টু বস</span> <span class="chapter-title-rest"> </span></h1>
     		</div>
 				<div class="row">
-					<h1>Coming Soon</h1>
+					<h3>Detail Coming Soon</h3>
+					<pre><code>
+class BusCounter {
+		constructor(){
+				this.locations = [];
+				this.seats = {};
+				this.prices = {};
+		}
+
+		addDestination(dest){
+			this.locations.push(dest.location);
+			this.seats[dest.location] = dest.seats;
+			this.prices [dest.location] = dest.price;
+		}
+
+		isSeatAvailable(location){
+				var index = this.locations.indexOf(location);
+				if(index == -1) {
+						return false;
+				}
+				else {
+							var available = this.seats[location];
+							if(available > 0) {
+								return true;
+							}
+							else {
+								return false;
+							}
+				}
+		}
+
+		buyTicket(location, money){
+			var available = this.isSeatAvailable(location);
+			if(available){
+				var price = this.prices[location];
+				if(money < price){
+						console.log("Give more money please");
+				}
+				else {
+					this.seats[location] = this.seats[location] - 1;
+					console.log("here is the ticket for", location);
+					var returnAmount = money - price;
+					console.log("you will get back", returnAmount);
+				}
+			}
+		}
+}
+
+
+class Destination {
+		constructor(location, seats, price){
+				this.location = location;
+				this.seats = seats;
+				this.price = price;
+		}
+}
+
+var hanifPoribohon;
+function main() {
+		hanifPoribohon = new BusCounter();
+
+		var khulna = new Destination("khulna", 50, 1200);
+		hanifPoribohon.addDestination(khulna);
+
+		var rangpur = new Destination("rangpur", 40, 1500);
+		hanifPoribohon.addDestination(rangpur);
+
+}
+main();
+					</code></pre>
 					<ul>
 						<li><a href="storeManager.html">Store Manager</a></li>
 						<li><a href="GarageAccounting.html">Garage Accounting</a></li>
