@@ -1,127 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>প্রোগ্রাম খায়, পিন্দে না মাথায় দেয়</title>
-	<link rel="shortcut icon" href="../images/favicon.png" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <title> Dictionary | Question</title>
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="../css/sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/user.css">
 </head>
+
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle cullapsed" data-toggle="cullapse" data-target="#navbar" aria-expanded="false" aria-contruls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- <a class="navbar-brand" href="#">Project name</a> -->
-          <div class="hablu-logo">
-              <a href="../index.html"><img src="../images/logo.png" height="50" width="60" alt=""></a>
-          </div>
-        </div>
-        <div id="navbar" class="navbar-cullapse cullapse">
-          <ul class="nav navbar-nav">
-            <li><a href="../index.html">Home</a></li>
-						<li><a href="../">প্রোগ্রামিং কনসেপ্ট</a></li>
-						<li class="active"><a href="index.html">ডিকশনারি</a></li>
-            <li><a href="index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
-            <li class="active"><a href="">হাবলু প্রশ্ন</a></li>
-            <li><a href="../jkr/index.html">About Jhankar</a></li>
-          </ul>
-        </div><!--/.nav-cullapse -->
-      </div>
-    </nav>
     <div class="container">
-    	<div class="jumbotron">
-    		<div class="row text-center chapter-title">
-    			<h1><span class="chapter-title-main">প্রোগ্রাম</span> <span class="chapter-title-rest">খায়, পিন্দে না মাথায় দেয়</span></h1>
-    		</div>
-            <div class="row">
-               <div class="chapter-summary">
-                   <p class="summary-text"></p>
-               </div>
-               <div class="chapter-one-line">
-                   <p>লিটন ভাইয়ের চা বানানোই একটা প্রোগ্রাম।</p>
-               </div>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand navbar-link" href="../"><img src="../images/logo.png"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+                        <li role="presentation"><a href="index.html">Home </a></li>
+                        <li role="presentation"><a href="../basic/">হাবলু প্রশ্ন</a></li>
+                        <li class="active" role="presentation"><a href="index.html">বলদ প্রশ্ন</a></li>
+                        <li role="presentation"><a href="concepts/">প্রোগ্রামিং কনসেপ্ট</a></li>
+                        <li role="presentation"><a href="../jkr/">ঝংকার</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="row">
-                <div class="chapter-link-text">
-                    <div class="text-center">
-                        <img src="../images/basic/kodur.png" height="200" width="400" alt="">
-                        <p>এই চ্যাপ্টারের হিজিবিজি মার্কা প্রশ্ন দেখে তোর মাথা ঘুরে অজ্ঞান হওয়ার আগে তিব্বত কদুর তেল দিয়ে নে।</p>
+        </nav>
+	</div>
+
+	<div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="index.html">প্রোগ্রামিংয়ের বলদ টু বস</a></li>
+                <li><a href="dataStructure.html">Data structure-এর লাল সুতা</a></li>
+                <li><a class="active" href="stack.html">খড়ের stack এ মারে গুঁতা</a></li>
+                <li><a href="queue.html">Queue-এর ঠাসায় ছিঁড়ে জুতা</a></li>
+                <br>
+                <li><a href="object.html">কাক object-এর প্রেমের জোড়া </a></li>
+                <li><a href="class.html">Class-এর নাকে উঠছে ফোঁড়া</a></li>
+                <br>
+                <li><a href="dictionary.html">Hash table-এ নাচে মিলা </a></li>
+                <li><a href="linkedList.html">Linked List-এর প্যান্ট ঢিলা</a></li>
+                <br>
+                <li><a href="search.html">Search করলে আমের আঁটি </a></li>
+                <li><a href="sort.html">ভেঙে যাবে sort-এর বাটি</a></li>
+                <br>
+                <li><a href="oop.html">OOP-এর বেয়াইন কোলা ব্যাঙ</a></li>
+                <li><a href="tree.html">Tree তে উঠে ভাঙছে ঠ্যাঙ</a></li>
+                <br>
+                <li><a href="process.html">সাহেব হবে, পুরান ভোদাই</a></li>
+                <li><a href="app.html">অ্যাপ বানিয়ে করবে বড়াই</a></li>
+                <li><a href="next.html">চাকরি এসে ধরবে জড়াই</a></li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+					    <a class="btn btn-toggle" id="menu-toggle">নিজে নিজে কর</a>
+                        <h3>stack মানে শীতের জামাকাপড় গায়ে দেওয়া</h3>
+                        <small>প্রত্যেকটা প্রশ্নের উত্তর নিচে কমেন্ট কর। প্রথমে নিজে নিজে চেষ্টা কর। না পারলে অন্যদের কমেন্ট দেখে চেষ্টা কর। সেটাও করতে না পারলে, কেনো পরতেছস না, সেটা কমেন্ট কর।</small>
                     </div>
+				</div>
+				<div class="row">
+					<div class="question-collection">
+						<section class="question-holder">
+							<p><span class="question-number">২.১ : </span>XXX </p>
+							<div class="fb-comments" width="100%" data-href="http://habluderadda.com/bolod/XXX.html#question1" data-numposts="5"></div>
+						</section>
+						<section class="question-holder">
+							<p><span class="question-number">১.২: </span>XXX</p>
+							<div class="fb-comments" width="100%" data-href="http://habluderadda.com/bolod/XXX.html#question2" data-numposts="5"></div>
+						</section>
+						<section class="question-holder">
+							<p><span class="question-number">১.৩: </span> XXX</p>
+							<div class="fb-comments" width="100%" data-href="http://habluderadda.com/bolod/XXX.html#question3" data-numposts="5"></div>
+						</section>
+					</div>
                 </div>
             </div>
-    		<div class="row">
-                <div class="chapter-nije-nije">
-                    <p class="nije-nije">নিজে নিজে কর</p>
+		  <div class="footer-spacing">
+		  </div>
+          <footer class="site-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <small class="text-left">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে&nbsp;<a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয় </small></div>
                 </div>
-                <small class="question-help">প্রত্যেকটা প্রশ্নের উত্তর নিচে কমেন্ট কর। প্রথমে নিজে নিজে চেষ্টা কর। না পারলে অন্যদের কমেন্ট দেখে চেষ্টা কর। সেটাও করতে না পারলে, কেনো পরতেছস না, সেটা কমেন্ট কর। </small>
-                <div class="question-collection">
-                    <section class="question-holder">
-                        <p><span class="question-number">১.১:</span> দৈনন্দিন জীবনে যেসব কাজ করস, সেখান থেকে এমন একটা কাজের নাম লেখ, যেটা একই পদ্ধতিতে বারবার করা যায়। ভাত খাওয়া, দাঁত ব্রাশ করা, রিক্সায় ওঠা বাদ দিয়ে অন্য একটা লিখ।</p>
-                        <div class="fb-comments" width="100%" data-href="http://habluderadda.com/basic/program.html#question1" data-numposts="5"></div>
-                    </section>
-                    <section class="question-holder">
-                        <p><span class="question-number">১.২:</span> ক্রিকেট খেলায় আম্পায়ার যেসব কাজ করে, সেখান থেকে এমন একটা কাজের নাম বল যেটা আম্পায়ার একই পদ্ধতিতে বারবার করে।</p>
-                        <div class="fb-comments" width="100%" data-href="http://habluderadda.com/basic/program.html#question2" data-numposts="5"></div>
-                    </section>
-                    <section class="question-holder">
-                        <p><span class="question-number">১.৩:</span> মোবাইল ফোন দিয়ে একই পদ্ধতিতে বার বার করা যায় এমন আরেকটা কাজের নাম লিখ। অবশ্যই কল করা ছাড়া অন্য আরেকটা কাজের নাম লিখবি।</p>
-                        <div class="fb-comments" width="100%" data-href="http://habluderadda.com/basic/program.html#question3" data-numposts="5"></div>
-                    </section>
-                </div>
-                <div class="other-chapters">
-                    <button id="otherChapterLink" type="button" class="toggleExample btn btn-primary">Show other chapter link</button>
-                    <div id="otherChapterLinkExample" class="hide bg-success">
-                        <ul>
-                            <li><a href="program.html">প্রোগ্রাম খায়, পরে না মাথায় দেয়?</a></li>
-                            <li><a href="variable.html">variable বুঝলে, হবে না পয়সা ব্যয়</a></li>
-                            <li><a href="practice.html">প্রোগ্রামিং প্র্যাকটিস করে রাত পোহালে</a></li>
-                            <li><a href="string.html">string এর তালে নাচবে গরু গোয়ালে</a></li>
-                            <br>
-                            <li><a href="ifelse.html">নানীর if-else বুঝে লাফায় নানা </a></li>
-                            <li><a href="array.html">বিস্কুটের array খায় বিড়ালছানা</a></li>
-                            <li><a href="while.html">while লুপকে করলে মালিশ</a></li>
-                            <li><a href="for.html">for লুপ ডাকবে সালিশ</a></li>
-                            <br>
-                            <li><a href="propose.html">প্রেমের প্রপোজ করলে গোটা দশ হালি</a></li>
-                            <li><a href="function.html">function বুঝবে না- কোনটা বউ কোনটা শালী</a></li>
-                            <li><a href="dhar.html">দ্বিগুণ টাকা ধার করে পালালে</a></li>
-                            <li><a href="language.html">প্রোগ্রামিং ল্যাঙ্গুয়েজ খুঁজবে মামা শিয়ালে</a></li>
-                            <li><a href="next.html">হাসবে হাবলু বিজয় মিছিলে</a></li>
-                        </ul>
-                    </div>
-                </div>
-    		</div>
-    	</div>
-        <div class="chapter-overall">
-            <div>
-                <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
-                <hr>
             </div>
+          </footer>
         </div>
     </div>
-    <div id="fb-root"></div>
-    <script src="../scripts/toggleExample.js"></script>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-40601505-2', 'auto');
-    ga('send', 'pageview');
-    </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/fb-ga.js"></script>
 </body>
 </html>
