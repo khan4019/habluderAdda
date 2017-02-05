@@ -194,19 +194,6 @@ blockquote{
   margin-top:15px;
 }
 
-.techcare{
-  color:#21a64a;
-  font-size:17px;
-}
-
-.techcare a{
-  color:#21a64a;
-}
-
-.techcare a:hover{
-  color:#21a64a;
-  text-decoration: none;
-}
 
 form{
   margin-top:100px;
@@ -295,4 +282,3 @@ button.navbar-toggle.collapsed{
 h3.text-center{
   margin-bottom:50px;
 }
-
