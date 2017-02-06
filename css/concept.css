@@ -212,7 +212,7 @@ button.navbar-toggle.collapsed{
 }
 
 h3.text-center{
-  margin: 0 5% 4% 5%;
+  margin: 5%;
 }
 
 h2.main.txt{
@@ -229,20 +229,17 @@ card-head{
 }
 
 .text-center.card-head{
-  color:#fff;
+  color:#fff !important;
 }
 
 ul.topics{
   list-style-position:inside;
   text-align:left;
   padding:0;
-  font-weight:bold;
-  font-size:18px;
-  color:#95989a;
 }
 .topic-items{
-  margin-left:20%;
-  margin-right:20%;
+  margin-left:20px;
+  margin-right:20px;
 }
 h3.text-center.concept-content{
   color:#95989a;
@@ -332,7 +329,7 @@ button.btn.btn-warning.btn-lg{
 }
 
 div.card.registration{
-  margin-top:120px;
+  margin-top:10px;
 }
 
 h2.text-center.registration.title{
