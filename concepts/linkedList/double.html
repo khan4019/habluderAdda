@@ -40,18 +40,21 @@
     		<div class="row text-center chapter-title">
     			<h1><span class="chapter-title-rest">Doubly</span><span class="chapter-title-main"> Linked List</span> <span class="chapter-title-rest"> </span></h1>
     		</div>
-				<div class="row">
-					<p>খুব শিগ্রই বাংলায় সহজ করে লেখা হবে</p>
-					<p>তখন ইমেইলে আপডেট পেতে রেজিস্ট্রেশন করো: <a href="registration/">এই খানে</a></p>
-			 <p>for doubly linked list there will be a link backward to the previous element. Your node object will look like</p>
-			 <pre><code>
+				</div>
+
+
+        <div class="chapter-overall">
+					<div class="">
+						<p>খুব শিগ্রই বাংলায় সহজ করে লেখা হবে, তখন ইমেইলে আপডেট পেতে রেজিস্ট্রেশন করো: <a href="registration/">এই খানে</a></p>
+				 <p>for doubly linked list there will be a link backward to the previous element. Your node object will look like</p>
+<pre><code>
 var node = {
  value: val,
  next: null,
  previous: null
 }
-			 </code></pre>
-			 <pre><code>
+</code></pre>
+<pre><code>
 function DoublyLinkedList(){
 	this.head = null;
 }
@@ -71,46 +74,43 @@ DoublyLinkedList.prototype.push = function(val){
 		current.next = {value: val, previous:current, next:null}
  }
 }
-			 </code></pre>
-			 <pre><code>
-//test at least once
+</code></pre>
+<pre><code>
 var dll = new DoublyLinkedList();
 dll.push(2);
 dll.push(3);
 dll.push(4);
 dll.push(5);
-//trust me it works
-			 </code></pre>
-			 <p>get most of it from: <a href="https://github.com/nzakas/computer-science-in-javascript/blob/master/data-structures/doubly-linked-list/doubly-linked-list.js">doubly linked list</a></p>
-		 </div>
-				</div>
-				<div class="row">
-					<h2>Alternative implementation</h2>
+</code></pre>
+				 <p class="hide">get most of it from: <a href="https://github.com/nzakas/computer-science-in-javascript/blob/master/data-structures/doubly-linked-list/doubly-linked-list.js">doubly linked list</a></p>
+			 </div>
+			 <div class="">
+				 <h2>Alternative implementation</h2>
 <pre><code>
 //code
 class Node{
-  constructor(value){
-    this.value = value;
-    this.left = undefined;
-    this.right = undefined;
-  }
+ constructor(value){
+	 this.value = value;
+	 this.left = undefined;
+	 this.right = undefined;
+ }
 }
 
 class LinkedList {
-  constructor(value) {
-    this.head = new Node(value);
-  }
-  add(value){
-      var newNode = new Node(value);
-      var currentNode = this.head;
-      var previousNode = currentNode;
-      while(currentNode.right != undefined){
-        previousNode = currentNode;
-        currentNode = currentNode.right;
-      }
-      newNode.left = previousNode;
-      currentNode.right = newNode;
-  }
+ constructor(value) {
+	 this.head = new Node(value);
+ }
+ add(value){
+		 var newNode = new Node(value);
+		 var currentNode = this.head;
+		 var previousNode = currentNode;
+		 while(currentNode.right != undefined){
+			 previousNode = currentNode;
+			 currentNode = currentNode.right;
+		 }
+		 newNode.left = previousNode;
+		 currentNode.right = newNode;
+ }
 }
 
 
@@ -123,36 +123,36 @@ console.log(mBondon)
 
 //count
 class Node{
-  constructor(value){
-    this.value = value;
-    this.previous = undefined;
-    this.next = undefined;
-  }
+ constructor(value){
+	 this.value = value;
+	 this.previous = undefined;
+	 this.next = undefined;
+ }
 }
 
 class LinkedList {
-  constructor(head) {
-    this.head = head;
-  }
-  add(node){
-      var current = this.head;
-      var previous = current;
-      while(current.next){
-        previous = current;
-        current = current.next;
-      }
-      node.previous = previous;
-      current.next = node;
-  }
-  nodeCount(){
-    var current = this.head;
-    var count = 1;
-    while(current.next){
-      count = count + 1;
-      current = current.next;
-    }
-    return count;
-  }
+ constructor(head) {
+	 this.head = head;
+ }
+ add(node){
+		 var current = this.head;
+		 var previous = current;
+		 while(current.next){
+			 previous = current;
+			 current = current.next;
+		 }
+		 node.previous = previous;
+		 current.next = node;
+ }
+ nodeCount(){
+	 var current = this.head;
+	 var count = 1;
+	 while(current.next){
+		 count = count + 1;
+		 current = current.next;
+	 }
+	 return count;
+ }
 
 }
 
@@ -175,35 +175,34 @@ mBondon.nodeCount();
 //remove a node by text
 
 </code></pre>
-//TODO
-//insert node in a particular position
-Circular linked list:
-Cricket khela or football khela
-Cricket khelar somoy winning lapse
+<p>TODO: insert node in a particular position</p>
+<p><strong>Advantages</strong></p>
+<p>Linked lists are a dynamic data structure, which can grow and be pruned, allocating and deallocating memory while the program is running.</p>
+<p>Insertion and deletion node operations are easily implemented in a linked list.</p>
+<p>Linear data structures such as stacks and queues can be implemented using a linked list.
+They can reduce access time and may expand in real time without memory overhead.</p>
+<p><strong>Disadvantages</strong></p>
+<p>They use more memory than arrays because of the storage used by their pointers.</p>
+<p>Nodes in a linked list must be read in order from the beginning as linked lists are inherently sequential access.</p>
+<p>Nodes are stored incontiguously, greatly increasing the time required to access individual elements within the list, especially with a CPU cache.</p>
+<p>Difficulties arise in linked lists when it comes to reverse traversing. For instance, singly linked lists are cumbersome to navigate backwards[1] and while doubly linked lists are somewhat easier to read, memory is wasted in allocating space for a back-pointer.</p>
 
-Ultimate link: Move it to habluder adda http://khan4019.github.io/front-end-Interview-Questions/linkedList.html#doublyLinkedList
-Advantages
-Linked lists are a dynamic data structure, which can grow and be pruned, allocating and deallocating memory while the program is running.
-Insertion and deletion node operations are easily implemented in a linked list.
-Linear data structures such as stacks and queues can be implemented using a linked list.
-They can reduce access time and may expand in real time without memory overhead.
-Disadvantages
-They use more memory than arrays because of the storage used by their pointers.
-Nodes in a linked list must be read in order from the beginning as linked lists are inherently sequential access.
-Nodes are stored incontiguously, greatly increasing the time required to access individual elements within the list, especially with a CPU cache.
-Difficulties arise in linked lists when it comes to reverse traversing. For instance, singly linked lists are cumbersome to navigate backwards[1] and while doubly linked lists are somewhat easier to read, memory is wasted in allocating space for a back-pointer.
-				</div>
-    		<div class="row">
-                <p><a href="single.html">Singly Linked List</a></p>
-                <p><a href="circular.html">Circular Linked List</a></p>
-    		</div>
-    	</div>
-        <div class="chapter-overall">
+
+
+
+
+
+			 </div>
+			 <div class="">
+							 <p><a href="single.html">Singly Linked List</a></p>
+							 <p><a href="circular.html">Circular Linked List</a></p>
+			 </div>
             <div>
                 <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
                 <hr>
             </div>
         </div>
+				</div>
     </div>
     <div id="fb-root"></div>
     <script src="../scripts/toggleExample.js"></script>

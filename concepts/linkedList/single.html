@@ -40,112 +40,105 @@
     		<div class="row text-center chapter-title">
     			<h1><span class="chapter-title-rest">Singly</span><span class="chapter-title-main"> Linked List</span> <span class="chapter-title-rest"> </span></h1>
     		</div>
-				<div class="row">
-					<p>খুব শিগ্রই বাংলায় সহজ করে লেখা হবে</p>
-					<p>তখন ইমেইলে আপডেট পেতে রেজিস্ট্রেশন করো: <a href="registration/">এই খানে</a></p>
-					<div>
-						এই যে "তোমার ডান হাত খালি আছে কিনা?" এই কথাটার উত্তর যতক্ষণ পর্যন্ত খালি নাই ততক্ষন পর্যন্ত জিজ্ঞেস করতে থাকে। তারমানে এই জিজ্ঞেস করার কাজ বারবার করে। আর কোন একটা কাজ বারবার করলে আমরা লুপ চালাই দেই। আরেকটু খেয়াল করলে দেখবি ততক্ষন করা লাগবে যতক্ষণ পর্যন্ত ডান হাত খালি না পায়। আগেই বলছিলাম লুপে কতবার চলবে জিজ্ঞেস করলে যদি উত্তর হয় কোন নিদৃষ্ট সংখ্যা তাহলে for লুপ চাপাবি। আর যদি সংখ্যা না হয়ে অন্য কোন শর্ত হয় তাহলে while লুপ। এইখানে যেহেতু ডানহাত খালি না পাওয়া পর্যন্ত লুপ চালাতে হবে তাই এইখানে একটা while লুপ চালাবি।
 
-ডান হাত খালি না পাওয়া পর্যন্ত এই while লুপ চলবে। সেটাকে ঘুরিয়ে বললে বলা যায়, যতক্ষণ পর্যন্ত ডানডানপাশে কেউ থাকবে না, ততক্ষণ পর্যন্ত while লুপ চলতে থাকবে। এই ডান হাতে কেউ থাকা মানে। ডান হাত খালি না থাকা। আর প্রোগ্রমিং এ কোনকিছু খালি থাকা মানে undefined হওয়া। এখন এই কথাটাকে ঘুরিয়ে বললে বলা যায় খালি না থাকার মানে undefined না হওয়া।
-
-এখন কোন একটা নোড এর ডান হাত খালি না হওয়ার মানে, ডান হাত undefined হবে না। আর undefined না হওয়াটাকে প্রোগ্রামিং এর ভাষায় লিখে != undefined । এখন ধর তুই যেই নোডকে জিজ্ঞেস করতেছস- "ডান হাত খালি আছে?", তার নাম currentNode। অর্থাৎ সেটা currentNode অবজেক্ট। আর কোন অবজেক্টের right প্রপার্টি এর মান জানার ডট দিয়ে কট করে ফেলবি। তাই currentNode.right লিখে এর ডান হাত এর মান জানা যাবে। অর্থাৎ ডান হাত খালি না সেখানে কিছু আছে জানা যাবে। আর খালি না থাকা যাচাই করার জন্য currentNode.right != undefined লিখবি। ।
-
-//optional illustration: going and asking one standing
-
-একটু আগে যে তুই জিজ্ঞেস করার কাজটা প্রথেমই আলামকে তারপর বালামকে তারপর সালামকে করতেছিলি। অথাৎ জিজ্ঞেস করার কাজটা বারবার করতেছিলি। সেই কথাটাকেই ঘুরিয়ে বললে বলা যায়- একটু পর কাকে জিজ্ঞেস করবি সেই মানুষটাকে চেইঞ্জ করে ফেলতি। আর তুই যেহেতু while লুপের শর্তে গিয়ে currentNode এর right এ কোন নোড আছে কিনা যাচাই করতেছস। তাই যদি ডানপাশে কেউ থাকে, সেটা while লুপের ভিতরে গিয়ে  ডানপাশের নোড টাই currentNode এ সেট করে ফেল। যাতে পরবর্তীতে সেটার ডানপাশে কেউ আছে কিনা চেক করতে পারস। তাই while লুপের ভিতরে লিখবি currentNode = currentNode.right;
-
-সোজা কোথায় বললে, যখন যাকে জিজ্ঞেস করবি সেটাই currentNode হবে। current একটা ইংরেজি শব্দ। এইটার মানে বর্তমান। আর কারেন্ট নোড মানে বর্তমান নোড। আর লুপের ভিতরে currentNode এর মানটা চেইঞ্জ করে নিতে হবে। চেইঞ্জ না করে নিলে, যতবার লুপ চালাবি, ততবার currentNode এর মান একই থাকবে। এবং ততবার সেই একই ব্যক্তিকে জিজ্ঞেস করবি তার ডান হাত খালি আছে কিনা। এটা করলে তুই জিজ্ঞেস করে করে সামনে আগাইতে পারবি না। সামনে আগাইতে হইলে প্রত্যেকবার লুপ চালানোর সময় currentNode এর মান চেইঞ্জ করে নিবি। এবং currentNode এর নতুন মান হবে, তার right প্রপার্টি এর মান। তাহলে পরেরবার লুপ চলার সময় ডানপাশের জনকে জিজ্ঞেস করবে "তোমার ডান হাত খালি আছে?"।
-
-যখন ডানপাশে আর কোন নোড থাকবে না। তখন currentNode এর right প্রপার্টিতে কোন ভ্যালু না থাকলে। অর্থাৎ currentNode এর ডানপাশে কেউ নাই। অর্থাৎ ডানপাশর জায়গা খালি। আর ডানপাশ খালি হলে while লুপের শর্ত মিথ্যা হবে। সেকারণে while লুপ আর চলবে না। অর্থাৎ while লুপ শেষ হয়ে যাবে। তাই while লুপের শেষে currentNode এর ডানপাশে চুপটি করে newNode কে বসায় দিবি। ডানপাশে newNode বসায় দেয়া মানে, currentNode এর right প্রপার্টি এর মান হবে newNode। সেটা করার জন্য currentNode.right লিখে সমান চিহ্ন দিয়ে newNode লিখে দিবি। তাহলেই তোর কাজ শেষ। এখন পুরা নোড এবং LinkedList ক্লাস দেখতে চাইলে সেটা নিচের মতো হবে।
-
-<pre><code>
-	class Node{
-	 constructor(value){
-	   this.value = value;
-	   this.right = undefined;
-	 }
-	}
-
-	class LinkedList {
-	 constructor(value) {
-	   this.head = new Node(value);
-	 }
-	 add(newNode){
-	    var currentNode = this.head;
-	    while(currentNode.right != undefined){
-	       currentNode = currentNode.right;
-	     }
-	     currentNode.right = newNode;
-	 }
-	}
-</code></pre>
-
-এখন এই LinkedList ক্লাস ব্যবহার করে আগের মতো bondon নামে একটা লিংকডলিস্ট বানা। তারপর সেখানে আমাদের প্যান্ট ঢিলা কেনো কতৃপক্ষ জবাব চাই যোগ কর নিচের মতো করে।
-
-<pre><code>
-	var headNode = new Node(“amader”);
-	var manobBondon = new LinkedList("amader");
-
-	var pantNode = new Node(“pant”);
-	manobBondon.add(pantNode);
-
-	var dhilaNode = new Node(“dhila”);
-	manobBondon.add(dhilaNode);
-
-	var kenoNode = new Node(“keno”);
-	manobBondon.add(kenoNode);
-
-	var kotripokkhoNode = new Node(“kotripokkho”);
-	manobBondon.add(kotripokkhoNode);
-
-	var jobabNode = new Node(“jobab”);
-	manobBondon.add(jobabNode);
-
-	var chaiNode = new Node(“chai”);
-	manobBondon.add(chaiNode);
-</code></pre>
-
-এখন পুরা manobBondon নামক লিংকডলিস্ট আউটপুট হিসেবে দেখতে চাইলে। সেটাকে console.log(manobBondon) করে দিবি। তখন নিচের মতো আউটপুট দেখতে পাবি। যেখানে হেড এর মধ্যে আছে আমাদের তারপর একটা একটা করে ডানপাশে (right) এ যাইতে থাকলে বাকি নোড গুলি দেখতে পাবি।
-
-<pre><code>
-	{
-	 "head": {
-	   "value": "amader",
-	   "right": {
-	     "value": "pant",
-	     "right": {
-	       "value": "dhila",
-	       "right": {
-	         "value": "keno",
-	         "right": {
-	           "value": "kortipokkho",
-	           "right": {
-	             "value": "jobab",
-	             "right": {
-	               "value": "chai"
-	             }
-	           }
-	         }
-	       }
-	     }
-	   }
-	 }
-	}
-</code></pre>
-
-এতক্ষন যে মানববন্ধন ছিলো সেটাতে এক হাত দিয়ে প্যান্ট ধরা ছিল। বাকি আরেক হাত দিয়ে ডানপাশের জনকে ধরে রাখছে। যেহেতু এক হাত দিয়ে ধরে রাখছে বা এক হাত দিয়ে লিংকড হইছে তাই এই লিংকড লিষ্টকে বলা হয় singly Linked List। কারণ লিংক একটা। আর যদি কিছুদিন পরে প্যান্ট ঢিলা পার্টির প্যান্ট টাইট হয়ে যায় এবং তারপরেও মানববন্ধন করতে আসে। তখন আর তাদের এক হাত দিয়ে প্যান্ট ধরা লাগবে না। তখন হয়তো বাম হাত দিয়ে বাম পাশের জনকে আর ডান হাত দিয়ে ডান পাশের জনকে ধরবে। গোল্লাছুট খেলা যদি দেখে থাকস সেখানেও দুই হাত দিয়ে দুই পাশের দুইজনকে ধরা হয়। যখন দুই হাত দিয়ে ধরা হয় বা দুই হাত দিয়ে লিংক করা হয়। তখন লিংক হয় দুইটা। তাই দুই হাত দিয়ে লিংক করা লিংকড লিষ্ট কে বলা হয় doubly linked লিষ্ট
-
-					</div>
-				</div>
-    		<div class="row">
-					<p><a href="double.html">Doulby Linked list</a></p>
-					<p><a href="circular.html">Circular Linked List</a></p>
-    		</div>
-				<div>
-					<p>Linked List realted programming problems are: <a href="http://khan4019.github.io/front-end-Interview-Questions/linkedList.html">here</a></p>
-				</div>
     	</div>
         <div class="chapter-overall">
+					<div class="">
+						<p>প্রোগ্রামিংয়ের বলদ টু বস বইয়ের লিংকড লিস্ট চ্যাপ্টার পড়ার পর। নিচের অংশটুকু পড়লে বুঝতে পারবে। (নিচের অংশ এখনো ফাইনাল করা হয়নি। টুকটাক ভুল থাকতে পারে। )</p>
+						<div>
+							<p>এই যে "তোমার বাম হাত খালি আছে কিনা?" এই কথাটার উত্তর যতক্ষণ পর্যন্ত খালি নাই ততক্ষন পর্যন্ত জিজ্ঞেস করতে থাকে। তারমানে এই জিজ্ঞেস করার কাজ বারবার করে। আর কোন একটা কাজ বারবার করলে আমরা লুপ চালাই দেই। আরেকটু খেয়াল করলে দেখবি ততক্ষন করা লাগবে যতক্ষণ পর্যন্ত বাম হাত খালি না পায়। আগেই বলছিলাম লুপে কতবার চলবে জিজ্ঞেস করলে যদি উত্তর হয় কোন নিদৃষ্ট সংখ্যা তাহলে for লুপ চাপাবি। আর যদি সংখ্যা না হয়ে অন্য কোন শর্ত হয় তাহলে while লুপ। এইখানে যেহেতু বামহাত খালি না পাওয়া পর্যন্ত লুপ চালাতে হবে তাই এইখানে একটা while লুপ চালাবি।</p>
+							<p>বাম হাত খালি না পাওয়া পর্যন্ত এই while লুপ চলবে। সেটাকে ঘুরিয়ে বললে বলা যায়, যতক্ষণ পর্যন্ত বামবামপাশে কেউ থাকবে না, ততক্ষণ পর্যন্ত while লুপ চলতে থাকবে। এই বাম হাতে কেউ থাকা মানে। বাম হাত খালি না থাকা। আর প্রোগ্রমিং এ কোনকিছু খালি থাকা মানে undefined হওয়া। এখন এই কথাটাকে ঘুরিয়ে বললে বলা যায় খালি না থাকার মানে undefined না হওয়া।</p>
+							<p>	এখন কোন একটা নোড এর বাম হাত খালি না হওয়ার মানে, বাম হাত undefined হবে না। আর undefined না হওয়াটাকে প্রোগ্রামিং এর ভাষায় লিখে != undefined । এখন ধর তুই যেই নোডকে জিজ্ঞেস করতেছস- "বাম হাত খালি আছে?", তার নাম currentNode। অর্থাৎ সেটা currentNode অবজেক্ট। আর কোন অবজেক্টের right প্রপার্টি এর মান জানার ডট দিয়ে কট করে ফেলবি। তাই currentNode.right লিখে এর বাম হাত এর মান জানা যাবে। অর্থাৎ বাম হাত খালি না সেখানে কিছু আছে জানা যাবে। আর খালি না থাকা যাচাই করার জন্য currentNode.right != undefined লিখবি। ।</p>
+							<p>একটু আগে যে তুই জিজ্ঞেস করার কাজটা প্রথেমই আলামকে তারপর বালামকে তারপর সালামকে করতেছিলি। অথাৎ জিজ্ঞেস করার কাজটা বারবার করতেছিলি। সেই কথাটাকেই ঘুরিয়ে বললে বলা যায়- একটু পর কাকে জিজ্ঞেস করবি সেই মানুষটাকে চেইঞ্জ করে ফেলতি। আর তুই যেহেতু while লুপের শর্তে গিয়ে currentNode এর right এ কোন নোড আছে কিনা যাচাই করতেছস। তাই যদি বামপাশে কেউ থাকে, সেটা while লুপের ভিতরে গিয়ে  বামপাশের নোড টাই currentNode এ সেট করে ফেল। যাতে পরবর্তীতে সেটার বামপাশে কেউ আছে কিনা চেক করতে পারস। তাই while লুপের ভিতরে লিখবি currentNode = currentNode.right;</p>
+							<p>সোজা কোথায় বললে, যখন যাকে জিজ্ঞেস করবি সেটাই currentNode হবে। current একটা ইংরেজি শব্দ। এইটার মানে বর্তমান। আর কারেন্ট নোড মানে বর্তমান নোড। আর লুপের ভিতরে currentNode এর মানটা চেইঞ্জ করে নিতে হবে। চেইঞ্জ না করে নিলে, যতবার লুপ চালাবি, ততবার currentNode এর মান একই থাকবে। এবং ততবার সেই একই ব্যক্তিকে জিজ্ঞেস করবি তার বাম হাত খালি আছে কিনা। এটা করলে তুই জিজ্ঞেস করে করে সামনে আগাইতে পারবি না। সামনে আগাইতে হইলে প্রত্যেকবার লুপ চালানোর সময় currentNode এর মান চেইঞ্জ করে নিবি। এবং currentNode এর নতুন মান হবে, তার right প্রপার্টি এর মান। তাহলে পরেরবার লুপ চলার সময় বামপাশের জনকে জিজ্ঞেস করবে "তোমার বাম হাত খালি আছে?"।</p>
+							<p>	যখন বামপাশে আর কোন নোড থাকবে না। তখন currentNode এর right প্রপার্টিতে কোন ভ্যালু না থাকলে। অর্থাৎ currentNode এর বামপাশে কেউ নাই। অর্থাৎ বামপাশর জায়গা খালি। আর বামপাশ খালি হলে while লুপের শর্ত মিথ্যা হবে। সেকারণে while লুপ আর চলবে না। অর্থাৎ while লুপ শেষ হয়ে যাবে। তাই while লুপের শেষে currentNode এর বামপাশে চুপটি করে newNode কে বসায় দিবি। বামপাশে newNode বসায় দেয়া মানে, currentNode এর right প্রপার্টি এর মান হবে newNode। সেটা করার জন্য currentNode.right লিখে সমান চিহ্ন দিয়ে newNode লিখে দিবি। তাহলেই তোর কাজ শেষ। এখন পুরা নোড এবং LinkedList ক্লাস দেখতে চাইলে সেটা নিচের মতো হবে।</p>
+
+<pre><code>
+class Node{
+ constructor(value){
+   this.value = value;
+   this.right = undefined;
+ }
+}
+
+class LinkedList {
+ constructor(value) {
+   this.head = new Node(value);
+ }
+ add(newNode){
+    var currentNode = this.head;
+    while(currentNode.right != undefined){
+       currentNode = currentNode.right;
+     }
+     currentNode.right = newNode;
+ }
+}
+</code></pre>
+
+	<p>এখন এই LinkedList ক্লাস ব্যবহার করে আগের মতো bondon নামে একটা লিংকডলিস্ট বানা। তারপর সেখানে আমাদের প্যান্ট ঢিলা কেনো কতৃপক্ষ জবাব চাই যোগ কর নিচের মতো করে।</p>
+
+<pre><code>
+var headNode = new Node(“amader”);
+var manobBondon = new LinkedList("amader");
+
+var pantNode = new Node(“pant”);
+manobBondon.add(pantNode);
+
+var dhilaNode = new Node(“dhila”);
+manobBondon.add(dhilaNode);
+
+var kenoNode = new Node(“keno”);
+manobBondon.add(kenoNode);
+
+var kotripokkhoNode = new Node(“kotripokkho”);
+manobBondon.add(kotripokkhoNode);
+
+var jobabNode = new Node(“jobab”);
+manobBondon.add(jobabNode);
+
+var chaiNode = new Node(“chai”);
+manobBondon.add(chaiNode);
+</code></pre>
+
+	<p>এখন পুরা manobBondon নামক লিংকডলিস্ট আউটপুট হিসেবে দেখতে চাইলে। সেটাকে console.log(manobBondon) করে দিবি। তখন নিচের মতো আউটপুট দেখতে পাবি। যেখানে হেড এর মধ্যে আছে আমাদের তারপর একটা একটা করে বামপাশে (right) এ যাইতে থাকলে বাকি নোড গুলি দেখতে পাবি।</p>
+
+<pre><code>
+{
+ "head": {
+   "value": "amader",
+   "right": {
+     "value": "pant",
+     "right": {
+       "value": "dhila",
+       "right": {
+         "value": "keno",
+         "right": {
+           "value": "kortipokkho",
+           "right": {
+             "value": "jobab",
+             "right": {
+               "value": "chai"
+             }
+           }
+         }
+       }
+     }
+   }
+ }
+}
+</code></pre>
+
+	<p>এতক্ষন যে মানববন্ধন ছিলো সেটাতে এক হাত দিয়ে প্যান্ট ধরা ছিল। বাকি আরেক হাত দিয়ে বামপাশের জনকে ধরে রাখছে। যেহেতু এক হাত দিয়ে ধরে রাখছে বা এক হাত দিয়ে লিংকড হইছে তাই এই লিংকড লিষ্টকে বলা হয় singly Linked List। কারণ লিংক একটা। আর যদি কিছুদিন পরে প্যান্ট ঢিলা পার্টির প্যান্ট টাইট হয়ে যায় এবং তারপরেও মানববন্ধন করতে আসে। তখন আর তাদের এক হাত দিয়ে প্যান্ট ধরা লাগবে না। তখন হয়তো বাম হাত দিয়ে বাম পাশের জনকে আর ডান হাত দিয়ে ডান পাশের জনকে ধরবে। গোল্লাছুট খেলা যদি দেখে থাকস সেখানেও দুই হাত দিয়ে দুই পাশের দুইজনকে ধরা হয়। যখন দুই হাত দিয়ে ধরা হয় বা দুই হাত দিয়ে লিংক করা হয়। তখন লিংক হয় দুইটা। তাই দুই হাত দিয়ে লিংক করা লিংকড লিষ্ট কে বলা হয় doubly linked লিষ্ট</p>
+
+						</div>
+					</div>
+	    		<div class="row">
+						<p><a href="double.html">Doulby Linked list</a></p>
+						<p><a href="circular.html">Circular Linked List</a></p>
+	    		</div>
+					<div>
+						<p>Linked List realted programming problems are: <a href="http://khan4019.github.io/front-end-Interview-Questions/linkedList.html">here</a></p>
+					</div>
             <div>
                 <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
                 <hr>
