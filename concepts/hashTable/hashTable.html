@@ -39,24 +39,54 @@
     		<div class="row text-center chapter-title">
     			<h1><span class="chapter-title-rest">Hash </span><span class="chapter-title-main"> Table</span> <span class="chapter-title-rest"> </span></h1>
     		</div>
-				<div class="row">
-					<h3>Coming Soon</h3>
-					<div>
-						<p> For now you can check the wikipedia about <a href="https://en.wikipedia.org/wiki/Hash_table">hash table</a></p>
-						<p>Watch this video made by someone else in english: <a href="https://www.youtube.com/watch?v=MfhjkfocRR0">Data Structure video</a> </p>
-					</div>
-				</div>
-    		<div class="row">
-                <p><a href="dictionary.html">Dictionary  সম্পর্কে আরো জানতে</a></p>
-    		</div>
     	</div>
+			<div class="row">
+
+			</div>
         <div class="chapter-overall">
-            <div>
-                <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
-                <hr>
-            </div>
+					<div class="">
+							<p>তুই তো ডিকশনারি সম্পর্কে জানস। সেখানে key থাকে। প্রত্যেকটা key এর সাথে সম্পর্কযুক্ত একটা করে value থাকে। যেমন তোর মোবাইলে, তোর বন্ধুদের নামের সাথে সম্পর্কযুক্ত   আর একটা হ্যাশ টেবিল</p>
+<pre><code>
+{
+	"butpar abir": 8801818777777,
+	"chikna abir": 8801717232323,
+	"hablu abir": 880155666666,
+	"motlu abir": 8801911111111
+}
+</code></pre>
+							<p>বা তোর ক্লাসের পোলাপানের রোল নম্বরের সাথে নামের একটা সম্পর্ক ছিলো। যাতে রোল নম্বর ধরে টান দিলে নাম জানা যায়। সেটা ছিল নিচের মতো। </p>
+<pre><code>
+{
+	1: "Masti Mizan",
+	2: "Pankhu  Parvej",
+	3: "Challu Sojib",
+	4: "Cool Kuddus"
+ }
+</code></pre>
+							<p>উপরের দুইটা ডিক্শনারির একটাতে key হিসেবে অনেকগুলা বর্ণ বা বর্ণের সমষ্টি ব্যবহার করা হইছে। আরেকটাতে key হিসেবে সংখ্যা ব্যবহার করা হইছে। এই দুইটার কোনটাতে key কি রকম হবে সেটা তুই ঠিক করে দিছস। একই নাম একাধিক থাকলে তুই একটু চেইঞ্জ করে ইউনিক বানিয়ে দিছস। </p>
+							<p>এই ইউনিক করার কাজটা তুই নিজে করার চাইতে যদি একটা ফাংশন লিখে করছ। তাহলে সেই ফাংশনকে বলা হবে হ্যাশ ফাংশন (hash function)</p>
+							<p>এই হ্যাশ ফাংশনের কাজ হবে- তোর  key যদি কঠিন কিছু হয় সেটাকে সিম্পল করে নেয়া। একই key যদি আগে যোগ করা হয়ে থাকে, তাহলে সেটাকে ইউনিক করে নেয়া। তাছাড়াও যাতে জিনিসগুলা রাখতে এবং খুঁজে বের করতে সুবিধা হয় যেজন্য ছোট এবং সহজ key বানায় দেয়াও হ্যাশ ফাংশনের কাজ।</p>
+							<p>এই হ্যাশ ফাংশনের কাজকে অনেক সময় হ্যাশিং করা বলে। তুই সহজে মনে রাখার জন্য মনে রাখবি হ্যাশ ফাংশনের কাজ হচ্ছে কেটেকুটে ইউনিক বানিয়ে হ্যারাসিং বা হ্যাশিং করা।</p>
+							<p>আর হ্যাশ ফাংশন ব্যবহার করে key বানিয়ে ডিকশনারিতে key-value রাখার পরে সেই ডিকশনারিকে হ্যাশ টেবিল বলে। আর সহজভাবে বলতে গেলে, হ্যাশ ফাংশন ব্যবহার করে, key-value সিস্টেমটাই হ্যাশ টেবিল।</p>
+							<p>আপাতত হ্যাশ ফাংশন ও হ্যাশটেবিল নাম দুইটা জেনে রাখ।</p>
+
+							<div class="hide">
+								<p>hash table in <a href="https://www.youtube.com/watch?v=B4vqVDeERhI">java</a></p>
+								<p> For now you can check the wikipedia about <a href="https://en.wikipedia.org/wiki/Hash_table">hash table</a></p>
+								<p>Watch this video made by someone else in english: <a href="https://www.youtube.com/watch?v=MfhjkfocRR0">Data Structure video</a> </p>
+							</div>
+
+					</div>
+					<div class="">
+									<p><a href="dictionary.html">বদল টু বস বইয়ে ডিকশনারি পড়ার পর, Dictionary  সম্পর্কে আরো জানতে</a></p>
+					</div>
         </div>
     </div>
+		<div class="container">
+			<div class="row">
+
+			</div>
+		</div>
     <div id="fb-root"></div>
     <script src="../scripts/toggleExample.js"></script>
     <script>
