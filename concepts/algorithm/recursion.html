@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Recursive Function</title>
+	<link rel="shortcut icon" href="../../images/favicon.png" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle cullapsed" data-toggle="cullapse" data-target="#navbar" aria-expanded="false" aria-contruls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Project name</a> -->
+          <div class="hablu-logo">
+              <a href="../index.html"><img src="../../images/logo.png" height="50" width="60" alt=""></a>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-cullapse cullapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li  class="active"><a href="index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
+            <li><a href="program.html">হাবলু প্রশ্ন</a></li>
+            <li><a href="../jkr/index.html">About Jhankar</a></li>
+          </ul>
+        </div><!--/.nav-cullapse -->
+      </div>
+    </nav>
+    <div class="container">
+    	<div class="jumbotron">
+    		<div class="row text-center chapter-title">
+    			<h1><span class="chapter-title-rest">Recursive</span><span class="chapter-title-main"> Function</span> <span class="chapter-title-rest"> </span></h1>
+    		</div>
+				<div class="row hide">
+					<p>খুব শিগ্রই বাংলায় সহজ করে লেখা হবে</p>
+					<p>তখন ইমেইলে আপডেট পেতে রেজিস্ট্রেশন করো: <a href="registration/">এই খানে</a></p>
+					<div class="">
+						<p><a href="https://www.go4expert.com/articles/beginners-guide-time-complexity-o-t29211/">easy and simple explanation</a></p>
+						<p>decent one: <a href="https://www.sitepoint.com/time-complexity-algorithms/">time complexity of algorithm</a></p>
+						<p>Reference: <a href="http://www.corejavainterviewquestions.com/idiots-guide-big-o/">Idiots guide to Big o notations</a></p>
+						<p><a href="http://algosaur.us/algorithmic-complexity/">Explain complexity</a></p>
+						<p>summary: big o cheatsheet: <a href="http://bigocheatsheet.com/">here</a></p>
+					</div>
+				</div>
+    		<div class="row">
+
+    		</div>
+    	</div>
+			<div>
+				<p>সহজ করে বলতে গেলে, কোন একটা ফাংশন যদি নিজেই নিজেকে কল করে সেটাই recursive function </p>
+				<p>ইংরেজি recursive এর বাংলা মানে হচ্ছে পুনরাবৃত্তি করা। repeat করা। ঘুরে ঘুরে একই জায়গায় ফেরত আসা। </p>
+				<p>যেমন ধর দুইটা সংখ্যা যোগ করার জন্য তুই নিচের মতো একটা ফাংশন লিখছস। যেটার নাম হচ্ছে যোগকর (joogKor) আর সেই ফাংশনে দুইটা ইনপুট নেয়া হচ্ছে- first ও second</p>
+				<p>তারপর 2 ও 3 যোগ করার জন্য ফাংশনের নিচে joogKor ফাংশনকে কল করে দিছস। নিচের মতো করে </p>
+				<pre><code>
+function joogKor(first, second){
+	var joogFol = first + second;
+	return joogFol;
+}
+
+joogKor(2,3);
+				</code></pre>
+				<p>  ধর তোর মাথা খারাপ হয়ে গেছে, তুই joogKor ফাংশনের ভিতরে return লেখা লাইনের আগে আবার joogKor ফাংশনকে কল করছস। অর্থাৎ ফাংশনের ভিতরের ভিতর থেকে সেই ফাংশনকেই আবার কল করছস। নিচের মতো করে। </p>
+				<pre><code>
+function joogKor(first, second){
+	var joogFol = first + second;
+	joogKor(first, second);
+	return joogFol;
+}
+
+joogKor(2,3);
+				</code></pre>
+				<p>এখন উপরের কোডের দিকে তাকা। দেখবি ফাংশনের ভিতর থেকে সেই ফাংশনকে আবার কল করা হয়েছে। </p>
+				<p>উপরের কোডের সবশেষ লাইনে joogKor ফাংশনকে কল করা হইছে। এই কল করার পর সে joogKor ফাংশনের ভিতরে যাবে। সেখানে গিয়ে যখন joogKor ফাংশনকে কল করার বিষয়টা দেখবে। সেখান থেকে আবার abar joogKor ফ্যাংশনকে কল করবে। সেটা আবার যখন ভিতরে যাবে, তখন আবার ফাংশনের ভিতরে নিজেই নিজেকে কল করার বিষয়টা দেখবে। দেখে আবার সেটাকে কল করবে। এইভাবে একের পর এক নিজেই নিজেকে কল করতে থাকবে। সেটা আজীবন চলতে থাকবে।</p>
+				<p>এই আজীবন চলা জিনিসটা অনেক সময় প্রোগ্রামিংয়ের error বা ভুল দেখিয়ে বন্ধ হয়ে যায়। বা অনেক সময় প্রোগ্রাম হ্যাং হয়ে যায়।</p>
+				<br>
+				<p></p>
+				<p><strong>উদাহরণ:</strong></p>
+				<p>নিচের অংশ এখনো লেখা হয় নাই। তার আগেই বই পাবলিশ হয়ে গেছে। তবে দুইটা কথা মনে রাখবি </p>
+				<p>১. recursive ফাংশনে থামানোর জন্য একটা if থাকে আর else এর ভিতরে সেই ফাংশনকে আবার কল করা হয়। </p>
+				<p>২. recursive ফাংশনের একটা উদাহরণ মনে রাখবি। সেটা হচ্ছে কোন একটা সংখ্যার বিন্যাস বা factorial বের করার সময় চাইলে recursive ব্যবহার করা যায়। </p>
+
+				<pre><code>
+function factorial(n) {
+  if (n === 0) {
+    return 1;
+  }
+
+  return n * factorial(n - 1);
+}
+
+factorial(8);
+				</code></pre>
+
+
+
+
+
+
+
+
+			</div>
+        <div class="chapter-overall hide">
+            <div>
+                <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div id="fb-root"></div>
+    <script src="../scripts/toggleExample.js"></script>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40601505-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+</body>
+</html>
