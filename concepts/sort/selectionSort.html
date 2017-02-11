@@ -48,22 +48,22 @@
 		        <p>thats how it continues to select (find out) the lowest element of the array and putting it on the left until it hits the last element.</p>
 		        <img src="../../images/concepts/selectionSort.png" alt="">
 		        <pre><code>
-		function selectionSort(arr){
-		  var minIdx, temp,
-		      len = arr.length;
-		  for(var i = 0; i &lt; len; i++){
-		    minIdx = i;
-		    for(var  j = i+1; j&lt;len; j++){
-		       if(arr[j]&lt;arr[minIdx]){
-		          minIdx = j;
-		       }
-		    }
-		    temp = arr[i];
-		    arr[i] = arr[minIdx];
-		    arr[minIdx] = temp;
-		  }
-		  return arr;
-		}
+function selectionSort(arr){
+  var minIdx, temp,
+      len = arr.length;
+  for(var i = 0; i &lt; len; i++){
+    minIdx = i;
+    for(var  j = i+1; j&lt;len; j++){
+       if(arr[j]&lt;arr[minIdx]){
+          minIdx = j;
+       }
+    }
+    temp = arr[i];
+    arr[i] = arr[minIdx];
+    arr[minIdx] = temp;
+  }
+  return arr;
+}
 		        </code></pre>
 		        <p><strong>complexity:</strong></p>
 		      </div>

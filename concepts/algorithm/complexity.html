@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>টাইম কমপ্লেক্সিটি </title>
+	<link rel="shortcut icon" href="../../images/favicon.png" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle cullapsed" data-toggle="cullapse" data-target="#navbar" aria-expanded="false" aria-contruls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Project name</a> -->
+          <div class="hablu-logo">
+              <a href="../index.html"><img src="../../images/logo.png" height="50" width="60" alt=""></a>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-cullapse cullapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li  class="active"><a href="index.html">হাবলুদের জন্য প্রোগ্রামিং</a></li>
+            <li><a href="program.html">হাবলু প্রশ্ন</a></li>
+            <li><a href="../jkr/index.html">About Jhankar</a></li>
+          </ul>
+        </div><!--/.nav-cullapse -->
+      </div>
+    </nav>
+    <div class="container">
+    	<div class="jumbotron">
+    		<div class="row text-center chapter-title">
+    			<h1><span class="chapter-title-rest">Time</span><span class="chapter-title-main"> Complexity</span> <span class="chapter-title-rest"> </span></h1>
+    		</div>
+				<div class="row hide">
+					<p>খুব শিগ্রই বাংলায় সহজ করে লেখা হবে</p>
+					<p>তখন ইমেইলে আপডেট পেতে রেজিস্ট্রেশন করো: <a href="registration/">এই খানে</a></p>
+					<div class="">
+						<p><a href="https://www.go4expert.com/articles/beginners-guide-time-complexity-o-t29211/">easy and simple explanation</a></p>
+						<p>decent one: <a href="https://www.sitepoint.com/time-complexity-algorithms/">time complexity of algorithm</a></p>
+						<p>Reference: <a href="http://www.corejavainterviewquestions.com/idiots-guide-big-o/">Idiots guide to Big o notations</a></p>
+						<p><a href="http://algosaur.us/algorithmic-complexity/">Explain complexity</a></p>
+						<p>summary: big o cheatsheet: <a href="http://bigocheatsheet.com/">here</a></p>
+					</div>
+				</div>
+    		<div class="row">
+
+    		</div>
+    	</div>
+			<div>
+				<p><strong>টাইম কমপ্লেক্সিটি:</strong></p>
+				<p>  টাইম কমপ্লেক্সিটি নামটা একটু কঠিন। এইটার নাম আমি দিলে এইটার নাম হতো- "কতক্ষণ লাগবে?" বা আরেকটু গুছিয়ে বললে বলবো- "কোড রান করতে কতক্ষণ লাগবে?", বা "কোড কতবার চলবে?</p>
+				<p>যেমন ধর তোর কাছে একটা friends নামে একটা array আছে। সেটার মধ্যে তোর সব ফ্রেন্ডের নাম লেখা আছে। এখন তুই একটা for লুপ চালিয়ে তোর friends নামক array এর সব উপাদানকে আউটপুট হিসেবে দেখতে চাস, নিচের মতো </p>
+				<pre><code>
+var friends = ["abul", "babul", "cabul", "dabul"];
+
+for(var i = 0; i< friends.length; i++){
+	var friend = friends[i];
+	console.log(friend);
+}
+				</code></pre>
+				<p>এই কোড রান করলে কয়টা আউটপুট দেখবি?</p>
+				<p>চারটা</p>
+				<p>কারণ তোর friends নামক array তে চারটা উপাদান আছে।</p>
+				<p>বিশ্বাস না হলে, <a href="www.habluderadda.com/console">www.habluderadda.com/console</a>এ গিয়ে টাইপ করে চেক করে দেখ</p>
+
+
+				<p>যদি তোর friends নামক array তে চারটা উপাদান না থেকে পাঁচটা উপাদান থাকতো তাহলে কয়টা আউটপুট দেখতি? নিশ্চয়ই পাঁচটা দেখতি। আর তোর friends নামক array তে চৌদ্দটা উপাদান থাকলে তুই চৌদ্দটা আউটপুট দেখতি।</p>
+				<p>তারমানে তোর array এর মধ্যে যতগুলা উপাদান আছে, যতগুলা আউটপুট দেখাবে।</p>
+				<p>উপরের for লুপের দিকে আরেকবার তাকা। দেখবি লুপের ভিতরে একবার করে আউটপুট দেখানো আছে। আর লুপ একবার চললে একবার আউটপুট দেয়। তাই যদি চৌদ্দবার চলে, তাহলে চৌদ্দটা আউটপুট দেখায়।</p>
+				<p>তারমানে কতবার চলবে সেটা নির্ভর করতেছে কতটা উপাদান আছে। অর্থাৎ চারটা থাকলে চারবার। পাঁচটা থাকলে পাঁচবার। চৌদ্দটা থাকলে চৌদ্দবার। আর উপাদান সংখ্যা n হইলে, n বার চলবে।</p>
+				<p>যদি কোন একটা কোড বা n বার চলে তাকে প্রোগ্রামিংয়ের ভাষায় বলে এইটা O(n) বার চলবে। বা সেই কোডের টাইম কমপ্লেক্সিটি (time complexity) হচ্ছে O(n)</p>
+				<p>এইখানে O আছে Order শব্দ এর প্রথম অক্ষর থেকে। অর্ডার (order) শব্দের বাংলা অর্থ হচ্ছে মাত্রা। সেটা একটু পরে একটু ভালো করে বুঝা যাবে। আপাতত সামনে আগাইতে থাক।</p>
+				<br>
+				<p><strong>ডাইরেক্ট একশন:</strong></p>
+				<p>ধর তুই তোর friends নামক array থেকে যেকোন একটা উপাদান বের করতে চাস। ধরে তুই ২পজিশনে থাকা উপাদানকে বের করতে চাস। তাহলে তুই নিচের মতো করে কোড লিখবি।</p>
+
+<pre><code>
+var friends = ["abul", "babul", "cabul", "dabul", "ebul"];
+var friend = friends[2];
+</code></pre>
+					<p>এই যে একটা নিদৃষ্ট পজিশন থেকে একটা উপাদান বের করছস। সেটা করার জন্য তোকে পুরা array টা ঘুরা লাগে নাই। জাস্ট ওই পজিশনে গিয়ে, অর্থাৎ জায়গামতো গিয়ে পেয়ে গেছস। তাই এইটার জন্য ১টা জায়গায় যাওয়া লাগবে। তাই কোন একটা array থেকে কোন একটা নিদৃস্ট পজিশনের উপাদান বের করতে হলে একবার কোড চালানো লাগবে তাই এইটার time complexity হবে O(1)</p>
+					<br>
+					<p><strong>সার্চ এলগোরিদম</strong></p>
+					<p>তুই যদি কোন একটা array এর মধ্যে নিদৃষ্ট পজিশনের কাউকে বের না করে, কোন একটা উপাদান আছে কিনা জানতে চাস। তখন তোকে প্রথম উপাদান থেকে শুরু করতে হবে। তারপর একটা একটা করে সামনে আগাইতে আগাইতে দেখতে হবে সেটা আছে কিনা। তারমানে কোন কিছু খোঁজার জন্য তোকে সবগুলা উপাদানের একটা একটা করে দেখতে হয়। সেটার জন্য নিচের মতো করে কোড লিখস</p>
+					<pre><code>
+var choukirTola = ["tShirt", "jeans", "juta", "boi", "gamcha", "charger", "panjabi"];
+for(var i = 0; i < choukirTola.length; i++){
+      var jinish = choukirTola[i];
+      if( jinish == "charger"){
+           console.log("charger paisi");
+           break;
+      }
+}
+					</code></pre>
+					<p>উপরের কোড যেহেতু তুই সবগুলা উপাদান খুজস। আর আর array  এর মধ্যে কয়টা উপাদান আছে সেটাকে সাধারণভাবে বললে বলা যায় n সংখ্যক উপাদান আছে। তাই</p>
+					<br>
+					<p><Strong>Sort এলগোরিদম:</Strong></p>
+					<p> Selection Sort এর কোড দেখছিলি? না দেখলে <a href="../sort/selectionSort.html">এইখানে</a> থেকে দেখে আয়। </p>
+					<p>নিচে Selection Sort এর কোড দেখানো আছে। এই কোডের আগা-মাথা কিচ্ছু না বুঝতে পারলেও এক নজর দেখ। দেখবি একটা for লুপের ভিতরে আরেকটা for লুপ আছে।</p>
+					<pre><code>
+function selectionSort(arr){
+  var minIdx, temp,
+      len = arr.length;
+  for(var i = 0; i &lt; len; i++){
+    minIdx = i;
+    for(var  j = i+1; j&lt;len; j++){
+       if(arr[j]&lt;arr[minIdx]){
+          minIdx = j;
+       }
+    }
+    temp = arr[i];
+    arr[i] = arr[minIdx];
+    arr[minIdx] = temp;
+  }
+  return arr;
+}
+					</code></pre>
+					<p>তুই জানস, একটা for লুপের জন্য সবগুলা উপাদান একবার একবার করে চলে। তারমানে চারটা উপাদান থাকলে চারবার চলবে। তারমানে array এর মধ্যে যতগুলা উপাদান আছে, ততবার ভিতরের কোডগুলা চলবে। এখন ধর, একটা উপাদানের জন্য কোড for লুপের ভিতরে গেল। এখন ভিতরে গিয়ে দেখলো আরেকটা লুপ। এখন ভিতরের যেহেতু একটা লুপ, তাই ভিতরের লুপের জন্য সেই লুপ array এর যতগুলা উপাদান আছে, ততবার চলবে।</p>
+					<p>তারমানে বাইরের লুপের একটা উপাদানের জন্য ভিতরের লুপে যতগুলা উপাদান আছে ততবার চলবে। ধর, ভিতরের array এর মধ্যে n সংখ্যক উপাদান আছে। তাই ভিতরে লুপ n বার চলবে। আর যদি বাইরের লুপে দুইটা উপাদান থাকে, তাহলে বাইরের লুপের প্রথম উপাদানের জন্য ভিতরে গিয়ে, ভিতরের লুপ n বার চলবে। আবার বাইরের লুপের দ্বিতীয় উপাদানের জন্য ভিতরের লুপ n বার চলবে। তারমানে ভিতরের লুপ, দুইবার n সংখ্যকবার চলবে। এই দুইবার n সংখ্যকবার চলাকে লিখতে পারস ২n</p>
+					<p>আর যদি বাইরের array এর মধ্যে 3টা উপাদান থাকে, তাহলে ভিতরে গিয়ে, বাইরের লুপের প্রত্যেকটা উপাদানের জন্য n সংখ্যকবার চলে। মোট 3n বার চলবে।</p>
+					<p>তারমানে বাইরের লুপে একটা উপাদান থাকলে ভিতরের লুপ n বার। বাইরের লুপে 2টা উপাদান থাকলে ভিতরের লুপ 2n বার। আর বাইরের লুপে 3টা উপাদান থাকলে ভিতরের লুপ 3n বার চলবে।  আর যদি বাইরের লুপে n সংখ্যক উপাদান থাকে তাহলে ভিতরের লুপ nXn বা n<sup>2</sup> বার চলবে।</p>
+					<p>তাই একটা লুপের ভিতরের আরেকটা লুপ থাকলে সেই কোডের টাইম কমপ্লেক্সিটি হয় O(n<sup>2</sup>)</p>
+					<p>আপাতত এইটুক মনে রাখতে পারলেই হবে।</p>
+			</div>
+        <div class="chapter-overall hide">
+            <div>
+                <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div id="fb-root"></div>
+    <script src="../scripts/toggleExample.js"></script>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40601505-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+</body>
+</html>
