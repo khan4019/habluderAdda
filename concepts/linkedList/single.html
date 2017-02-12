@@ -44,79 +44,91 @@
     	</div>
         <div class="chapter-overall">
 					<div class="">
-						<p>প্রোগ্রামিংয়ের বলদ টু বস বইয়ের লিংকড লিস্ট চ্যাপ্টার পড়ার পর। নিচের অংশটুকু পড়লে বুঝতে পারবে। (নিচের অংশ এখনো ফাইনাল করা হয়নি। টুকটাক ভুল থাকতে পারে। )</p>
+						<p style="color:blue">প্রোগ্রামিংয়ের বলদ টু বস বইয়ের লিংকড লিস্ট চ্যাপ্টার পড়ার পর। নিচের অংশটুকু পড়লে বুঝতে পারবে। (নিচের অংশ এখনো ফাইনাল করা হয়নি। টুকটাক ভুল থাকতে পারে। )</p>
 						<div>
-							<p>এই যে "তোমার বাম হাত খালি আছে কিনা?" এই কথাটার উত্তর যতক্ষণ পর্যন্ত খালি নাই ততক্ষন পর্যন্ত জিজ্ঞেস করতে থাকে। তারমানে এই জিজ্ঞেস করার কাজ বারবার করে। আর কোন একটা কাজ বারবার করলে আমরা লুপ চালাই দেই। আরেকটু খেয়াল করলে দেখবি ততক্ষন করা লাগবে যতক্ষণ পর্যন্ত বাম হাত খালি না পায়। আগেই বলছিলাম লুপে কতবার চলবে জিজ্ঞেস করলে যদি উত্তর হয় কোন নিদৃষ্ট সংখ্যা তাহলে for লুপ চাপাবি। আর যদি সংখ্যা না হয়ে অন্য কোন শর্ত হয় তাহলে while লুপ। এইখানে যেহেতু বামহাত খালি না পাওয়া পর্যন্ত লুপ চালাতে হবে তাই এইখানে একটা while লুপ চালাবি।</p>
-							<p>বাম হাত খালি না পাওয়া পর্যন্ত এই while লুপ চলবে। সেটাকে ঘুরিয়ে বললে বলা যায়, যতক্ষণ পর্যন্ত বামবামপাশে কেউ থাকবে না, ততক্ষণ পর্যন্ত while লুপ চলতে থাকবে। এই বাম হাতে কেউ থাকা মানে। বাম হাত খালি না থাকা। আর প্রোগ্রমিং এ কোনকিছু খালি থাকা মানে undefined হওয়া। এখন এই কথাটাকে ঘুরিয়ে বললে বলা যায় খালি না থাকার মানে undefined না হওয়া।</p>
-							<p>	এখন কোন একটা নোড এর বাম হাত খালি না হওয়ার মানে, বাম হাত undefined হবে না। আর undefined না হওয়াটাকে প্রোগ্রামিং এর ভাষায় লিখে != undefined । এখন ধর তুই যেই নোডকে জিজ্ঞেস করতেছস- "বাম হাত খালি আছে?", তার নাম currentNode। অর্থাৎ সেটা currentNode অবজেক্ট। আর কোন অবজেক্টের right প্রপার্টি এর মান জানার ডট দিয়ে কট করে ফেলবি। তাই currentNode.right লিখে এর বাম হাত এর মান জানা যাবে। অর্থাৎ বাম হাত খালি না সেখানে কিছু আছে জানা যাবে। আর খালি না থাকা যাচাই করার জন্য currentNode.right != undefined লিখবি। ।</p>
-							<p>একটু আগে যে তুই জিজ্ঞেস করার কাজটা প্রথেমই আলামকে তারপর বালামকে তারপর সালামকে করতেছিলি। অথাৎ জিজ্ঞেস করার কাজটা বারবার করতেছিলি। সেই কথাটাকেই ঘুরিয়ে বললে বলা যায়- একটু পর কাকে জিজ্ঞেস করবি সেই মানুষটাকে চেইঞ্জ করে ফেলতি। আর তুই যেহেতু while লুপের শর্তে গিয়ে currentNode এর right এ কোন নোড আছে কিনা যাচাই করতেছস। তাই যদি বামপাশে কেউ থাকে, সেটা while লুপের ভিতরে গিয়ে  বামপাশের নোড টাই currentNode এ সেট করে ফেল। যাতে পরবর্তীতে সেটার বামপাশে কেউ আছে কিনা চেক করতে পারস। তাই while লুপের ভিতরে লিখবি currentNode = currentNode.right;</p>
-							<p>সোজা কোথায় বললে, যখন যাকে জিজ্ঞেস করবি সেটাই currentNode হবে। current একটা ইংরেজি শব্দ। এইটার মানে বর্তমান। আর কারেন্ট নোড মানে বর্তমান নোড। আর লুপের ভিতরে currentNode এর মানটা চেইঞ্জ করে নিতে হবে। চেইঞ্জ না করে নিলে, যতবার লুপ চালাবি, ততবার currentNode এর মান একই থাকবে। এবং ততবার সেই একই ব্যক্তিকে জিজ্ঞেস করবি তার বাম হাত খালি আছে কিনা। এটা করলে তুই জিজ্ঞেস করে করে সামনে আগাইতে পারবি না। সামনে আগাইতে হইলে প্রত্যেকবার লুপ চালানোর সময় currentNode এর মান চেইঞ্জ করে নিবি। এবং currentNode এর নতুন মান হবে, তার right প্রপার্টি এর মান। তাহলে পরেরবার লুপ চলার সময় বামপাশের জনকে জিজ্ঞেস করবে "তোমার বাম হাত খালি আছে?"।</p>
-							<p>	যখন বামপাশে আর কোন নোড থাকবে না। তখন currentNode এর right প্রপার্টিতে কোন ভ্যালু না থাকলে। অর্থাৎ currentNode এর বামপাশে কেউ নাই। অর্থাৎ বামপাশর জায়গা খালি। আর বামপাশ খালি হলে while লুপের শর্ত মিথ্যা হবে। সেকারণে while লুপ আর চলবে না। অর্থাৎ while লুপ শেষ হয়ে যাবে। তাই while লুপের শেষে currentNode এর বামপাশে চুপটি করে newNode কে বসায় দিবি। বামপাশে newNode বসায় দেয়া মানে, currentNode এর right প্রপার্টি এর মান হবে newNode। সেটা করার জন্য currentNode.right লিখে সমান চিহ্ন দিয়ে newNode লিখে দিবি। তাহলেই তোর কাজ শেষ। এখন পুরা নোড এবং LinkedList ক্লাস দেখতে চাইলে সেটা নিচের মতো হবে।</p>
+							<p>এই যে "তোমার পাশে জায়গা খালি আছে কিনা?" এই কথাটার উত্তর যতক্ষণ পর্যন্ত খালি নাই ততক্ষন পর্যন্ত জিজ্ঞেস করতে থাকে। তারমানে এই জিজ্ঞেস করার কাজ বারবার করে। আর কোন একটা কাজ বারবার করলে আমরা লুপ চালাই দেই। আরেকটু খেয়াল করলে দেখবি ততক্ষন করা লাগবে যতক্ষণ পর্যন্ত পাশের জায়গা খালি না পায়। </p>
+							<br>
+							<p><strong>while না for লুপ। কোনটা ব্যবহার করবো?</strong></p>
+							<p>লুপ কতবার চলবে জিজ্ঞেস করলে যদি উত্তর হয় কোন নিদৃষ্ট সংখ্যা তাহলে for লুপ চাপাবি। আর যদি সংখ্যা না হয়ে অন্য কোন শর্ত হয় তাহলে while লুপ। এইখানে যেহেতু হাত খালি না পাওয়া পর্যন্ত লুপ চালাতে হবে তাই এইখানে একটা while লুপ চালাবি।</p>
+							<p>পাশের জায়গা খালি না পাওয়া পর্যন্ত এই while লুপ চলবে। সেটাকে ঘুরিয়ে বললে বলা যায়, যতক্ষণ পর্যন্ত পাশের জায়গয়া কেউ থাকবে না, ততক্ষণ পর্যন্ত while লুপ চলতে থাকবে। এই কেউ থাকা মানে। খালি না থাকা। আর প্রোগ্রমিং এ কোনকিছু খালি থাকা মানে undefined হওয়া। এখন এই কথাটাকে ঘুরিয়ে বললে বলা যায়, খালি না থাকার মানে undefined না হওয়া।</p>
+							<br>
+							<p><strong>সহজভাবে বললে- খালি থাকলে undefined হবে। আর খালি না থাকলে undefined হবে না। </strong></p>
+							<br>
+							<p>এখন কোন একটা নোড এর পাশে খালি না হওয়ার মানে, next প্রপার্টির মান undefined না হওয়া। আর undefined না হওয়াটাকে প্রোগ্রামিং এর ভাষায় লিখে != undefined । এখন ধর তুই যেই নোডকে জিজ্ঞেস করতেছস- "পাশে খালি আছে?", তার নাম currentNode। অর্থাৎ সেটা currentNode অবজেক্ট। আর কোন অবজেক্টের next প্রপার্টির মান জানার ডট দিয়ে কট করে ফেলবি। তাই currentNode.next লিখে। আর খালি না থাকা যাচাই করার জন্য currentNode.next != undefined লিখবি।</p>
+							<br>
+							<p><strong>জিগাই আর জিগাই </strong></p>
+							<p>একটু আগে যে তুই জিজ্ঞেস করার কাজটা প্রথমেই আলামকে তারপর বালামকে তারপর সালামকে করতেছিলি। অথাৎ জিজ্ঞেস করার কাজটা বারবার করতেছিলি। সেই কথাটাকেই ঘুরিয়ে বললে বলা যায়- একটু পর কাকে জিজ্ঞেস করবি সেই মানুষটাকে চেইঞ্জ করে ফেলতি। আর তুই যেহেতু while লুপের শর্তে গিয়ে currentNode এর next এ কোন নোড আছে কিনা যাচাই করতেছস। তাই যদি পাশে কেউ থাকে, সেটা while লুপের ভিতরে গিয়ে  পাশের নোড টাই currentNode এ সেট করে ফেল। যাতে পরবর্তীতে সেটার পাশে কেউ আছে কিনা চেক করতে পারস। তাই while লুপের ভিতরে লিখবি currentNode = currentNode.next;</p>
+							<p>সোজা কোথায় বললে, যখন যাকে জিজ্ঞেস করবি সেটাই currentNode হবে। current একটা ইংরেজি শব্দ। এইটার মানে বর্তমান। আর কারেন্ট নোড মানে বর্তমান নোড। আর লুপের ভিতরে currentNode এর মানটা চেইঞ্জ করে নিতে হবে। চেইঞ্জ না করে নিলে, যতবার লুপ চালাবি, ততবার currentNode এর মান একই থাকবে। এবং ততবার সেই একই ব্যক্তিকে জিজ্ঞেস করবি তার পাশের জায়গা খালি আছে কিনা। এটা করলে তুই জিজ্ঞেস করে করে সামনে আগাইতে পারবি না। সামনে আগাইতে হইলে প্রত্যেকবার লুপ চালানোর সময় currentNode এর মান চেইঞ্জ করে নিবি। এবং currentNode এর নতুন মান হবে, তার next প্রপার্টি এর মান। তাহলে পরেরবার লুপ চলার সময় পাশের জনকে জিজ্ঞেস করবে "তোমার পাশের জায়গা খালি আছে?"।</p>
+							<br>
+							<p><strong>পাইছি তোরে:</strong></p>
+							<p>	যখন পাশে আর কোন নোড থাকবে না। তখন currentNode এর next প্রপার্টিতে কোন ভ্যালু না থাকলে। অর্থাৎ currentNode এর পাশে কেউ নাই। অর্থাৎ পাশের জায়গা খালি। আর খালি হলে while লুপের শর্ত মিথ্যা হবে। সেকারণে while লুপ আর চলবে না। অর্থাৎ while লুপ শেষ হয়ে যাবে। তাই while লুপের শেষে currentNode এর পাশে চুপটি করে newNode কে বসায় দিবি। পাশে newNode বসায় দেয়া মানে, currentNode এর next প্রপার্টি এর মান হবে newNode। সেটা করার জন্য currentNode.next লিখে সমান চিহ্ন দিয়ে newNode লিখে দিবি। তাহলেই তোর কাজ শেষ। এখন পুরা নোড এবং LinkedList ক্লাস দেখতে চাইলে সেটা নিচের মতো হবে।</p>
 
 <pre><code>
 class Node{
  constructor(value){
    this.value = value;
-   this.right = undefined;
+   this.next;
  }
 }
 
 class LinkedList {
- constructor(value) {
-   this.head = new Node(value);
+ constructor(head) {
+   this.head = head;
  }
  add(newNode){
     var currentNode = this.head;
-    while(currentNode.right != undefined){
-       currentNode = currentNode.right;
+    while(currentNode.next != undefined){
+       currentNode = currentNode.next;
      }
-     currentNode.right = newNode;
+     currentNode.next = newNode;
  }
 }
 </code></pre>
 
-	<p>এখন এই LinkedList ক্লাস ব্যবহার করে আগের মতো bondon নামে একটা লিংকডলিস্ট বানা। তারপর সেখানে আমাদের প্যান্ট ঢিলা কেনো কতৃপক্ষ জবাব চাই যোগ কর নিচের মতো করে।</p>
+	<p>এখন এই LinkedList ক্লাস ব্যবহার করে আগের মতো manobBondon নামে একটা লিংকডলিস্ট বানা। তারপর সেখানে আমাদের প্যান্ট ঢিলা কেনো কতৃপক্ষ জবাব চাই যোগ কর নিচের মতো করে।</p>
 
 <pre><code>
-var headNode = new Node(“amader”);
-var manobBondon = new LinkedList("amader");
+var head= new Node("amader");
+var manobBondon = new LinkedList(head);
 
-var pantNode = new Node(“pant”);
-manobBondon.add(pantNode);
+var pant = new Node("pant");
+manobBondon.add(pant);
 
-var dhilaNode = new Node(“dhila”);
-manobBondon.add(dhilaNode);
+var dhila = new Node("dhila");
+manobBondon.add(dhila);
 
-var kenoNode = new Node(“keno”);
-manobBondon.add(kenoNode);
+var keno = new Node("keno");
+manobBondon.add(keno);
 
-var kotripokkhoNode = new Node(“kotripokkho”);
-manobBondon.add(kotripokkhoNode);
+var kotripokkho = new Node("kotripokkho");
+manobBondon.add(kotripokkho);
 
-var jobabNode = new Node(“jobab”);
-manobBondon.add(jobabNode);
+var jobab = new Node("jobab");
+manobBondon.add(jobab);
 
-var chaiNode = new Node(“chai”);
-manobBondon.add(chaiNode);
+var chai = new Node("chai");
+manobBondon.add(chai);
+
+console.log(manobBondon);
 </code></pre>
 
-	<p>এখন পুরা manobBondon নামক লিংকডলিস্ট আউটপুট হিসেবে দেখতে চাইলে। সেটাকে console.log(manobBondon) করে দিবি। তখন নিচের মতো আউটপুট দেখতে পাবি। যেখানে হেড এর মধ্যে আছে আমাদের তারপর একটা একটা করে বামপাশে (right) এ যাইতে থাকলে বাকি নোড গুলি দেখতে পাবি।</p>
+	<p>উপরের কোড দুইটা একসাথ করে www.habluderadda.com/console এ গিয়ে টাইপ করে run বাটনে চাল দিলে নিচের মতো আউটপুট দেখাবে। ।</p>
 
 <pre><code>
 {
  "head": {
    "value": "amader",
-   "right": {
+   "next": {
      "value": "pant",
-     "right": {
+     "next": {
        "value": "dhila",
-       "right": {
+       "next": {
          "value": "keno",
-         "right": {
+         "next": {
            "value": "kortipokkho",
-           "right": {
+           "next": {
              "value": "jobab",
-             "right": {
+             "next": {
                "value": "chai"
              }
            }
@@ -134,7 +146,7 @@ manobBondon.add(chaiNode);
 					</div>
 	    		<div class="row">
 						<p><a href="double.html">Doulby Linked list</a></p>
-						<p><a href="circular.html">Circular Linked List</a></p>
+						<p class="hide"><a href="circular.html">Circular Linked List</a></p>
 	    		</div>
 					<div>
 						<p>Linked List realted programming problems are: <a href="http://khan4019.github.io/front-end-Interview-Questions/linkedList.html">here</a></p>

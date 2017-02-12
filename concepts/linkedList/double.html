@@ -48,40 +48,60 @@
 						<p>খুব শিগ্রই বাংলায় সহজ করে লেখা হবে, তখন ইমেইলে আপডেট পেতে রেজিস্ট্রেশন করো: <a href="registration/">এই খানে</a></p>
 				 <p>for doubly linked list there will be a link backward to the previous element. Your node object will look like</p>
 <pre><code>
-var node = {
- value: val,
- next: null,
- previous: null
+class Node{
+	constructor(value){
+		this.value = value;
+		this.next;
+		this.previous;
+	}
 }
 </code></pre>
 <pre><code>
-function DoublyLinkedList(){
-	this.head = null;
-}
-
-DoublyLinkedList.prototype.push = function(val){
-	var head = this.head,
-			current = head,
-			previous = head;
- if(!head){
-		 this.head = {value: val, previous:null, next:null };
- }
- else{
-		 while(current && current.next){
+class DoublyLinkedList{
+	constructor(head){
+		this.head = head;
+	}
+	add(newNode){
+		var head = this.head,
+		current = head,
+		previous = head;
+		while(current.next != undefined){
 				previous = current;
 				current = current.next;
 		 }
-		current.next = {value: val, previous:current, next:null}
- }
+		current.next = newNode;
+		current.previous = previous;
+	}
 }
 </code></pre>
+
 <pre><code>
-var dll = new DoublyLinkedList();
-dll.push(2);
-dll.push(3);
-dll.push(4);
-dll.push(5);
+	var head = new Node("amader");
+	var double = new DoublyLinkedList(head);
+
+
+	var pant = new Node("pant");
+	double.add(pant);
+
+	var dhila = new Node("dhila");
+	double.add(dhila);
+
+	var keno = new Node("keno");
+	double.add(keno);
+
+	var kotripokkho = new Node("kotripokkho");
+	double.add(kotripokkho);
+
+	var jobab = new Node("jobab");
+	double.add(jobab);
+
+	var chai = new Node("chai");
+	double.add(chai);
+
+	console.log(double);
+
 </code></pre>
+
 				 <p class="hide">get most of it from: <a href="https://github.com/nzakas/computer-science-in-javascript/blob/master/data-structures/doubly-linked-list/doubly-linked-list.js">doubly linked list</a></p>
 			 </div>
 			 <div class="">
@@ -187,15 +207,10 @@ They can reduce access time and may expand in real time without memory overhead.
 <p>Nodes are stored incontiguously, greatly increasing the time required to access individual elements within the list, especially with a CPU cache.</p>
 <p>Difficulties arise in linked lists when it comes to reverse traversing. For instance, singly linked lists are cumbersome to navigate backwards[1] and while doubly linked lists are somewhat easier to read, memory is wasted in allocating space for a back-pointer.</p>
 
-
-
-
-
-
 			 </div>
 			 <div class="">
 							 <p><a href="single.html">Singly Linked List</a></p>
-							 <p><a href="circular.html">Circular Linked List</a></p>
+							 <p class="hide"><a href="circular.html">Circular Linked List</a></p>
 			 </div>
             <div>
                 <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
