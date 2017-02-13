@@ -57,9 +57,12 @@
 		        <p>super easy.</p>
 		        <pre><code>
 function insertionSort(arr){
-  var i, len = arr.length, el, j;
+  var i;
+	var len = arr.length;
+	var el;
+	var j;
 
-  for(i = 1; i&lt;len; i++){
+  for(i = 1; i < len; i++){
     el = arr[i];
     j = i;
 
@@ -82,7 +85,7 @@ function insertionSort(arr){
 						<li><a href="selectionSort.html">Selection Sort</a></li>
 						<li><a href="insertionSort.html">Insertion Sort</a></li>
 						<li><a href="mergeSort.html">Merge Sort</a></li>
-						<li><a href="quickSort.html">Quick Sort</a></li>
+						<li class="hide"><a href="quickSort.html">Quick Sort</a></li>
 						<li class="hide"><a href="heapSort.html">Heap Sort</a></li>
 						<li class="hide"><a href="moreSort.html">More Sorting Algorithm</a></li>
 					</ul>

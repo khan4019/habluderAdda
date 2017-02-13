@@ -52,32 +52,30 @@
 		        <pre><code>
 	function mergeSort(arr){
 	   var len = arr.length;
-	   if(len &lt;2)
-	      return arr;
-	   var mid = Math.floor(len/2),
-	       left = arr.slice(0,mid),
-	       right =arr.slice(mid);
-	   //send left and right to the mergeSort to broke it down into pieces
-	   //then merge those
+	   if(len < 2){
+		      return arr;
+		 }
+	   var mid = Math.floor(len/2);
+	   var left = arr.slice(0,mid);
+	   var right =arr.slice(mid);
 	   return merge(mergeSort(left),mergeSort(right));
 	}
 	        </code></pre>
 	        <pre><code>
 	function merge(left, right){
-	  var result = [],
-	      lLen = left.length,
-	      rLen = right.length,
-	      l = 0,
-	      r = 0;
-	  while(l &lt; lLen && r &lt; rLen){
-	     if(left[l] &lt; right[r]){
+	  var result = [];
+	  var lLen = left.length;
+	      var rLen = right.length;
+	      var l = 0;
+	      var r = 0;
+	  while(l < lLen && r < rLen){
+	     if(left[l] < right[r]){
 	       result.push(left[l++]);
 	     }
 	     else{
 	       result.push(right[r++]);
 	    }
 	  }
-	  //remaining part needs to be addred to the result
 	  return result.concat(left.slice(l)).concat(right.slice(r));
 	}
 		        </code></pre>
@@ -89,7 +87,7 @@
 						<li><a href="selectionSort.html">Selection Sort</a></li>
 						<li><a href="insertionSort.html">Insertion Sort</a></li>
 						<li><a href="mergeSort.html">Merge Sort</a></li>
-						<li><a href="quickSort.html">Quick Sort</a></li>
+						<li class="hide"><a href="quickSort.html">Quick Sort</a></li>
 						<li class="hide"><a href="heapSort.html">Heap Sort</a></li>
 						<li class="hide"><a href="moreSort.html">More Sorting Algorithm</a></li>
 					</ul>
