@@ -49,12 +49,14 @@
 		        <img src="../../images/concepts/selectionSort.png" alt="">
 		        <pre><code>
 function selectionSort(arr){
-  var minIdx, temp,
-      len = arr.length;
-  for(var i = 0; i &lt; len; i++){
+  var minIdx;
+	var temp;
+	var len = arr.length;
+
+  for(var i = 0; i < len; i++){
     minIdx = i;
-    for(var  j = i+1; j&lt;len; j++){
-       if(arr[j]&lt;arr[minIdx]){
+    for(var  j = i+1; j < len; j++){
+       if(arr[j] < arr[minIdx]){
           minIdx = j;
        }
     }
@@ -73,7 +75,7 @@ function selectionSort(arr){
 						<li><a href="selectionSort.html">Selection Sort</a></li>
 						<li><a href="insertionSort.html">Insertion Sort</a></li>
 						<li><a href="mergeSort.html">Merge Sort</a></li>
-						<li><a href="quickSort.html">Quick Sort</a></li>
+						<li class="hide"><a href="quickSort.html">Quick Sort</a></li>
 						<li class="hide"><a href="heapSort.html">Heap Sort</a></li>
 						<li class="hide"><a href="moreSort.html">More Sorting Algorithm</a></li>
 					</ul>
