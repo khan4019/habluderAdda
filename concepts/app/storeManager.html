@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>বিস্কুটের array খায় বিড়াল ছানা</title>
+	<title>বলদ-ষাঁড় ফ্যাশন হাউজ</title>
 	<link rel="shortcut icon" href="../images/favicon.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/style.css">
@@ -35,12 +35,21 @@
     <div class="container">
     	<div class="jumbotron">
     		<div class="row text-center chapter-title">
-    			<h1><span class="chapter-title-rest">প্রোগ্রামিংয়ের </span><span class="chapter-title-main"> বলদ টু বস</span> <span class="chapter-title-rest"> </span></h1>
+    			<h1><span class="chapter-title-rest">বলদ-ষাঁড় </span><span class="chapter-title-main"> ফ্যাশন হাউজ</span> <span class="chapter-title-rest"> </span></h1>
     		</div>
+			</div>
 				<div class="row">
-					<h3>you get most in the book</h3>
-					<p>Add the following features</p>
-					<p>add a method to pay rent per month. This method will take an input as rent. and will reduct amount from totalSales. If the totalSales is less than rent. than show output that you don't have enough money to pay rent</p>
+					<p class="text-center">
+						<img style="width:400px" src="../../images/concepts/store.jpg" alt="">
+					</p>
+					<p>নিচের কোডটা 'প্রোগ্রামিংয়ের বলদ টু বস' বইয়ের,  অ্যাপ বানিয়ে করবে বড়াই অধ্যায়ের ফাইনাল কোড।  একদম হুবহু তুলে দেয়া হইছে। এখন তোর কাজ হবে এই কোডের সাথে আরো দুইটা ফিচার যোগ করা। </p>
+					<p>১. এখন ভাড়া দেয়ার জন্য payRent নামে একটা মেথড যোগ কর। যেই মেথডে ইনপুট হিসেবে ভাড়ার টাকার পরিমান নেওয়া হবে। তারপর সেই মেথডের ভিতরে গিয়ে দেখবে, ভাড়ার টাকা আজকে যত বিক্রি হইছে তার সাথে তুলনা করবে।  </p>
+					<ul>
+						<li>যদি totalSales ভাড়ার টাকার অর্ধেকের চাইতে কম হয় তাহলে, সরি বলে দিবে। </li>
+						<li>আর যদি totalSales এর টাকা, ভাড়ার টাকা অর্ধেকের বেশি কিন্তু পুরা টাকার কম হয়, তোলে আউটপুট দিবে- অর্ধেক দিলাম, বাকি টাকা পরে দিবো। </li>
+						<li>আরো যদি totalSales এর টাকা, ভাড়ার টাকার চাইতে বেশি হয়, তাহলে পুরা টাকা দিয়ে আউটপুট হিসেবে বলবে- সামনের মাসে ভাড়া একটু কমায় নিয়েন। </li>
+					</ul>
+					<p>২. আর তুই নিজে নিজে দোকানের একটা ফিচার ঠিক কর। তারপর সেটার কোড লিখে নিচে কমেন্ট কর। </p>
 					<pre><code>
 class Store {
  constructor(name) {
@@ -111,22 +120,8 @@ habluStore.addItem("shirt", 40, 300);
 habluStore.addItem("pant", 20, 500);
 
 					</code></pre>
-					<ul>
-						<li><a href="storeManager.html">Store Manager</a></li>
-						<li><a href="garageAccounting.html">Garage Accounting</a></li>
-						<li><a href="ticketCounter.html">Ticket Counter</a></li>
-					</ul>
 				</div>
-    		<div class="row">
-
-    		</div>
-    	</div>
-        <div class="chapter-overall">
-            <div>
-                <p style="font-size: 1.2em;">আর খেয়ে দেয়ে কোন কাজ কাম না থাকলে <a href="http://jhankarmahbub.com/">www.JhankarMahbub.com</a> দেখে আয়</p>
-                <hr>
-            </div>
-        </div>
+				<div class="fb-comments" width="100%" data-href="http://habluderadda.com/concepts/app/storeManager.html"></div>
     </div>
     <div id="fb-root"></div>
     <script src="../scripts/toggleExample.js"></script>
