@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Selection Sort</title>
+	<title>Insertion Sort</title>
 	<link rel="shortcut icon" href="../../images/favicon.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/style.css">
@@ -55,26 +55,29 @@
 		        <p>Now first and second item is sorted.</p>
 		        <p>Then, pick the third element and check whether the second element is bigger than the third. keep going similar way until you hit the first element or a element smaller than the element you are comparing with. When you get an item smaller than the picked item, you insert it.</p>
 		        <p>super easy.</p>
+						<p><strong>Code Explanation: </strong></p>
+						<p>Below is a function that does insertion sort. In side the function you will see two loop. the first for loop is seleccting an item for the items array. the selected item is the picked card on your hand. It's called currentItem.</p>
+						<p>Now think, in a middle situation where you have picked the third card. this means all the card in the left are sorted. you have to find a position for the current card to be inserted. if the current card is smaller than any of the previous card it will be insterted before that</p>
+						<p>For this we run the second while loop. This loop goes backward upto 0 position. As 0 is the first position of the array</p>
+						<p>while running the while loop, if the item in the array is bigger than the currentItem, we move the item to the right. Think it as if you are inserting cards on your hand by looking into your available cards from right to left</p>
+
 		        <pre><code>
-function insertionSort(arr){
-  var i;
-	var len = arr.length;
-	var el;
-	var j;
+function insertionSort(items) {
 
-  for(i = 1; i < len; i++){
-    el = arr[i];
-    j = i;
+    for (var i=0; i < items.length; i++) {
 
-    while(j>0 && arr[j-1]>toInsert){
-      arr[j] = arr[j-1];
-      j--;
-   }
+        var currentItem = items[i];
+        var j = i -1;
 
-   arr[j] = el;
-  }
+        while (j >= 0 && items[j] > currentItem) {
+            items[j+1] = items[j];
+            j--;
+        }
 
-  return arr;
+        items[j+1] = currentItem;
+    }
+
+    return items;
 }
 		        </code></pre>
 		        <p><strong>complexity:</strong> the worst case O(n2) and best case O(n)</p>
