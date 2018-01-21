@@ -50,7 +50,7 @@
     font-family: "Lucida Bright", Georgia, serif;
     font-size: 23px;
     color: #fff;
-    background-color: #01c9c3;
+    background-image: linear-gradient(to bottom right, #02b3e4, #02ccba);
     -webkit-box-shadow: 0 5px 1px -4px black;
     -moz-box-shadow: 0 5px 1px -4px black;
     box-shadow: 0 5px 1px -4px black;
@@ -321,7 +321,8 @@ header .navbar-nav>li:first-child {
 .section1 .chapter ul li {
         list-style: none;
         padding: 10px 10px;
-        background-image: linear-gradient(to bottom right, #02beb9, #73e8e5);
+        background: linear-gradient(to right, #01c9c3 , #5db8e4);
+        /* background-image: linear-gradient(to bottom right, #02beb9, #73e8e5); */
         border-bottom: 1px solid #ffffffb5;
         box-shadow: 0px 0px 2px #dedede;
          /* border-bottom: 1px solid #e2e2e2; */
@@ -500,8 +501,8 @@ footer p {
 
 .question-holder {
     border-radius: 5px;
-    background: #fefefe;
-    color: #111111;
+    background: #8cadc5;
+    color: #ffffff;
     box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
     padding: 30px;
     margin-bottom: 30px;
