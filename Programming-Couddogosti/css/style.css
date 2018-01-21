@@ -331,9 +331,9 @@ header .navbar-nav>li:first-child {
     border: 2px solid red;
     background-color: white;
 }
-.section1 .chapter ul li:first-child {
+/* .section1 .chapter ul li:first-child {
     padding-top: 20px;
-}
+} */
 .section1 .chapter ul li:last-child {
     border: none;
 }
@@ -344,11 +344,13 @@ header .navbar-nav>li:first-child {
 
 .section1 .chapter li:hover a{
     display:block;   
-    color: #ff7b62;  
+    color: #fff;
 }
 
 .section1 .chapter ul :hover{
-    background: #fbfbfb;
+    /* background: #fbfbfb; */
+        background-image: linear-gradient(to bottom right, #55ddd9, #1fc9c4);
+        cursor: pointer;
 }
 .section1 .chapter a:hover,
 .section1 .chapter a:focus {
