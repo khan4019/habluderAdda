@@ -64,12 +64,12 @@
 }
 
 header {
-    background-color: #efefef;
+    background-color: #456179c7;
     border-bottom: 2px solid #79b0c4;
 }
 
 .navbar-default {
-    background-color: #efefef;
+    background-color: #6e8496;
     border: none;
     margin-bottom: 16px;
 }
@@ -83,7 +83,7 @@ header .navbar-nav>li:first-child {
 }
 
 .navbar-nav>li>a {
-    color: #777!important;
+    color: #e1f3f7!important;
     text-transform: uppercase;
     text-align: center;
     padding: 2px 15px;
@@ -119,7 +119,7 @@ header .navbar-nav>li:first-child {
 }
 .btitle h1{
     font-size: 65px;
-    color: #22bbe9;
+    color: #cc1616a3;
     text-shadow: 1px 2px 0px #fcfbfb, 3px 4px 0px rgba(0,0,0,0.15);
     text-align: center;
     line-height: 1.3;
@@ -283,7 +283,7 @@ header .navbar-nav>li:first-child {
     width: 100%;
     box-shadow: 0px 1px 20px #cecece;
     background-color: #fff;
-    padding: 0 15px;
+    padding: 0 11px;
     border: 1px solid #ddd;
 }
 .btn {
@@ -321,7 +321,8 @@ header .navbar-nav>li:first-child {
 .section1 .chapter ul li {
         list-style: none;
         padding: 10px 10px;
-        background: linear-gradient(to right, #01c9c3 , #5db8e4);
+        background-color: #456179c7;
+        /* background: linear-gradient(to right, #01c9c3 , #5db8e4); */
         /* background-image: linear-gradient(to bottom right, #02beb9, #73e8e5); */
         border-bottom: 1px solid #ffffffb5;
         box-shadow: 0px 0px 2px #dedede;
@@ -360,7 +361,7 @@ header .navbar-nav>li:first-child {
 } 
 
 .section1 .chapter ul li span {
-    padding-right: 8px;
+    padding-right: 5px;
     font-size: 15px;
 }
 .section1 .subscribe {
@@ -501,8 +502,7 @@ footer p {
 
 .question-holder {
     border-radius: 5px;
-    background: #8cadc5;
-    color: #ffffff;
+    color: #333333;
     box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
     padding: 30px;
     margin-bottom: 30px;
@@ -510,8 +510,8 @@ footer p {
 }
 
 .question-holder:hover{
-    background-image: linear-gradient(to bottom right, #02b3e4, #02ccba);
-    color: #fff;
+    box-shadow: 5px 10px 25px 0px rgba(46,61,73,0.2);
+    /* background-image: linear-gradient(to bottom right, #02b3e4, #02ccba); */
 }
 
 .question-number{
