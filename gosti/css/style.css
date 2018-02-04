@@ -118,7 +118,7 @@ header .navbar-nav>li:first-child {
     transform: translate(-50%, -50%);
 }
 .btitle h1{
-    font-size: 65px;
+    font-size: 61px;
     color: #dd6969;
     text-shadow: 1px 2px 0px #fcfbfb, 3px 4px 0px rgba(0,0,0,0.15);
     text-align: center;
@@ -313,10 +313,38 @@ header .navbar-nav>li:first-child {
 .ansbtn {
     background-color: #01c9c3;
     box-shadow: 1px 5px 3px #e4e4e4;
-    width: 102px;
+    width: 132px;
+    outline: none !important;
     font-size: 18px;
 }
 .ansbtn:hover {background: #00bcb0; color: #fff !important;     box-shadow: 1px 5px 5px #e4e4e4;}
+
+.ansbtn2 {
+    background-color: #01c9c3;
+    box-shadow: 1px 5px 3px #e4e4e4;
+    width: 132px;
+    outline: none !important;
+    font-size: 18px;
+}
+.ansbtn2:hover {background: #00bcb0; color: #fff !important;     box-shadow: 1px 5px 5px #e4e4e4;}
+
+.ansbtn3 {
+    background-color: #01c9c3;
+    box-shadow: 1px 5px 3px #e4e4e4;
+    width: 132px;
+    outline: none !important;
+    font-size: 18px;
+}
+.ansbtn3:hover {background: #00bcb0; color: #fff !important;     box-shadow: 1px 5px 5px #e4e4e4;}
+
+.ansbtn4 {
+    background-color: #01c9c3;
+    box-shadow: 1px 5px 3px #e4e4e4;
+    width: 132px;
+    outline: none !important;
+    font-size: 18px;
+}
+.ansbtn4:hover {background: #00bcb0; color: #fff !important;     box-shadow: 1px 5px 5px #e4e4e4;}
 
 .ansbox{
     margin-top: 20px;
@@ -359,7 +387,7 @@ header .navbar-nav>li:first-child {
     border: none;
 }
 .section1 .chapter ul li a {
-    font-size: 15.5px;
+    font-size: 15.3px;
     color: #ffffff;
 }
 
