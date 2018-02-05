@@ -124,7 +124,26 @@
                                 <div class="ansbox">
                                     <div id="Tdiv" class="collapse">
                                         <p class="answer-show">
-                                            <span class="question-number">উত্তরঃ </span> এখানে উত্তর থাকবে। 
+                                            <span class="question-number">উত্তরঃ </span> 
+                                            <p> যদি একটা মাত্র খালি জায়গা বা হোয়াইট স্পেস (whitespace) থাকে তাহলে হোয়াইট স্পেস এর আগেরটা আর খালি জায়গা হবে না। সেখানে কোন একটা বর্ন থাকবে। সেজন্য আমরা if এর ভিতরে চেক করবো, কোন একটা বর্ন whitespace কিনা এবং তার আগেরটা whitespace না কিনা। যেমন agami eid er  por andolon      hobe. তে eid এর পরে যে খালি জায়গা আছে তার আগের জায়গায় অর্থাৎ i -১ পজিশনে d আছে। তাই এইটা একটা ওয়ার্ড ধরে নিবে।কারণ খালি জায়গার আগের পজিশন খালি জায়গা না। কিন্তু er এরপর দুইটা খালি জায়গা। প্রথম খালি জায়গাটার আগের জায়গায় r আছে। অর্থাৎ খালি জায়গার আগেরটা খালি নাই তাই সেটাকে ওয়ার্ড একটা গুনবে। তবে for লুপ চালিয়ে সেকেন্ড খালি জায়গায় গেলে দেখবে এইটা একটা খালি জায়গা। কিন্তু তার আগেরটাও "খালি জায়গা না" না। কারণ সেখানে খালি জায়গা। আর খালি জায়গা থাকা মানে, "খালি জায়গা না" এই কথাটা মিথ্যা। তাই দুইটা খালি জায়গা থাকলে পরের শর্ত সত্য হবে না। তাই if এর ভিতরে যাবে না। তাই শব্দ গুনবে না। 
+                                            </p>
+                                            <p>এই একই সিস্টেমে তিন চারটা বা দশটা খালি জায়গা থাকলেও, শুধু প্রথম খালি জায়গার আগেরটা "খালি জায়গা না" এই শর্ত পূরণ করবে। পরের খালি জায়গাগুলা "আগেরটা খালি জায়গা না" এই শর্ত পূরণ করবে না। তাই নিচের কোড দুই তিনটা বা দশটা খালি জায়গা থাকলেও সেটাকে শুধু একটা শব্দ হিসেবে গোনায় ধরা হবে। </p>
+                                            <p>এই বর্ননা বুঝতে না পারলে নিচে কমেন্ট করো। আমি এসে বুঝিয়ে দিবো। বুঝাতে না পারলে বইয়ের মূল্য ফেরত। </p>
+
+
+                                            <pre><code>
+function wordCount(boktrita) { 
+    var count = 0;
+    
+    for(var i = 0; i < boktrita.length; i++) {
+        if(boktrita[i] == ' ' && boktrita[i-1] !=' ') {
+        count++;
+        }
+    }
+    count++;
+    return count;
+}
+                                            </code></pre>
                                         </p>
                                     </div>
                                 </div>
@@ -148,7 +167,23 @@
                                     <div class="ansbox">
                                         <div id="Tdiv2" class="collapse">
                                             <p class="answer-show2">
-                                                <span class="question-number">উত্তরঃ </span> এটা ২নং প্রশ্নের উত্তর  
+                                                <span class="question-number">উত্তরঃ </span> 
+                                                <pre><code>
+function sentenceCount(boktrita) { 
+    var count = 0;
+    
+    for(var i = 0; i < boktrita.length; i++) {
+        if(boktrita[i] == '.') {
+        count++;
+        }
+    }
+    
+    return count;
+}
+    
+sentenceCount("agami eid er por andolon hobe. rajpath gorom hobe. songram hobe."); 
+                                                                                                          
+                                                                                                    </code></pre> 
                                             </p>
                                         </div>
                                     </div>
@@ -170,7 +205,31 @@
                                     <div class="ansbox">
                                         <div id="Tdiv3" class="collapse">
                                             <p class="answer-show3">
-                                                <span class="question-number">উত্তরঃ </span> এটা ৩নং প্রশ্নের উত্তর  
+                                                <span class="question-number">উত্তরঃ </span> 
+                                                <pre><code>
+function sentenceCount(boktrita) { 
+    var count = 0;
+
+    for(var i = 0; i < boktrita.length; i++) {
+        if(boktrita[i] == '.') {
+        count++;
+        }
+        
+        else if (boktrita[i] == '!') {
+        count++;
+        }
+        
+        else if (boktrita[i] == '?') {
+        count++;
+        }
+    }
+    
+    return count;
+}
+    
+sentenceCount("agami eid er por andolon hobe. amader ki boka paise? jaliye dao!"); 
+                                                      
+                                                </code></pre>
                                             </p>
                                         </div>
                                     </div>
@@ -191,7 +250,22 @@
                                     <div class="ansbox">
                                         <div id="Tdiv4" class="collapse">
                                             <p class="answer-show4">
-                                                <span class="question-number">উত্তরঃ </span> এটা ৪নং প্রশ্নের উত্তর  
+                                                <span class="question-number">উত্তরঃ </span>
+                                                <pre><code>
+function vowelCount(boktrita) {
+    var count = 0;
+    for(var i = 0; i < boktrita.length; i++) {
+        
+        if(boktritai] == 'a' || boktritai] == 'e' || boktritai] == 'i' || boktritai] == 'o' || boktritai] == 'u') {
+        count++;
+        }
+    }
+    return count;
+}
+    
+vowelCount("agami eid er por andolon hobe");
+                                                      
+                                                </code></pre>  
                                             </p>
                                         </div>
                                     </div>
