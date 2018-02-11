@@ -14,7 +14,7 @@
     <link href="css/media.css" rel="stylesheet">
     <link href="css/tomorrow-night.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
 
 <body>
@@ -122,9 +122,32 @@
                             <div class="sansdiv">
                                 <div class="ansbox">
                                     <div id="Tdiv" class="collapse">
-                                        <p class="answer-show">
-                                            <span class="question-number">উত্তরঃ </span> এখানে 8.1 নং উত্তর থাকবে।
-                                        </p>
+                                        <div class="answer-show">
+                                            <span class="question-number">উত্তরঃ </span>
+                                            <pre><code>
+var mangoes = [  
+    { weight: 600, category: "fazlee", isFormalin: false }, 
+    { weight: 700, category: "kathalvog", isFormalin: false }, 
+    { weight: 690, category: "fazlee", isFormalin: true }, 
+    { weight: 300, category: "himSagor", isFormalin: false }, 
+    { weight: 250, category: "kathalvog", isFormalin: true }, 
+    { weight: 650, category: "langra", isFormalin: true },
+    { weight: 350, category: "himSagor", isFormalin: true }
+];
+
+function getLarger(mangoes){
+    var selected = [];
+    for(var i = 0; i < mangoes.length; i++){
+        var mango = mangoes[i];
+        if(mango.weight > 500){
+            selected.push(mango);
+        }
+    }
+    return selected;
+}
+                                       
+                                            </code></pre>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -142,9 +165,21 @@
                             <div class="sansdiv">
                                 <div class="ansbox">
                                     <div id="Tdiv2" class="collapse">
-                                        <p class="answer-show2">
-                                            <span class="question-number">উত্তরঃ </span> এটা ২নং প্রশ্নের উত্তর
-                                        </p>
+                                        <div class="answer-show2">
+                                            <span class="question-number">উত্তরঃ </span>
+                                            <pre><code>
+function biggerAndNoFormalin(mangoes){
+    var selected = [];
+    for(var i = 0; i < mangoes.length; i++){
+        var mango = mangoes[i];
+        if(mango.weight > 400 && mango.isFormalin == false){
+            selected.push(mango);
+        }
+    }
+    return selected;
+}
+                                            </code></pre>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -161,9 +196,21 @@
                             <div class="sansdiv">
                                 <div class="ansbox">
                                     <div id="Tdiv3" class="collapse">
-                                        <p class="answer-show3">
-                                            <span class="question-number">উত্তরঃ </span> এটা 8.3 নং প্রশ্নের উত্তর
-                                        </p>
+                                        <div class="answer-show3">
+                                            <span class="question-number">উত্তরঃ </span> 
+                                            <pre><code>
+function getGoodMango(mangoes){
+    var selected = [];
+    for(var i = 0; i < mangoes.length; i++){
+        var mango = mangoes[i];
+        if(mango.category == "fazlee" || mango.category == "himSagor"){
+            selected.push(mango);
+        }
+    }
+    return selected;
+}
+                                            </code></pre>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
