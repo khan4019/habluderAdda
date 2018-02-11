@@ -13,7 +13,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/media.css" rel="stylesheet">
     <link href="css/tomorrow-night.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../img/favicon.png" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
@@ -120,9 +120,32 @@
                                     <div class="sansdiv">
                                         <div class="ansbox">
                                             <div id="Tdiv" class="collapse">
-                                                <p class="answer-show">
-                                                    <span class="question-number">উত্তরঃ </span> এখানে 3.1 নং উত্তর থাকবে।
-                                                </p>
+                                                <div class="answer-show">
+                                                    <span class="question-number">উত্তরঃ </span>
+                                                    <p>কিছু কিছু শব্দের ক্ষেত্রেও দেখা যায় এরা তাদের ওয়েটেজ ধরে রাখতে পারে না। সামনে দিয়ে যা বলে পিছনের দিক থেকেও তাই বলে। যেমন এমন একটা ওয়ার্ড হচ্ছে- madam, civic, eye, refer, rotator, ইত্যাদি।</p>
+                                                    <p>এইসব ওয়ার্ডকে সামনের দিক থেকে পড়লে যেমন পড়া যায়। পিছনের দিক থেকে পড়লে একই রকম ভাবে পড়া যায়। দুই দিক থেকে পড়লেই একই শব্দ পাওয়া যায়। এই রকম শব্দগুলোকে আমি বলি চরিত্রহীন শব্দ আর এদেরকে ইংরেজিতে বলে প্যালিনড্রম (Palindrome)। এই ইংরেজি নামটা মনে রাখিস। কারণ ইন্টারভিউতে প্রশ্ন করার সময় ইংরেজি দিয়েই জিজ্ঞেস করবে। </p>
+                                                    <p>কোন একটা শব্দ প্যালিনড্রম কিনা সেটা চেক করা খুবই সোজা। কারণ যেহেতু এই শব্দের পিছন থেকে পড়লে যা হবে সামনে থেকে পড়লেও তাই হবে। সেকারণে দেখ সব শব্দগুলার শুরুর এবং শেষ বর্ণ কিন্তু একই। আবার দেখ শুরু থেকে দ্বিতীয় বর্ণ আর শেষ থেকে দ্বিতীয় বর্ণও কিন্তু একই। </p>
+                                                    <p>তুই isPalindrome নামে একটা ফাংশন ডিক্লেয়ার করবি সেটাতে একটা ইনপুট প্যারামিটার নিবি। যেই ইনপুট প্যারামিটারের নাম দিতে পারস word। তারপর প্রথমেই তোর আগের reverse ফাংশনকে এই কল করবি আর ইনপুট প্যারামিটার হিসেবে তোর word ইনপুট প্যারামিটারকে দিবি। তাহলে তোর reverse ফাংশন উল্টিয়ে যে ওয়ার্ড দিবে সেটাকে তুই reverseWord নামক একটা ভেরিয়েবলে রাখবি। তাহলে তোর ফাংশনটা দেখতে নিচের মতো হবে।</p>
+                                                    <pre><code>
+function isPalindrome(input){
+    var reverseWord = reverse(input);
+}                                                        
+                                                    </code></pre>
+                                                    <p>এখন তোর কাজ অর্ধেকের বেশি হয়ে গেছে। তুই জানস যে কোন একটা শব্দ যদি প্যালিনড্রোম হয় তাহলে সেই ওয়ার্ড সামনে থেকে যেরকম পিছন থেকেও একই রকমের হবে। অর্থাৎ সেই ওয়ার্ডকে উল্টালেও সে একই জিনিস থাকবে।  সেজন্যই madam কে উল্টালে madamই থাকে।  কিন্তু medium কে উল্টালে medium থাকে না muidem হয়ে যায়।  এতো কথার মেইন কথা হচ্ছে কোন একটা ওয়ার্ডকে উল্টালে যদি সেই একই  ওয়ার্ড পাওয়া যায় তাহলে সেটাই একটা প্যালিনড্রম।  তুই তো একটু আগে তোর word কে রিভার্স করে reverseWord নামক ভেরিয়েবলে রাখছস। এখন তোর কাজ হবে চেক করে দেখা। যদি তোর word ইনপুট প্যারামিটার আর reversedWord দুইটা সমান হয় তাহলে যে word ইনপুট হিসেবে নিছস সেটা একটা  প্যালিনড্রোম। আর যদি না হয় তাহলে সে প্যালিনড্রোম না। তাই তোর isPalindrome ফাংশনটা দেখতে নিচের মতো হবে।  </p>
+                                                    <pre><code>
+function isPalindrome(input){
+    var reverseWord = reverse(input);
+        if(input == reverseWord){
+        return true;
+    } else {
+        return false;
+    }
+}
+                                                          
+                                                    </code></pre>
+                                                    <p>এখন তুই যদি medum শব্দটা পালিনড্রোম কিনা সেটা চেক করতে চাস তাহলে তোর isPalindrome ফাংশনকে isPalindrome(“madam”); লিখে কল করবি তখন আউটপুট হিসেবে true পাওয়া যাবে। আর তুই যদি তোর isPlaindrome ফাংশনকে medium দিয়ে কল করস তখন তুই isPalindrome(“medium”) লিখবি তখন আউটপুট হিসেবে false পাওয়া যাবে। তখন প্রমাণিত হবে madam শব্দটা একটা প্যালিনড্রোম আর medium শব্দটা প্যালিনড্রোম না।   </p>
+                                                    
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -141,9 +164,36 @@
                                     <div class="sansdiv">
                                         <div class="ansbox">
                                             <div id="Tdiv2" class="collapse">
-                                                <p class="answer-show2">
-                                                    <span class="question-number">উত্তরঃ </span> এটা ২নং প্রশ্নের উত্তর  
-                                                </p>
+                                                <div class="answer-show2">
+                                                    <span class="question-number">উত্তরঃ </span> 
+                                                    <p>এইটা করার জন্য সেন্টেন্সের বা string এর শব্দগুলোকে আলাদা করে ফেলতে হবে। এক একটা string এর শব্দগুলোকে আলাদা করার একটা সহজ উপায় হচ্ছে split ব্যবহার করা। সেজন্য text.split(" "); ব্যবহার করা হয়েছে। এইটা করলে সবগুলা শব্দ আলাদা আলাদা হয়ে words নামক array তে জমা হবে। </p>
+                                                    <p>তারপর আগের মতো করে উল্টা করে for লুপ চালিয়ে দিবে। লুপ চালাতে চলতে সেটাকে reverseText নামক ভেরিয়েবলে যোগ করে দিবে। আর যোগ করার সময় প্রত্যেকটা শব্দের একটা একটা করে হোয়াইট স্পেস যোগ করে দিতে হবে। তাহলেই আসল কাজ শেষ হয়ে যাবে। </p>
+                                                    <pre><code>
+function reverseSentence(text){
+    var reverseText = "";
+    var words = text.split(" ");
+    
+    for(var i = words.length - 1; i>=0; i--){
+        var word = words[ i ];
+        reverseText = reverseText + " "+ word;
+    }
+    return reverseText;
+}
+                                                        
+                                                    </code></pre>
+                                                    <p></p>
+                                                    <p><strong>Alternative solution:</strong></p>
+                                                    <p></p>
+                                                    <pre><code>
+function reverseSentence(text){
+    var words = text.split(" ");
+    var reversed = words.reverse();
+    var reversedText = reversed.join(" ");
+    return reversedText;
+}
+                                                        
+                                                    </code></pre>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>  
@@ -163,9 +213,40 @@
                                         <div class="sansdiv">
                                             <div class="ansbox">
                                                 <div id="Tdiv3" class="collapse">
-                                                    <p class="answer-show3">
-                                                        <span class="question-number">উত্তরঃ </span> এটা 16.3 নং প্রশ্নের উত্তর
-                                                    </p>
+                                                    <div class="answer-show3">
+                                                        <span class="question-number">উত্তরঃ </span> 
+                                                        <p>এইটা করার জন্য উপরের দুইটা সল্যুশনকে কাজে লাগাতে হবে। </p>
+                                                        <p>আগের reverse ফাংশনটা এইখানে ইউজ করতে হবে। সেটা আগের মতোই আছে। </p>
+                                                        <p>এই ফাংশনে শব্দগুলোকে তার জায়গায়র মধ্যে রেখে উল্টানো হবে। তাই প্রথমেই split করে নে।  তাইলে শব্দগুলো ভাগ  ভাগ হয়ে যাবে। তারপর একটা for লুপ চালিয়ে array থেকে একটা করে উপাদান নিবি। সেই উপাদানগুলোকে  একটা একটা করে নিয়ে সেটাকে reverse করে wordReversed নামক ভেরিয়েবলে রাখবি। তারপর সেই ভেরিয়েবল কে reversed নামক array এর মধ্যে পুশ করে দিবি। 
+                                                        </p>
+                                                        <p>এরপর আর তেমন কাজ নাই। জাস্ট reversed নামক array কে join করে দিবি হোয়াইট স্পেস দিয়ে। পুরা কোড দেখে বুঝার চেষ্টা কর। </p>
+                                                        <pre><code>
+function reverseInPlace(text){
+    var words = text.split(" ");
+    var reversed = [];
+    
+    for(var i = 0; i&lt;words.length; i++){
+        var word = words[ i ];
+        var wordReversed = reverse(word);
+        reversed.push(wordReversed);
+    }
+    var reverseText = reversed.join(" ");
+    
+    return reverseText;
+}
+
+function reverse(word){
+    var reverseWord = "";
+    for(var i = word.length - 1; i>=0; i--){
+        var letter = word[ i ];
+        reverseWord = reverseWord + letter;
+    }
+    return reverseWord;
+}
+                                                                                                                       
+                                                        </code></pre>
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

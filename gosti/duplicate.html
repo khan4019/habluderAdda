@@ -120,7 +120,24 @@
                                     <div class="ansbox">
                                         <div id="Tdiv" class="collapse">
                                             <p class="answer-show">
-                                                <span class="question-number">উত্তরঃ </span> এখানে 2.1 নং উত্তর থাকবে।
+                                                <span class="question-number">উত্তরঃ </span>
+                                                <p>একটা array এর মধ্যে কোন একটা উপাদান আছে কিনা সেটা চেক করা আর কোন একটা স্ট্রিং এর মধ্যে আছে কিনা দুইটাই চেক করার সিস্টেম একই রকমের। indexOf লিখে চেক করতে হয়। 
+
+                                                </p>
+                                                <pre><code>
+function removeDuplicate(sentence){
+    var output = "";
+
+    for(var i = 0; i < sentence.length; i++){
+            var letter = sentence[ i ];
+            if(output.indexOf(letter) == -1){
+                output = output + letter;
+            }
+    }
+    return output;
+}                                                   
+                                                </code></pre>
+                                                <p>উপরের কোড কে removeDuplicate("isting bisting disting"); লিখে কল করলে আউটপুট হিসেবে "istng bd" পাওয়া যাবে। সেখানে কোন ডুপ্লিকেট ক্যারেক্টার থাকবে না। </p>
                                             </p>
                                         </div>
                                     </div>
@@ -144,8 +161,28 @@
                                     <div class="ansbox">
                                         <div id="Tdiv2" class="collapse">
                                             <p class="answer-show2">
-                                                <span class="question-number">উত্তরঃ </span> এটা ২নং প্রশ্নের উত্তর
+                                                <span class="question-number">উত্তরঃ </span>
+                                                <p>এই কোড কয়েকভাবে করা যায়। একটা উপায় হচ্ছে হ্যাশ টেবিল বা ডিকশনারি দিয়ে করা। আরেকটা উপায় হচ্ছে indexOf এর মতো আরেকটা জিনিস আছে সেটা হচ্ছে lastIndexOf । এই lastIndexOf এর কাজ হচ্ছে কোন একটা array মধ্যে  উপাদান পিছনের দিক থেকে খুঁজে। </p>
+                                                <p>যেমন ধর [১, ২, ৩, ৪১, ৩, ৭ ] এই array এর মধ্যে ১ মাত্র একবার আছে। তাই এইটাকে সামনের দিক থেকে খুঁজলেও প্রথম পজিশনে পাওয়া যাবে। আবার পিছনের দিক থেকে খুঁজলেও প্রথম পজিশনে পাওয়া যাবে। তাই বলা যায় ১ সংখ্যাটা একবারের বেশি নাই। অন্যদিকে তুই যদি ৩ কে খুঁজতে যাস। তাহলে শুরুর দিক থেকে খুঁজলে পাওয়া যাবে তৃতীয় পজিশনে আর শেষের দিক থেকে খুঁজলে পাওয়া যাবে পঞ্চম পজিশনে। 
+                                                </p>
+                                                <p> তারমানে indexOf আর lastIndexOf একই পজিশন দেখাচ্ছে না। তাই এই উপাদানটা একাধিকবার আছে তাই সেটাকে আমরা আমাদের আউটপুট selected নামক array এর মধ্যে যোগ করবো না। </p>
+                                                <p>আরেকটা জিনিস খেয়াল রাখবি। আগের কোড করার সময় আমরা চেক করতেছিলাম যে selected নামক array এর মধ্যে উপাদানটা যোগ করা হয়ে গেছে কিনা। এখন যেহেতু names নামক array এর মধ্যে একাধিকবার যোগ করা হয়েছে কিনা সেটা চেক করতে হবে। তাই indexOf আর lastIndexOf এই দুই জিনিসটা চেক করতে হবে names নামক array থেকে </p>
                                             </p>
+                                            <p>আর এই ফাংশনের কাজ যেহেতু যে নামগুলো একবারের বেশি আসেনি তাই এই ফাংশনের নামটা একটু চেইঞ্জ করে দে। </p>
+                                            <pre><code>
+function getNotRepeated(names){
+    var selected = [ ];
+
+    for(var i = 0; i < names.length; i++){
+            var name = names[ i ];
+            if(names.indexOf(name) == names.lastIndexOf(name)){
+                selected.push(name);
+            }
+    }
+    return selected;
+}
+                                            </code></pre>
+                                            <p>এই ফাংশন কে removeDuplicate(["pitu", "ritu", "jitu", "situ", "mitu", "nitu", "bitu", "jitu", "jitu", "bitu", "situ", "litu", "gitu", "litu"]) লিখে কল করলে আউটপুট হিসেবে ["pitu", "ritu", "mitu", "nitu", "gitu"] পাওয়া যাবে। অর্থাৎ যে নামগুলো একবারের বেশি আসেনি সেগুলাকেই আউটপুট হিসেবে দেখাবে। </p>
                                         </div>
                                     </div>
                                 </div>
@@ -167,7 +204,35 @@
                                     <div class="ansbox">
                                         <div id="Tdiv3" class="collapse">
                                             <p class="answer-show3">
-                                                <span class="question-number">উত্তরঃ </span> এটা 2.3 নং প্রশ্নের উত্তর
+                                                <span class="question-number">উত্তরঃ </span>
+                                                <p>Description coming soon... email for more help</p>
+                                                <pre><code>
+function getOddTimesRepeated(names){
+    var uniqueNames = [ ];
+    var output = [];
+    var nameCount = {};
+
+    for(var i = 0; i < names.length; i++){
+            var name = names[ i ];
+            if(uniqueNames.indexOf(name) == -1){
+                uniqueNames.push(name);
+                nameCount[name] = 1;
+            } 
+            else{
+                nameCount[name] = nameCount[name] +1;
+            } 
+    }
+    
+    for(var i = 0; i < uniqueNames.length; i++){
+        var name = names[ i ];
+        if(nameCount[name]%2!=0){
+            output.push(name);
+        }
+    }
+    return output;
+}
+                                                    
+                                                </code></pre>
                                             </p>
                                         </div>
                                     </div>

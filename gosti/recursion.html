@@ -12,7 +12,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/media.css" rel="stylesheet">
     <link href="css/tomorrow-night.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../img/favicon.png" />
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
@@ -109,9 +109,17 @@
                                 <div class="sansdiv">
                                     <div class="ansbox">
                                         <div id="Tdiv" class="collapse">
-                                            <p class="answer-show">
-                                                <span class="question-number">উত্তরঃ </span> এখানে 5.1 নং উত্তর থাকবে।
-                                            </p>
+                                            <div class="answer-show">
+                                                <span class="question-number">উত্তরঃ </span>
+                                                <pre><code>
+function factorial(number) {
+    if (number < 1) {
+        return 1;
+    }
+    return number * factorial(number - 1);
+}
+                                                </code></pre>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -131,9 +139,27 @@
                                 <div class="sansdiv">
                                     <div class="ansbox">
                                         <div id="Tdiv2" class="collapse">
-                                            <p class="answer-show2">
-                                                <span class="question-number">উত্তরঃ </span> এটা ২নং প্রশ্নের উত্তর
-                                            </p>
+                                            <div class="answer-show2">
+                                                <span class="question-number">উত্তরঃ </span> 
+                                                <p>প্রাইম বা মৌলিক সংখ্যা হবে যখন কোন একটা সংখ্যাকে সেই সংখ্যা আর ১ ছাড়া অন্য কোন সংখ্যা দিয়ে ভাগ করা যাবে না। যদি কোন সংখ্যা দিয়ে ভাগ করা যায় তাহলে সেই সংখ্যা দিয়ে ভাগ করলে ভাগশেষ ০ হবে।  তাই নিচের ফাংশনে একটা while লুপ চালিয়ে দেয়া হয়েছে। সেটার ভিতরে সংখ্যায়টাকে divisor দিয়ে ভাগ দিয়ে ভাগশেষ ০ এর সম্যান কিনা সেটা if এর ভিতরের শর্ত দিয়ে চেক করা হচ্ছে।  যদি ভাগশেষ ০ এর সমান হয় তাহলে ভাগ হয়ে গেলে তাই সংখ্যাটা মৌলিক সংখ্যা হবে না। আর যদি ভাগ না যায় তাহলে যে সংখ্যা দিয়ে ভাগ করা হচ্ছে তার মান এক করে বাড়ানো হচ্ছে। আর যদি একদম কোন সংখ্যা দিয়ে ভাগ না যায় থামলে সেটাকে প্রাইম সংখ্যা বলে true রিটার্ন করে দিছস।  </p>
+                                                <pre><code>
+function isPrime(n){
+    var divisor = 2;
+    
+    while (n > divisor){
+        if(n % divisor == 0){
+        return false; 
+        }
+        else
+        divisor++;
+    }
+    return true;
+    }
+                                                      
+                                                </code></pre>
+                                                <p>এখন ১৩৭ প্রাইম সংখ্যা কিনা সেটা চেক করার জন্য isPrime(137); লিখে রান কর। তখন আউটপুট হিসেবে true পাওয়া যাবে।একইভাবে ২৩৭ একটা মৌলিক সংখ্যা কিনা চেক করতে গিয়ে  isPrime(237); লিখে run করলে আউটপুট হিসেবে false পাওয়া যাবে। </p>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -152,9 +178,79 @@
                                 <div class="sansdiv">
                                     <div class="ansbox">
                                         <div id="Tdiv3" class="collapse">
-                                            <p class="answer-show3">
-                                                <span class="question-number">উত্তরঃ </span> এটা 5.3 নং প্রশ্নের উত্তর
-                                            </p>
+                                            <div class="answer-show3">
+                                                <span class="question-number">উত্তরঃ </span> 
+                                                <p>গসাগুকে ইংরেজিতে বলে Greatest Common Divisor বা GCD এখন তোর কাজ হবে তোকে দুইটা সংখ্যা দিলে সেই দুইটা সংখ্যার গসাগু বের করে দিতে হবে। সেটা করার জন্য   </p>
+                                                <pre><code>
+function greatestCommonDivisor(a, b){
+    var divisor = 2; 
+    var greatestDivisor = 1;    
+    
+    if (a < 2 || b < 2)
+        return 1;
+    
+    while(a >= divisor && b >= divisor){
+        if(a %divisor == 0 && b% divisor ==0){
+        greatestDivisor = divisor;      
+        }
+        divisor++;
+    }
+    return greatestDivisor;
+}
+                                                      
+                                                </code></pre>
+                                                <p>এখন তুই যদি রিকারসিভ পদ্ধতিতে গসাগু বের করতে চাস তাহলে নিচের ফাংশনটা ব্যবহার করবি। সত্যি কথা বলতে কি, নিচের কোডটা কাজ করে এইটা বুঝতে মাঝে মধ্যে আমার চোখের জল আর নাকের জল এক হয়ে যায়। তারপরেও তোর এই কোডটা জানা উচিত। যদি কেউ ইন্টারভিউতে জিজ্ঞেস করে বসে। কারণ সাবধান খুব ভদ্র ছেলে। তাই সাবধানের মাইর নাই। মাইর সব অসাবধানের। 
+                                                </p>
+                                                <pre><code>
+function greatestCommonDivisor(a, b){
+    if(b == 0){
+        return a;
+    }
+    else {
+        return greatestCommonDivisor(b, a%b);
+    }
+}
+                                                     
+                                                </code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="fb-comments" width="100%" data-href="http://habluderadda.com/basic/ifelse.html#question3" data-numposts="5"></div>
+                            </section>
+                            <section class="question-holder">
+                                <p>
+                                    <span class="question-number">প্রশ্ন-5.4</span>Extra Question: Prime Factor
+                                </p>
+
+                                <div class="ansbtndiv">
+                                    <button type="button" class="btn ansbtn4 btn-block" data-target="#Tdiv4" data-toggle="collapse">Show Answer</button>
+                                </div>
+                                <div class="sansdiv">
+                                    <div class="ansbox">
+                                        <div id="Tdiv4" class="collapse">
+                                            <div class="answer-show3">
+                                                <span class="question-number">উত্তরঃ </span> 
+                                                <pre><code>
+function primeFactors(n){
+    var factors = []; 
+    var divisor = 2;
+    
+    while(n>2){
+        if(n % divisor == 0){
+            factors.push(divisor); 
+            n= n/ divisor;
+        }
+        else{
+        divisor++;
+        }     
+    }
+    return factors;
+}
+                                                      
+                                                </code></pre>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
