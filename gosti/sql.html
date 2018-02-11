@@ -171,7 +171,13 @@ INSERT INTO Student (name, age) VALUES ("Chorom Ullah", 17);
                                                 <span class="question-number">উত্তরঃ </span>
                                                 <pre><code>
 CREATE TABLE Result (id int AUTO_INCREMENT PRIMARY KEY, 
-    studentId int, subject varchar(25),  number double); 
+    studentId int, subject varchar(25),  marks double); 
+
+
+INSERT INTO Result (studentId, subject, marks) VALUES (1, "physics", 86);
+INSERT INTO Result (studentId, subject, marks) VALUES (1, "chemistry", 76);
+INSERT INTO Result (studentId, subject, marks) VALUES (2, "physics", 91);
+INSERT INTO Result (studentId, subject, marks) VALUES (2, "chemistry", 87);
                                             
                                                 </code></pre>
                                             </div>
