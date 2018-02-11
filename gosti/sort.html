@@ -14,7 +14,7 @@
     <link href="css/media.css" rel="stylesheet">
     <link href="css/tomorrow-night.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
 
 <body>
@@ -119,9 +119,27 @@
                                 <div class="sansdiv">
                                     <div class="ansbox">
                                         <div id="Tdiv" class="collapse">
-                                            <p class="answer-show">
-                                                <span class="question-number">উত্তরঃ </span> এখানে 6.1 নং উত্তর থাকবে।
-                                            </p>
+                                            <div class="answer-show">
+                                                <span class="question-number">উত্তরঃ </span> 
+                                                <pre><code>
+var mobiles = [
+    {brand: "walton", price: 6500, camera: 9},
+    {brand: "sympony", price: 5500, camera: 11},
+    {brand: "walton", price: 4000, camera: 6},
+    {brand: "samsung", price: 24500, camera: 13},
+    {brand: "LG", price: 9500, camera: 12},
+    {brand: "apple", price: 45500, camera: 8},
+    {brand: "walton", price: 4500, camera: 5},
+];
+    
+function sortComparison(first, second) {
+    return (first.camera - second.camera);
+}
+
+mobiles.sort(sortComparison);
+console.log(mobiles);
+                                                </code></pre>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -139,9 +157,27 @@
                                 <div class="sansdiv">
                                     <div class="ansbox">
                                         <div id="Tdiv2" class="collapse">
-                                            <p class="answer-show2">
-                                                <span class="question-number">উত্তরঃ </span> এটা ২নং প্রশ্নের উত্তর  
-                                            </p>
+                                            <div class="answer-show2">
+                                                <span class="question-number">উত্তরঃ </span> 
+                                                <pre><code>
+var mobiles = [
+    {brand: "walton", price: 6500, camera: 9},
+    {brand: "sympony", price: 5500, camera: 11},
+    {brand: "walton", price: 4000, camera: 6},
+    {brand: "samsung", price: 24500, camera: 13},
+    {brand: "LG", price: 9500, camera: 12},
+    {brand: "apple", price: 45500, camera: 8},
+    {brand: "walton", price: 4500, camera: 5},
+];
+    
+function sortComparisonDescending(first, second) {
+    return (second.camera - first.camera);
+}
+
+mobiles.sort(sortComparisonDescending);
+console.log(mobiles);
+                                                </code></pre>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>  
@@ -158,9 +194,27 @@
                                 <div class="sansdiv">
                                     <div class="ansbox">
                                         <div id="Tdiv3" class="collapse">
-                                            <p class="answer-show3">
-                                                <span class="question-number">উত্তরঃ </span> এটা 9.3 নং প্রশ্নের উত্তর
-                                            </p>
+                                            <div class="answer-show3">
+                                                <span class="question-number">উত্তরঃ </span>
+                                                <pre><code>
+var mangoes = [  
+    { weight: 600, category: "fazlee", isFormalin: false }, 
+    { weight: 700, category: "kathalvog", isFormalin: false }, 
+    { weight: 690, category: "fazlee", isFormalin: true }, 
+    { weight: 300, category: "himSagor", isFormalin: false }, 
+    { weight: 250, category: "kathalvog", isFormalin: true }, 
+    { weight: 650, category: "langra", isFormalin: true },
+    { weight: 350, category: "himSagor", isFormalin: true }
+];
+
+function sortComparisonDescending(first, second) {
+    return (second.weight - first.weight);
+}
+
+mangoes.sort(sortComparisonDescending);
+console.log(mangoes);
+                                                </code></pre>
+                                            </div
                                         </div>
                                     </div>
                                 </div>
