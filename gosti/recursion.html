@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>দেখলে Recursive Function এর ফুলের তোড়া </title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+    <link href="css/tomorrow-night.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id))
+                return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="../index.html">
+                            <img src="img/logo.PNG">
+                        </a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="../basic/" target="_blank">হাবলুদের জন্য প্রোগ্রামিং </a>
+                            </li>
+                            <li>
+                                <a href="index.html" target="_blank">বলদ টু বস </a>
+                            </li>
+                            <li>
+                                <a href="../concepts/" target="_blank">প্রোগ্রামিং কনসেপ্ট </a>
+                            </li>
+                            <li>
+                                <a href="../Programming-Couddogosti/" target="_blank">প্রোগ্রামিংয়ের চৌদ্দগোষ্ঠী</a>
+                            </li>
+                            <li>
+                                <a href="../jkr/" target="_blank">ঝংকার </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+    </header>
+    <div class="banner .visible-xs-block, hidden-xs .btitle: .visible-sm-block, hidden-sm">
+        <img src="img/banner.png" class="img-responsive">
+        <div class="btitle">
+            <h1>দেখলে Recursive Function এর ফুলের তোড়া</h1>
+        </div>
+    </div>
+    <div class="section1">
+        <div class="container nopadding">
+            <div class="col-md-8">
+                <div class="qu insec">
+                    <div class="row text-center chapter-title">
+                        <h1>
+                            <span class="chapter-title-main">নিজে নিজে কর </span>
+                        </h1>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="question-sub-title">
+                            <small class="question-help">প্রত্যেকটা প্রশ্নের উত্তর নিচে কমেন্ট কর। প্রথমে নিজে নিজে চেষ্টা কর। না পারলে অন্যদের কমেন্ট
+                                দেখে চেষ্টা কর। সেটাও করতে না পারলে, কেনো পরতেছস না, সেটা কমেন্ট কর। </small>
+                        </div>
+                        <div class="question-collection">
+                            <section class="question-holder">
+                                <p>
+                                    <span class="question-number">প্রশ্ন-5.1</span>রিকার্সন পদ্ধতিতে একটা সংখ্যার ফ্যাক্টরিয়াল বের কর?
+                                </p>
+
+                                <div class="ansbtndiv">
+                                    <button type="button" class="btn ansbtn btn-block" data-target="#Tdiv" data-toggle="collapse">Show Answer</button>
+                                </div>
+                                <div class="sansdiv">
+                                    <div class="ansbox">
+                                        <div id="Tdiv" class="collapse">
+                                            <div class="answer-show">
+                                                <span class="question-number">উত্তরঃ </span>
+                                                <pre><code>
+function factorial(number) {
+    if (number < 1) {
+        return 1;
+    }
+    return number * factorial(number - 1);
+}
+                                                </code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="fb-comments" width="100%" data-href="http://habluderadda.com/gosti/recursion.html#question1" data-numposts="5"></div>
+                            </section>
+                            <section class="question-holder">
+                                <p>
+                                    <span class="question-number">প্রশ্ন-5.2</span> কোন একটা সংখ্যা প্রাইম বা মৌলিক সংখ্যা কিনা সেটা বের করার একটা প্রোগ্রাম
+                                    লিখ।
+                                </p>
+
+
+                                <div class="ansbtndiv">
+                                    <button type="button" class="btn ansbtn2 btn-block" data-target="#Tdiv2" data-toggle="collapse">Show Answer</button>
+                                </div>
+                                <div class="sansdiv">
+                                    <div class="ansbox">
+                                        <div id="Tdiv2" class="collapse">
+                                            <div class="answer-show2">
+                                                <span class="question-number">উত্তরঃ </span> 
+                                                <p>প্রাইম বা মৌলিক সংখ্যা হবে যখন কোন একটা সংখ্যাকে সেই সংখ্যা আর ১ ছাড়া অন্য কোন সংখ্যা দিয়ে ভাগ করা যাবে না। যদি কোন সংখ্যা দিয়ে ভাগ করা যায় তাহলে সেই সংখ্যা দিয়ে ভাগ করলে ভাগশেষ ০ হবে।  তাই নিচের ফাংশনে একটা while লুপ চালিয়ে দেয়া হয়েছে। সেটার ভিতরে সংখ্যায়টাকে divisor দিয়ে ভাগ দিয়ে ভাগশেষ ০ এর সম্যান কিনা সেটা if এর ভিতরের শর্ত দিয়ে চেক করা হচ্ছে।  যদি ভাগশেষ ০ এর সমান হয় তাহলে ভাগ হয়ে গেলে তাই সংখ্যাটা মৌলিক সংখ্যা হবে না। আর যদি ভাগ না যায় তাহলে যে সংখ্যা দিয়ে ভাগ করা হচ্ছে তার মান এক করে বাড়ানো হচ্ছে। আর যদি একদম কোন সংখ্যা দিয়ে ভাগ না যায় থামলে সেটাকে প্রাইম সংখ্যা বলে true রিটার্ন করে দিছস।  </p>
+                                                <pre><code>
+function isPrime(n){
+    var divisor = 2;
+    
+    while (n > divisor){
+        if(n % divisor == 0){
+        return false; 
+        }
+        else
+        divisor++;
+    }
+    return true;
+    }
+                                                      
+                                                </code></pre>
+                                                <p>এখন ১৩৭ প্রাইম সংখ্যা কিনা সেটা চেক করার জন্য isPrime(137); লিখে রান কর। তখন আউটপুট হিসেবে true পাওয়া যাবে।একইভাবে ২৩৭ একটা মৌলিক সংখ্যা কিনা চেক করতে গিয়ে  isPrime(237); লিখে run করলে আউটপুট হিসেবে false পাওয়া যাবে। </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="fb-comments" width="100%" data-href="http://habluderadda.com/gosti/recursion.html#question2" data-numposts="5"></div>
+                            </section>
+                            <section class="question-holder">
+                                <p>
+                                    <span class="question-number">প্রশ্ন-5.3</span>কোন একটা সংখ্যার গসাগু(Greatest common divisor) বের করার জন্য একটা প্রোগ্রাম
+                                    লিখ।
+                                </p>
+
+                                <div class="ansbtndiv">
+                                    <button type="button" class="btn ansbtn3 btn-block" data-target="#Tdiv3" data-toggle="collapse">Show Answer</button>
+                                </div>
+                                <div class="sansdiv">
+                                    <div class="ansbox">
+                                        <div id="Tdiv3" class="collapse">
+                                            <div class="answer-show3">
+                                                <span class="question-number">উত্তরঃ </span> 
+                                                <p>গসাগুকে ইংরেজিতে বলে Greatest Common Divisor বা GCD এখন তোর কাজ হবে তোকে দুইটা সংখ্যা দিলে সেই দুইটা সংখ্যার গসাগু বের করে দিতে হবে। সেটা করার জন্য   </p>
+                                                <pre><code>
+function greatestCommonDivisor(a, b){
+    var divisor = 2; 
+    var greatestDivisor = 1;    
+    
+    if (a < 2 || b < 2)
+        return 1;
+    
+    while(a >= divisor && b >= divisor){
+        if(a %divisor == 0 && b% divisor ==0){
+        greatestDivisor = divisor;      
+        }
+        divisor++;
+    }
+    return greatestDivisor;
+}
+                                                      
+                                                </code></pre>
+                                                <p>এখন তুই যদি রিকারসিভ পদ্ধতিতে গসাগু বের করতে চাস তাহলে নিচের ফাংশনটা ব্যবহার করবি। সত্যি কথা বলতে কি, নিচের কোডটা কাজ করে এইটা বুঝতে মাঝে মধ্যে আমার চোখের জল আর নাকের জল এক হয়ে যায়। তারপরেও তোর এই কোডটা জানা উচিত। যদি কেউ ইন্টারভিউতে জিজ্ঞেস করে বসে। কারণ সাবধান খুব ভদ্র ছেলে। তাই সাবধানের মাইর নাই। মাইর সব অসাবধানের। 
+                                                </p>
+                                                <pre><code>
+function greatestCommonDivisor(a, b){
+    if(b == 0){
+        return a;
+    }
+    else {
+        return greatestCommonDivisor(b, a%b);
+    }
+}
+                                                     
+                                                </code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="fb-comments" width="100%" data-href="http://habluderadda.com/gosti/recursion.html#question3" data-numposts="5"></div>
+                            </section>
+                            <section class="question-holder">
+                                <p>
+                                    <span class="question-number">প্রশ্ন-5.4</span>Extra Question: Prime Factor
+                                </p>
+
+                                <div class="ansbtndiv">
+                                    <button type="button" class="btn ansbtn4 btn-block" data-target="#Tdiv4" data-toggle="collapse">Show Answer</button>
+                                </div>
+                                <div class="sansdiv">
+                                    <div class="ansbox">
+                                        <div id="Tdiv4" class="collapse">
+                                            <div class="answer-show3">
+                                                <span class="question-number">উত্তরঃ </span> 
+                                                <pre><code>
+function primeFactors(n){
+    var factors = []; 
+    var divisor = 2;
+    
+    while(n>2){
+        if(n % divisor == 0){
+            factors.push(divisor); 
+            n= n/ divisor;
+        }
+        else{
+        divisor++;
+        }     
+    }
+    return factors;
+}
+                                                      
+                                                </code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="fb-comments" width="100%" data-href="http://habluderadda.com/gosti/recursion.html#question4" data-numposts="5"></div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav1 insec">
+                        <div class="col-xs-4 noleft noright">
+                            <div class="prev">
+                                <a href="complexity.html">
+                                    <span>
+                                        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                                    </span>আগের চ্যাপ্টার &nbsp;</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <h6>Chapters 5 of 20</h6>
+                        </div>
+                        <div class="col-xs-4 noleft noright">
+                            <div class="next">
+                                    <a style=" background-color: #007bff;
+                                    color: #f6f6f6;;" href="series.html">পরের চ্যাপ্টার
+                                    <span>
+                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="chapter">
+                    <h1 class="heading">Chapters</h1>
+                    <div class="list1">
+                        <ul>
+                            <li>
+                                <a href="count.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>ভাষণের Word Count করে চাইলে ভ্যাট </a>
+                            </li>
+                            <li>
+                                <a href="duplicate.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Duplicate Entry চিপায় গিয়ে করবে চ্যাট </a>
+                            </li>
+                            <li>
+                                <a href="reverse.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Reverse String and Palindrom</a>
+                            </li>
+                            <li>
+                                <a href="complexity.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Time Complexity দেখে কয় বাপরে বাপ</a>
+                            </li>
+                            <li style="background-image: linear-gradient(to bottom right, #55ddd9, #1fc9c4);">
+                                <a href="recursion.html">
+                                    <span style="color:#fff;">
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>
+                                    <span style="    font-size: 15px;">দেখলে Recursive Function এর ফুলের তোড়া</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="series.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                        জাগে Fibonacci series এর মনে প্রেমের ধারা </a>
+                            </li>
+                            <li>
+                                <a href="merge.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Sorted Array মার্জ করতে ধোঁয়া মারে চুঙ্গী </a>
+                            </li>
+                            <li>
+                                <a href="search.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Property ধরে সার্চ করেও খুঁজে পায়না লুঙ্গি </a>
+                            </li>
+                            <li>
+                                <a href="sort.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>ধরে ধরে sort করলেও খুশি হয়না ঢংঙ্গী </a>
+                            </li>
+                            <li>
+                                <a href="sql.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Database তুই পালাবি কোথায় </a>
+                            </li>
+                            <li>
+                                <a href="relation.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Relational Database এর ব্রেকআপের গুতায় </a>
+                            </li>
+                            <li>
+                                <a href="connect.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Server এর সাথে Database এর প্রেম জমে </a>
+                            </li>
+                            <li>
+                                <a href="architecture.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Architecture ডায়াগ্রাম হিংসায় কেঁদে মরে </a>
+                            </li>
+                            <li>
+                                <a href="bestPractice.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Comment, Convention খায়না ভাত </a>
+                            </li>
+                            <li>
+                                <a href="debug.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Error দেখলেই মাথায় হাত </a>
+                            </li>
+                            <li>
+                                <a href="resume.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>ফকিরা Resumeতে ডিম পা ড়ে না হাঁস </a>
+                            </li>
+                            <li>
+                                <a href="apply.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>না বুঝে এপ্লাই করলে আইক্কাওয়ালা বাঁশ </a>
+                            </li>
+                            <li>
+                                <a href="google.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>গুগল, এমাজনে চাকরি পাওয়ার কায়দা </a>
+                            </li>
+                            <li>
+                                <a href="newHire.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>চাকরির প্রথম প্রথম লাইফ হবে ময়দা </a>
+                            </li>
+                            <li>
+                                <a href="mission.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>লেগে থাকলে খেতে পাবে ফালুদা </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="qbox">
+                    <div class="commentbox">
+                        <a href="#">
+                            <button class="btn info btn-block">বই পড়ে তোমার মন্তব্য </a>
+                        </button>
+                    </div>
+                </div>
+                <div class="subscribe">
+                    <h1 class="heading">আড্ডায় যুক্ত হও</h1>
+                    <!-- <form>
+                     <div class="input-group">
+                         <input type="text" class="form-control" placeholder="Your email adress" aria-describedby="basic-addon1">
+                     </div>
+                     <div class="submit">
+                         <a href="#">SUBMIT</a>
+                     </div>
+                     </form> -->
+                    <div class="fbpage">
+                        <div class="fb-page" data-href="https://www.facebook.com/jhankarmahbubshow/" data-small-header="false" data-adapt-container-width="true"
+                            data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/jhankarmahbubshow/" class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/jhankarmahbubshow/">Jhankar Mahbub</a>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightb">
+                    <h1 class="heading">হাবলু কপি কালেক্ট করো</h1>
+                    <div class="book">
+                        <img src="img/book3.png" class="img-responsive book3">
+                        <a href="https://www.rokomari.com/book/112222/">
+                            <img src="img/buy.png" class="img-responsive buy">
+                        </a>
+                    </div>
+                </div>
+                <div class="rightb">
+                        <h1 class="heading">হাবলু কপি কালেক্ট করো</h1>
+                        <div class="book">
+                            <img src="img/book3.png" class="img-responsive book3">
+                            <a href="https://www.rokomari.com/book/112222/">
+                                <img src="img/buy.png" class="img-responsive buy">
+                            </a>
+                        </div>
+                    </div>
+    
+                
+                <div class="rightb">
+                        <h1 class="heading">বলদ টু বস কালেক্ট করো</h1>
+                        <div class="book2">
+                            <img src="img/bolod-to-boss-book.png" class="img-responsive book3">
+                            <a href="https://www.rokomari.com/book/128993/">
+                                <img src="img/buy2.png" class="img-responsive buy">
+                            </a>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="social">
+                <a href="https://www.facebook.com/JhankarMahbub">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/jhankarmahbub">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a>
+                <a href="http://www.jhankarmahbub.com/">
+                    <i class="fa fa-link" aria-hidden="true"></i>
+                </a>
+                <a href="http://thatjsdude.com/">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                <p>প্রোগ্রামিংয়ের চৌদ্দগোষ্ঠী © 2017</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/collpus-button.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-40601505-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-40601505-5');
+    </script>
+</body>
+
+</html>

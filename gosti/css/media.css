@@ -1,0 +1,124 @@
+@media (max-width:1199px) {
+    .section1 .chapter ul li a {
+        font-size: 16px;
+    }
+    .heading {
+        font-size: 22px;
+    }
+    .section1 .insec .hand img {
+        width: 45px;
+    }
+}
+@media (max-width:991px) {
+    .section1 .chapter {
+        width: 50%;
+    }
+    .section1 .subscribe {
+        width: 50%;
+        padding-top: 0;
+        margin-top: 0;
+    }
+    .navbar-nav>li>a{
+        font-size: 12px;
+        padding: 2px 9px;
+    }
+}
+@media (max-width:767px) {
+
+    .section1 .chapter {
+        width: 100%;
+    }
+    .section1 .subscribe {
+        width: 100%;
+        padding-top: 0;
+        margin-top: 0;
+    }
+    .section1 .chapter .list1 {
+
+    }
+    .section1 .chapter ul li a {
+        font-size: 19px;
+    }
+    .hand {
+        width: 35px;
+    }
+    .section1 .insec .instruct h1 {
+        font-size: 15px;
+    }
+    header .navbar-nav>li {
+        border:none;
+    }
+    header .navbar-toggle {
+        margin-top: 20px;
+    }
+    .section1 {
+        padding: 0;
+    }
+    .section1 .insec{
+        padding: 0px 20px;
+    }
+    .subscribe{
+        display: none;
+    }
+    .navbar-nav>li>a{
+        font-size: 15px;
+    }
+}
+@media (max-width:559px) {
+
+    .section1 .nav1 a {
+        font-size: 12px;
+        padding: 3px;
+
+    }
+    .section1 .nav1 .prev a span {
+        padding-right: 4px;
+    }
+    .section1 .nav1 .next a span {
+        padding-left: 4px;
+    }
+    .section1 .insec .hand img {
+        width: 40px;
+    }
+}
+@media (max-width:524px) {
+    .section1 .insec ul {
+        padding-left: 20px;
+    }
+    .section1 .nav1 a {
+        font-size: 12px;
+        padding: 3px;
+
+    }
+    .section1 .nav1 .prev a span {
+        padding-right: 4px;
+    }
+    .section1 .nav1 .next a span {
+        padding-left: 4px;
+    }
+}
+@media (max-width:424px) {
+
+}
+@media (max-width:384px) {
+    .section1 .insec h1 {
+        margin: 15px;
+    }
+    .section1 .insec .instruct h1 {
+        padding-left: 8px;
+        font-size: 12px;
+    }
+
+    .section1 .nav1 h6 {
+        margin: 0;
+    }
+    .section1 .chapter ul li a {
+        font-size: 15px;
+    }
+    .section1 .insec p {
+        font-size: 20px;
+    }
+    .section1 .insec .hand img {
+        width: 35px;
+    }
+}

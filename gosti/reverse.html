@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>সিজনাল কবি String Reverse করে মারে চাপ</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+    <link href="css/tomorrow-night.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id))
+                return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="../index.html">
+                            <img src="img/logo.PNG">
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="../basic/" target="_blank">হাবলুদের জন্য প্রোগ্রামিং </a>
+                            </li>
+                            <li>
+                                <a href="index.html" target="_blank">বলদ টু বস </a>
+                            </li>
+                            <li>
+                                <a href="../concepts/" target="_blank">প্রোগ্রামিং কনসেপ্ট </a>
+                            </li>
+                            <li>
+                                <a href="../Programming-Couddogosti/" target="_blank">প্রোগ্রামিংয়ের চৌদ্দগোষ্ঠী</a>
+                            </li>
+                            <li>
+                                <a href="../jkr/" target="_blank">ঝংকার </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+    </header>
+
+    <div class="banner .visible-xs-block, hidden-xs .btitle: .visible-sm-block, hidden-sm">
+        <img src="img/banner.png" class="img-responsive">
+        <div class="btitle">
+            <h1>সিজনাল কবি String Reverse করে মারে চাপ</h1>
+        </div>
+    </div>
+
+    <div class="section1">
+        <div class="container nopadding">
+            <div class="col-md-8">
+
+                <div class="qu insec">
+                    <div class="row text-center chapter-title">
+                        <h1>
+                            <span class="chapter-title-main">নিজে নিজে কর </span>
+                        </h1>
+                    </div>
+
+                    <div class="row">
+                        <div class="question-sub-title">
+                            <small class="question-help">প্রত্যেকটা প্রশ্নের উত্তর নিচে কমেন্ট কর। প্রথমে নিজে নিজে চেষ্টা কর। না পারলে অন্যদের কমেন্ট
+                                দেখে চেষ্টা কর। সেটাও করতে না পারলে, কেনো পরতেছস না, সেটা কমেন্ট কর। </small>
+                        </div>
+                        <div class="question-collection">
+                            <section class="question-holder">
+                                <p>
+                                    <span class="question-number">প্রশ্ন-3.1</span> কিছু কিছু শব্দ রিভার্স করলে সেটা আগের শব্দের মতো সেইম হয়ে যায়। যেমন,
+                                    madam, civic, eye, refer, rotator, ইত্যাদি। তারমানে ওয়ার্ডকে রিভার্স করলে আগের ওয়ার্ড
+                                    পাওয়া যাবে। এইটাকে বলে প্যালিনড্রোম। এখন তোর কাজ হচ্ছে এমন একটা ফাংশন লেখা যেটাকে কোন
+                                    একটা ওয়ার্ড দিলে সে বলে দিবে সেই ওয়ার্ড প্যালিনড্রোম কিনা?
+                                </p>
+
+                                <div class="ansbtndiv">
+                                        <button type="button" class="btn ansbtn btn-block" data-target="#Tdiv" data-toggle="collapse">Show Answer</button>
+                                    </div>
+                                    <div class="sansdiv">
+                                        <div class="ansbox">
+                                            <div id="Tdiv" class="collapse">
+                                                <div class="answer-show">
+                                                    <span class="question-number">উত্তরঃ </span>
+                                                    <p>কিছু কিছু শব্দের ক্ষেত্রেও দেখা যায় এরা তাদের ওয়েটেজ ধরে রাখতে পারে না। সামনে দিয়ে যা বলে পিছনের দিক থেকেও তাই বলে। যেমন এমন একটা ওয়ার্ড হচ্ছে- madam, civic, eye, refer, rotator, ইত্যাদি।</p>
+                                                    <p>এইসব ওয়ার্ডকে সামনের দিক থেকে পড়লে যেমন পড়া যায়। পিছনের দিক থেকে পড়লে একই রকম ভাবে পড়া যায়। দুই দিক থেকে পড়লেই একই শব্দ পাওয়া যায়। এই রকম শব্দগুলোকে আমি বলি চরিত্রহীন শব্দ আর এদেরকে ইংরেজিতে বলে প্যালিনড্রম (Palindrome)। এই ইংরেজি নামটা মনে রাখিস। কারণ ইন্টারভিউতে প্রশ্ন করার সময় ইংরেজি দিয়েই জিজ্ঞেস করবে। </p>
+                                                    <p>কোন একটা শব্দ প্যালিনড্রম কিনা সেটা চেক করা খুবই সোজা। কারণ যেহেতু এই শব্দের পিছন থেকে পড়লে যা হবে সামনে থেকে পড়লেও তাই হবে। সেকারণে দেখ সব শব্দগুলার শুরুর এবং শেষ বর্ণ কিন্তু একই। আবার দেখ শুরু থেকে দ্বিতীয় বর্ণ আর শেষ থেকে দ্বিতীয় বর্ণও কিন্তু একই। </p>
+                                                    <p>তুই isPalindrome নামে একটা ফাংশন ডিক্লেয়ার করবি সেটাতে একটা ইনপুট প্যারামিটার নিবি। যেই ইনপুট প্যারামিটারের নাম দিতে পারস word। তারপর প্রথমেই তোর আগের reverse ফাংশনকে এই কল করবি আর ইনপুট প্যারামিটার হিসেবে তোর word ইনপুট প্যারামিটারকে দিবি। তাহলে তোর reverse ফাংশন উল্টিয়ে যে ওয়ার্ড দিবে সেটাকে তুই reverseWord নামক একটা ভেরিয়েবলে রাখবি। তাহলে তোর ফাংশনটা দেখতে নিচের মতো হবে।</p>
+                                                    <pre><code>
+function isPalindrome(input){
+    var reverseWord = reverse(input);
+}                                                        
+                                                    </code></pre>
+                                                    <p>এখন তোর কাজ অর্ধেকের বেশি হয়ে গেছে। তুই জানস যে কোন একটা শব্দ যদি প্যালিনড্রোম হয় তাহলে সেই ওয়ার্ড সামনে থেকে যেরকম পিছন থেকেও একই রকমের হবে। অর্থাৎ সেই ওয়ার্ডকে উল্টালেও সে একই জিনিস থাকবে।  সেজন্যই madam কে উল্টালে madamই থাকে।  কিন্তু medium কে উল্টালে medium থাকে না muidem হয়ে যায়।  এতো কথার মেইন কথা হচ্ছে কোন একটা ওয়ার্ডকে উল্টালে যদি সেই একই  ওয়ার্ড পাওয়া যায় তাহলে সেটাই একটা প্যালিনড্রম।  তুই তো একটু আগে তোর word কে রিভার্স করে reverseWord নামক ভেরিয়েবলে রাখছস। এখন তোর কাজ হবে চেক করে দেখা। যদি তোর word ইনপুট প্যারামিটার আর reversedWord দুইটা সমান হয় তাহলে যে word ইনপুট হিসেবে নিছস সেটা একটা  প্যালিনড্রোম। আর যদি না হয় তাহলে সে প্যালিনড্রোম না। তাই তোর isPalindrome ফাংশনটা দেখতে নিচের মতো হবে।  </p>
+                                                    <pre><code>
+function isPalindrome(input){
+    var reverseWord = reverse(input);
+        if(input == reverseWord){
+        return true;
+    } else {
+        return false;
+    }
+}
+                                                          
+                                                    </code></pre>
+                                                    <p>এখন তুই যদি medum শব্দটা পালিনড্রোম কিনা সেটা চেক করতে চাস তাহলে তোর isPalindrome ফাংশনকে isPalindrome(“madam”); লিখে কল করবি তখন আউটপুট হিসেবে true পাওয়া যাবে। আর তুই যদি তোর isPlaindrome ফাংশনকে medium দিয়ে কল করস তখন তুই isPalindrome(“medium”) লিখবি তখন আউটপুট হিসেবে false পাওয়া যাবে। তখন প্রমাণিত হবে madam শব্দটা একটা প্যালিনড্রোম আর medium শব্দটা প্যালিনড্রোম না।   </p>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <div class="fb-comments" width="100%" data-href="http://habluderadda.com/gosti/reverse.html#question1" data-numposts="5"></div>
+                            </section>
+                            <section class="question-holder">
+                                <p>
+                                    <span class="question-number">প্রশ্ন-3.2</span> একটা সেন্টেন্সের শব্দগুলোকে রিভার্স করবি। যদি ফাংশনের ইনপুট হয় I am
+                                    a good boy তাহলে আউটপুট হবে boy good a am I একটু চিন্তা করে দেখ করতে পারস কিনা।
+                                </p>
+
+                                <div class="ansbtndiv">
+                                        <button type="button" class="btn ansbtn2 btn-block" data-target="#Tdiv2" data-toggle="collapse">Show Answer</button>
+                                    </div>
+                                    <div class="sansdiv">
+                                        <div class="ansbox">
+                                            <div id="Tdiv2" class="collapse">
+                                                <div class="answer-show2">
+                                                    <span class="question-number">উত্তরঃ </span> 
+                                                    <p>এইটা করার জন্য সেন্টেন্সের বা string এর শব্দগুলোকে আলাদা করে ফেলতে হবে। এক একটা string এর শব্দগুলোকে আলাদা করার একটা সহজ উপায় হচ্ছে split ব্যবহার করা। সেজন্য text.split(" "); ব্যবহার করা হয়েছে। এইটা করলে সবগুলা শব্দ আলাদা আলাদা হয়ে words নামক array তে জমা হবে। </p>
+                                                    <p>তারপর আগের মতো করে উল্টা করে for লুপ চালিয়ে দিবে। লুপ চালাতে চলতে সেটাকে reverseText নামক ভেরিয়েবলে যোগ করে দিবে। আর যোগ করার সময় প্রত্যেকটা শব্দের একটা একটা করে হোয়াইট স্পেস যোগ করে দিতে হবে। তাহলেই আসল কাজ শেষ হয়ে যাবে। </p>
+                                                    <pre><code>
+function reverseSentence(text){
+    var reverseText = "";
+    var words = text.split(" ");
+    
+    for(var i = words.length - 1; i>=0; i--){
+        var word = words[ i ];
+        reverseText = reverseText + " "+ word;
+    }
+    return reverseText;
+}
+                                                        
+                                                    </code></pre>
+                                                    <p></p>
+                                                    <p><strong>Alternative solution:</strong></p>
+                                                    <p></p>
+                                                    <pre><code>
+function reverseSentence(text){
+    var words = text.split(" ");
+    var reversed = words.reverse();
+    var reversedText = reversed.join(" ");
+    return reversedText;
+}
+                                                        
+                                                    </code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+
+
+                                <div class="fb-comments" width="100%" data-href="http://habluderadda.com/gosti/reverse.html#question2" data-numposts="5"></div>
+                            </section>
+                            <section class="question-holder">
+                                <p>
+                                    <span class="question-number">প্রশ্ন-3.3</span> একটা সেন্টেন্স দেয়া হবে তারপর শব্দগুলোকে জায়গার মধ্যে রেখে সেখানে উল্টায়
+                                    দিয়ে দিবি। ধর তুই যদি I am the good boy ইনপুট হিসেবে দেস তাহলে আউটপুট হিসেবে I ma eht
+                                    doog yob পাবি। </p>
+
+                                    <div class="ansbtndiv">
+                                            <button type="button" class="btn ansbtn3 btn-block" data-target="#Tdiv3" data-toggle="collapse">Show Answer</button>
+                                        </div>
+                                        <div class="sansdiv">
+                                            <div class="ansbox">
+                                                <div id="Tdiv3" class="collapse">
+                                                    <div class="answer-show3">
+                                                        <span class="question-number">উত্তরঃ </span> 
+                                                        <p>এইটা করার জন্য উপরের দুইটা সল্যুশনকে কাজে লাগাতে হবে। </p>
+                                                        <p>আগের reverse ফাংশনটা এইখানে ইউজ করতে হবে। সেটা আগের মতোই আছে। </p>
+                                                        <p>এই ফাংশনে শব্দগুলোকে তার জায়গায়র মধ্যে রেখে উল্টানো হবে। তাই প্রথমেই split করে নে।  তাইলে শব্দগুলো ভাগ  ভাগ হয়ে যাবে। তারপর একটা for লুপ চালিয়ে array থেকে একটা করে উপাদান নিবি। সেই উপাদানগুলোকে  একটা একটা করে নিয়ে সেটাকে reverse করে wordReversed নামক ভেরিয়েবলে রাখবি। তারপর সেই ভেরিয়েবল কে reversed নামক array এর মধ্যে পুশ করে দিবি। 
+                                                        </p>
+                                                        <p>এরপর আর তেমন কাজ নাই। জাস্ট reversed নামক array কে join করে দিবি হোয়াইট স্পেস দিয়ে। পুরা কোড দেখে বুঝার চেষ্টা কর। </p>
+                                                        <pre><code>
+function reverseInPlace(text){
+    var words = text.split(" ");
+    var reversed = [];
+    
+    for(var i = 0; i&lt;words.length; i++){
+        var word = words[ i ];
+        var wordReversed = reverse(word);
+        reversed.push(wordReversed);
+    }
+    var reverseText = reversed.join(" ");
+    
+    return reverseText;
+}
+
+function reverse(word){
+    var reverseWord = "";
+    for(var i = word.length - 1; i>=0; i--){
+        var letter = word[ i ];
+        reverseWord = reverseWord + letter;
+    }
+    return reverseWord;
+}
+                                                                                                                       
+                                                        </code></pre>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <div class="fb-comments" width="100%" data-href="http://habluderadda.com/gosti/reverse.html#question3" data-numposts="5"></div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav1 insec">
+                        <div class="col-xs-4 noleft noright">
+                            <div class="prev">
+                                <a href="duplicate.html">
+                                    <span>
+                                        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                                    </span>আগের চ্যাপ্টার &nbsp;</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <h6>Chapters 3 of 20</h6>
+                        </div>
+                        <div class="col-xs-4 noleft noright">
+                            <div class="next">
+                                    <a style=" background-color: #007bff;
+                                    color: #f6f6f6;;" href="complexity.html">পরের চ্যাপ্টার
+                                    <span>
+                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="chapter">
+                    <h1 class="heading">Chapters</h1>
+                    <div class="list1">
+                        <ul>
+                            <li>
+                                <a href="count.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>ভাষণের Word Count করে চাইলে ভ্যাট </a>
+                            </li>
+                            <li>
+                                <a href="duplicate.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Duplicate Entry চিপায় গিয়ে করবে চ্যাট </a>
+                            </li>
+                            <li style="background-image: linear-gradient(to bottom right, #55ddd9, #1fc9c4);">
+                                <a href="reverse.html">
+                                    <span style="color:#fff;">
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>
+                                    <span style="    font-size: 15px;">সিজনাল কবি String Reverse করে মারে চাপ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="complexity.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Time Complexity দেখে কয় বাপরে বাপ</a>
+                            </li>
+                            <li>
+                                <a href="recursion.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span> দেখলে Recursive Function এর ফুলের তোড়া</a>
+                            </li>
+                            <li>
+                                <a href="series.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                        জাগে Fibonacci series এর মনে প্রেমের ধারা </a>
+                            </li>
+                            <li>
+                                <a href="merge.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Sorted Array মার্জ করতে ধোঁয়া মারে চুঙ্গী </a>
+                            </li>
+                            <li>
+                                <a href="search.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Property ধরে সার্চ করেও খুঁজে পায়না লুঙ্গি </a>
+                            </li>
+                            <li>
+                                <a href="sort.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>ধরে ধরে sort করলেও খুশি হয়না ঢংঙ্গী </a>
+                            </li>
+                            <li>
+                                <a href="sql.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Database তুই পালাবি কোথায় </a>
+                            </li>
+                            <li>
+                                <a href="relation.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Relational Database এর ব্রেকআপের গুতায় </a>
+                            </li>
+                            <li>
+                                <a href="connect.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Server এর সাথে Database এর প্রেম জমে </a>
+                            </li>
+                            <li>
+                                <a href="architecture.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Architecture ডায়াগ্রাম হিংসায় কেঁদে মরে </a>
+                            </li>
+                            <li>
+                                <a href="bestPractice.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Comment, Convention খায়না ভাত </a>
+                            </li>
+                            <li>
+                                <a href="debug.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>Error দেখলেই মাথায় হাত </a>
+                            </li>
+                            <li>
+                                <a href="resume.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>ফকিরা Resumeতে ডিম পা ড়ে না হাঁস </a>
+                            </li>
+                            <li>
+                                <a href="apply.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>না বুঝে এপ্লাই করলে আইক্কাওয়ালা বাঁশ </a>
+                            </li>
+
+                            <li>
+                                <a href="google.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>গুগল, এমাজনে চাকরি পাওয়ার কায়দা </a>
+                            </li>
+
+                            <li>
+                                <a href="newHire.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>চাকরির প্রথম প্রথম লাইফ হবে ময়দা </a>
+                            </li>
+                            <li>
+                                <a href="mission.html">
+                                    <span>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </span>লেগে থাকলে খেতে পাবে ফালুদা </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="qbox">
+                    <div class="commentbox">
+                        <a href="#">
+                            <button class="btn info btn-block">বই পড়ে তোমার মন্তব্য </a>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="subscribe">
+                    <h1 class="heading">আড্ডায় যুক্ত হও</h1>
+                    <!-- <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Your email adress" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="submit">
+                                <a href="#">SUBMIT</a>
+                            </div>
+                        </form> -->
+                    <div class="fbpage">
+                        <div class="fb-page" data-href="https://www.facebook.com/jhankarmahbubshow/" data-small-header="false" data-adapt-container-width="true"
+                            data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/jhankarmahbubshow/" class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/jhankarmahbubshow/">Jhankar Mahbub</a>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rightb">
+                        <h1 class="heading">হাবলু কপি কালেক্ট করো</h1>
+                        <div class="book">
+                            <img src="img/book3.png" class="img-responsive book3">
+                            <a href="https://www.rokomari.com/book/112222/">
+                                <img src="img/buy.png" class="img-responsive buy">
+                            </a>
+                        </div>
+                    </div>
+    
+                
+                <div class="rightb">
+                        <h1 class="heading">বলদ টু বস কালেক্ট করো</h1>
+                        <div class="book2">
+                            <img src="img/bolod-to-boss-book.png" class="img-responsive book3">
+                            <a href="https://www.rokomari.com/book/128993/">
+                                <img src="img/buy2.png" class="img-responsive buy">
+                            </a>
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="social">
+                <a href="https://www.facebook.com/JhankarMahbub">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/jhankarmahbub">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a>
+                <a href="http://www.jhankarmahbub.com/">
+                    <i class="fa fa-link" aria-hidden="true"></i>
+                </a>
+                <a href="http://thatjsdude.com/">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                <p>প্রোগ্রামিংয়ের চৌদ্দগোষ্ঠী © 2017</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/owl.carousel.min.js" type="text/javascript"></script>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/collpus-button.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-40601505-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-40601505-5');
+    </script>
+
+
+
+</body>
+
+</html>
