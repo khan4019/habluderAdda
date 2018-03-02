@@ -115,3 +115,33 @@
 .comment-text{
 	font-size: 12px;
 }
+
+
+.box3 {
+    margin: 20px 0;
+}
+.quote img {height: 65px; width: 126px;}
+.bluequote img {height: 65px; width: 135px;}
+.box3 .inner3 {
+    float: left;
+    width: 100%;
+    background-color: #f4f4f4;
+    box-shadow: 2px 2px 0px #e5dede, 2px -2px 10px #e5dede;
+    padding: 10px 0;
+}
+.box3 h1 {
+	font-family: 'SiyamRupali', sans-serif;
+    text-align: center;
+    color: #527ea5;
+    font-size: 25px;
+    border-bottom: 2px solid #e5dede;
+    background-color: #f4f4f4;
+    line-height: 50px;
+    margin-top: 10px;
+    padding-top: 5px;
+    font-weight: bold;
+}
+.box3 p {
+    font-size: 17px;
+    color: #535252;
+}
